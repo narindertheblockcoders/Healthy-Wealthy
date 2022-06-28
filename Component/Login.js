@@ -4,6 +4,7 @@ import React, { useRef, useState } from "react";
 import Heart from "../public/Heart.svg";
 import { useRouter } from "next/router";
 import { ToastContainer, toast } from "react-toastify";
+import { signIn } from "next-auth/react";
 
 const Login = () => {
   const router = useRouter();
@@ -11,38 +12,45 @@ const Login = () => {
   const passwordInputRef = useRef();
   const [valid, setValid] = useState(false);
 
-  async function login(dat) {
-    try {
-      let res = await axios.post("/api/login", dat);
-      const response = res.data;
-      // console.log(response.data);
-      setValid(false);
-      localStorage.setItem("token", response.data.data);
-      window.location.reload()
-      window.location.href = "/linkPage";
-    } catch (err) {
-      console.log(err, err);
-      setValid(true);
-    }
-  }
+  // async function login(dat) {
+  //   try {
+  //     let res = await axios.post("/api/login", dat);
+  //     const response = res.data;
+  //     // console.log(response.data);
+  //     setValid(false);
+  //     // localStorage.setItem("token", response.data.data);
+  //     // window.location.reload()
+  //     // window.location.href = "/linkPage";
+  //   } catch (err) {
+  //     console.log(err, err);
+  //     setValid(true);
+  //   }
+  // }
 
-  function formSubmitHandler(event) {
+  async function formSubmitHandler(event) {
     event.preventDefault();
     const email = emailInputRef.current.value;
     const password = passwordInputRef.current.value;
 
-    if (!email || email.trim() === "" || !email.includes("@") || !password) {
-      setValid(true);
-
-      return;
-    }
-
-    const data = {
+    const res = await signIn("credentials", {
+      redirect: false,
       email,
       password,
-    };
-    login(data);
+  
+    });
+      console.log(res)
+      if (res?.error) {
+        // setError(res.error);
+        console.log(res.error);
+        setValid(true);
+
+      } else {
+        // setError(null);
+      }
+      if (!res.error) {router.push('/linkPage')};
+    
   }
+
   return (
     <div>
       <section className="profile-sec">

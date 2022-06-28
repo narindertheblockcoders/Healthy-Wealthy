@@ -6,6 +6,7 @@ export default NextAuth({
   session: {
     strategy: "jwt",
     maxAge: 500,
+    secret:"ayC5ej+5fmSNxGt61XXH2uSa61wQgCr2dUwmAoDUzXs="
   },
   providers: [
     CredentialsProviders({
@@ -28,7 +29,7 @@ export default NextAuth({
         }
         if (!(response.status == 200)) {
           
-          throw new Error("Invalid Credentials" +email);
+          throw new Error("Invalid Credentials" + email);
         }
         if (response.status == 200) {
           return (user = {

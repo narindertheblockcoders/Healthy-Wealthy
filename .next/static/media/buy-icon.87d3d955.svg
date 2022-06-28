@@ -1,0 +1,7 @@
+<svg id="MDI_plus-circle-multiple-outline" data-name="MDI / plus-circle-multiple-outline" xmlns="http://www.w3.org/2000/svg" width="40.593" height="40.593" viewBox="0 0 40.593 40.593">
+  <g id="Boundary" fill="#d32286" stroke="rgba(0,0,0,0)" stroke-width="1" opacity="0">
+    <rect width="40.593" height="40.593" stroke="none"/>
+    <rect x="0.5" y="0.5" width="39.593" height="39.593" fill="none"/>
+  </g>
+  <path id="Path_plus-circle-multiple-outline" data-name="Path / plus-circle-multiple-outline" d="M27.062,11.457H23.679v5.074H18.605v3.383h5.074v5.074h3.383V19.914h5.074V16.531H27.062M3.383,18.222a11.837,11.837,0,0,1,6.766-10.69V3.846a15.258,15.258,0,0,0,0,28.754V28.912a11.837,11.837,0,0,1-6.766-10.69M25.371,3A15.222,15.222,0,1,0,40.593,18.222,15.245,15.245,0,0,0,25.371,3m0,27.062a11.84,11.84,0,1,1,11.84-11.84A11.853,11.853,0,0,1,25.371,30.062Z" transform="translate(0 2.074)" fill="#d32286"/>
+</svg>
