@@ -149,8 +149,7 @@ healthier, happier, longer, and richer.</p>
                 )}
          
 
-           
-           <Link href={'/login'}>
+     
 
               <Button
       variant="primary"
@@ -163,7 +162,7 @@ healthier, happier, longer, and richer.</p>
       {isLoadingRef ? 'Loading…' : '   CONTINUE'}
     </Button>
 
-        </Link>
+
     {/* {error && (
                   <p style={{ color: "red", fontSize:"13px" }}> This email exists already. Login below. </p>
                 )}
