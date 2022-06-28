@@ -1,0 +1,224 @@
+import React, { useEffect, useState } from "react";
+import Qr from "../public/qrcode.png";
+import MDI from "../public/mdi.png";
+import Link from "next/link";
+import axios from "axios";
+import { useRouter } from "next/router";
+import { CopyToClipboard } from "react-copy-to-clipboard";
+import { ToastContainer, toast } from "react-toastify";
+import { Spinner } from "react-bootstrap";
+
+
+const PaymentForm = () => {
+  const router = useRouter();
+  const [ifSetId, setIfSetId] = useState(null);
+
+  const [query, setQuery] = useState(null);
+  const [ifFinalValue, setIfFinalValue] = useState(null);
+
+  const via = router.query;
+
+  const { finalAmount } = router.query;
+
+  async function payment() {
+    try {
+      let res = await axios.post("/api/payment");
+      const record = res.data;
+      console.log(record.data.data);
+      setIfSetId(record.data.data);
+
+      if( setIfSetId){
+        return(
+          <Spinner animation="border" variant="primary" />
+        )
+      }
+
+      
+      setIfFinalValue(record.data.data);
+    } catch (err) {
+      console.log(err, "hello");
+    }
+  }
+
+  const notify = (msg) =>
+    toast.success(msg, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+
+  useEffect(() => {
+    payment();
+    if (window) {
+      setQuery(JSON.parse(localStorage.getItem("query")));
+    }
+  }, []);
+
+  async function formSubmitHandler(event) {
+    event.preventDefault();
+
+    var query = await JSON.parse(localStorage.getItem("query"));
+    console.log(query);
+    // localStorage.setItem("finaldata", JSON.stringify(query));
+    router.push("/linkPage");
+
+    // PaymentForm()
+  }
+
+  return (
+    <div>
+      <section className="profile-sec  pt-5 pb-3">
+        <div className="container">
+          <div className="row justify-content-center">
+            <ToastContainer
+              position="top-right"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+            />
+
+            <form
+              className="input-sec  payment-form "
+              id="form-pay"
+              style={{ width: "35%", padding: "30px" }}
+              onSubmit={formSubmitHandler}
+            >
+              <div className="heading-parts">
+                <h3 className="order-text">ORDER CONFORMATION</h3>
+              </div>
+
+              <div className="input-line   paymentForm-line"></div>
+
+              <div className="head-partes">
+                <div className="col-md-5">
+                  <div className="payment-method mt-3">
+                    <div className="flex-ipt">
+                      <h4 className="payment-text">
+                        Currency Rate :{" "}
+                        <span> {query && query?.tokenPrice}</span>
+                      </h4>
+                      {/* <input className='ipt-currency' defaultValue={}></input> */}
+                    </div>
+
+                    <div className="flex-ipt">
+                      <h4 className="payment-text">
+                        Invested Money :{" "}
+                        <span> {query && query?.enteredFor}</span>
+                      </h4>
+                      {/* <input type="text" className='ipt-currency' defaultValue={query?.enteredFor}></input> */}
+                    </div>
+
+                    <div className="flex-ipt">
+                      <h4 className="payment-text">
+                        Money in RXHEAL:{" "}
+                        <span> {query && query?.finalValue}</span>{" "}
+                      </h4>
+                      {/* <input type="text" className='ipt-currency' defaultValue={query?.finalValue}></input> */}
+                    </div>
+
+                    {/* <div className='flex-ipt'>
+
+                      {ifSetId?.map(item => {
+                        if (item.id == via.via) {
+                          return <p className='ipt-currency' >{item.description}  </p>
+                        }
+                      })}
+                      <p className='ipt-currency  font-weight-bold ' > {(parseFloat(finalAmount)).toFixed(5)}</p>
+                    </div> */}
+
+                    {/* <div className='flex-ipt'>
+                      {/* <h4 className='payment-text'>Money in RXHEAL </h4> */}
+
+                    {/* </div> */}
+                  </div>
+                </div>
+
+                <div className="col-md-7">
+                  <div className="input-item">
+                    <div className="qr-sec m-0">
+                      <Link href={"/varification"}>
+                        <img src={Qr.src} className="qr" />
+                      </Link>
+                    </div>
+                    <div className="qr-sec m-0">
+                      <p className="qr-text">OR</p>
+                    </div>
+                    <div
+                      className="para-set"
+                      style={{
+                        display: "flex",
+                        border: "none",
+                        flexWrap: "wrap",
+                        justifyContent: "center",
+                        marginTop: "0px",
+                      }}
+                    >
+                      <p className="iptpara-text" style={{ fontSize: "14px" }}>
+                        0x8B9071AAC02ab97b250f66A2aBa629f6e8806e07{" "}
+                      </p>
+                      <CopyToClipboard
+                        text={"0x8B9071AAC02ab97b250f66A2aBa629f6e8806e07"}
+                        onCopy={() => notify("Copied Successfully")}
+                      >
+                        <img style={{ marginLeft: "10px" }} src={MDI.src} />
+                      </CopyToClipboard>
+                    </div>
+                    {/* <div className='deposit-cls'>
+                      <p> DEPOSIT </p>
+                    </div> */}
+
+                    <div className="final-data">
+                      <div className="dps">
+                        <p className=" dps-text font-weight-bold ">
+                          {" "}
+                          DEPOSIT {parseFloat(finalAmount).toFixed(4)}
+                        </p>
+                        {ifSetId?.map((item) => {   
+                          if (item.id == via.via) { 
+                            return (
+                              <p className="dps-text">{item.description} </p>
+                            );
+                            
+                          }
+                          // if (item.description){
+                          //   return(
+                          //     <Spinner animation="border" variant="primary" />
+                          //   )
+                          // }
+                            })}
+                        <p style={{ paddingLeft: "5px" }}> for this address</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="heading-parts">
+                {/* <Link href={"/login"}> */}
+                <button
+                  className="btn btn-round btn-warning form-btn w-50 p-0 mb-3"
+                  style={{ marginTop: "57px" }}
+                  type="submit"
+                >
+                  CONTINUE
+                </button>
+                {/* </Link> */}
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default PaymentForm;
