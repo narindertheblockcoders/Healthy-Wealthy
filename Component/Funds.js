@@ -147,17 +147,20 @@ const Funds = () => {
                       <tr>
                       <td class="logo-txt">
                          RXHEAL
-                      </td> <td >
-                        {item.coinPrice}
+                      </td> 
+                      <td >
+                        {/* {item.availableToken>0? */}
+                      {item.coinPrice}
+                    {/* } */}
                       </td>
-                      <td style={{textAlign:"center"}}>{item.availableToken}</td>
+                      <td style={{textAlign:"center"}}>{item?.availableToken}</td>
                       <td>{item.locked}</td>
                       <td>
-                    
-                        {item.total}
+                    {item.total}
                       </td>
-                      <td style={{textAlign:"center"}}>{item.totalValue}</td>
-                      <td>
+                      <td style={{textAlign:"center"}}>{item?.totalValue}</td>
+                      <td>{item.totalValue>0?
+                      
                         <button
                           type="button"
                           class="btn deposit-btn"
@@ -165,7 +168,8 @@ const Funds = () => {
                           onClick={()=>router.push('/pay')}
                         >
                           Withdraw
-                        </button>{" "}
+                        </button>:null
+                    }
                       </td>
                   
                     </tr>
@@ -345,7 +349,7 @@ const Funds = () => {
                     {/* </tbody> */}
                   {/* </table> */}
                       <div className='hydration'>
-                        <Link href={'/linkPage'}>
+                        <Link href={'/dashboard'}>
                         <h5>   <span
                     className="arrow-icon"
                     style={{ position: "relative", left: "-0%" }}

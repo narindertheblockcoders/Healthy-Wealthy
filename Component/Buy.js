@@ -8,7 +8,7 @@ const Buy = () => {
   const forInputRef = useRef();
   const [tokenPrice, setTokenPrice] = useState(null);
   const [finalValue, setFinalValue] = useState(null);
-  const [amount, setAmount] = useState(null);
+  const [amount, setAmount] = useState(0 );
   const router = useRouter();
 
   async function currencyFunction() {
@@ -52,7 +52,7 @@ const Buy = () => {
 
   return (
     <div>
-      <section className="profile-sec pb-3 pt-5 ">
+      <section className="profile-sec pb-3 pt-4 ">
         <div className="container">
           <div className="row justify-content-center">
             <form
@@ -87,7 +87,7 @@ const Buy = () => {
                     type="text"
                     required
                     ref={forInputRef}
-                    // value={}
+                    // 
                     onChange={onChangeHandler}
                     className="form-control"
                     placeholder="300"
@@ -129,10 +129,7 @@ const Buy = () => {
                     // pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$"
                     // data-type="currency"
 
-                    defaultValue={finalValue?.toLocaleString('en-US', {
-                      style: 'currency',
-                      currency: 'USD',
-                    })} 
+                    defaultValue={finalValue }
 
                     placeholder="0.00945"
                     aria-label=" amount"
@@ -160,10 +157,8 @@ const Buy = () => {
                 
                   <option className="form-control  mt-2"   style={{ color: "#6a6a7a", height:"53px", paddingTop:"15px", fontSize:"1rem", backgroundImage:"none !important" }}
                   aria-label=".form-select-lg example">
-                    You get {finalValue?.toLocaleString('en-US', {
-  style: 'currency',
-  currency: 'USD',
-})}  RXHEAL for ${amount?.toLocaleString('en-US', {
+                    You get {finalValue} {' '}
+                      RXHEAL for {parseInt(amount).toLocaleString('en-US', {
   style: 'currency',
   currency: 'USD',
 })} 
@@ -196,7 +191,7 @@ const Buy = () => {
         </div>
       </section>
       <div className="text-set mt-0">
-        <Link href={'/linkPage'}>
+        <Link href={'/dashboard'}>
         <p style={{ cursor: "pointer" }}>Skip for Now</p>
         </Link>
       </div>

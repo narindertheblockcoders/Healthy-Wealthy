@@ -12,6 +12,7 @@ const ChangePassword = () => {
   const newPasswordRef= useRef()
   const confirmPasswordRef = useRef()
   const sendCodeRef = useRef()
+  
   const [isValid, setIsValid] = useState(false);
   const [email, setEmail] = useState()
   const [isLoading, setIsLoading] = useState(false);
@@ -25,8 +26,6 @@ const ChangePassword = () => {
 
   const  router = useRouter()
   // const [enterfield, setEnterField] = useState(false);
-
-
 
   async function passwordFill() {
     try {
@@ -66,16 +65,16 @@ const ChangePassword = () => {
   
   async function changePass(data) {
     try {
-      // const token = localStorage.getItem('token')
-      // console.log(token, 'weyfgqegfq')
-      let res = await axios.post("/api/changepassword",data);
-      const resend = res.data.data;
+      const token = localStorage.getItem('token')
+      console.log(token, 'weyfgqegfq')
+      let res = await axios.post("/api/changepassword",{token:token,data});
+      const resend = res.data;
       console.log(resend, "Passsword Change");
       notify(' Change Successfuly')
       setVerify(true)
       setTimeout(()=>{
 
-        router.push('/linkPage')
+        router.push('/dashboard')
       },3000)
   
       
@@ -159,7 +158,7 @@ toast.error(msg, {
             <form className="input-sec" onSubmit={onSubmitHandler}>
               <div className="line profile-line"></div>
               <h3 className="heading-text pink-text mt-2 ">
-              <Link href={'/linkPage'}>
+              <Link href={'/dashboard'}>
               <span  className="arrows-icon" style={{ position: "relative", left: "-23%", cursor:"pointer" }}  >
                     <img src={Arrow.src} />
                   </span>
@@ -212,7 +211,7 @@ toast.error(msg, {
                   <p style={{ color: "red", margin:"0px" }}> Invalid detail </p>
                 )}
                        {verify && (
-                  <p style={{ color: "green", fontSize:"15px", fontWeight:"600", margin:"0" }}>Change Successfuly </p>
+                  <p style={{ color: "green", fontSize:"15px", fontWeight:"500", margin:"0" }}>Change Successfuly </p>
                 )}
               <button
                 href="funds-page.html"

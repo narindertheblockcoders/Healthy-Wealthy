@@ -26,7 +26,7 @@ const Verification = () => {
       setIsLoading(false);
     } catch (err) {
       console.log(err);
-      notifyError("Check your email inbox for the verification code");
+      notifyError("Invalid Verification Code ");
       setError(true)
 
     }
@@ -62,7 +62,7 @@ const Verification = () => {
     const email = localStorage.getItem("email");
 
     if (otp.trim().length < 6) {
-      notifyError("Check your email inbox for the verification code.");
+      notifyError("Invalid Verification Code ");
       setIsLoading(false);
       setError(true)
 
@@ -131,7 +131,7 @@ const Verification = () => {
               </h3>
 
               <p className="check-txt">
-                Check your email For verification code
+              Check your email inbox for the verification code
               </p>
               <div className="ipt-box">
                 <input
@@ -156,7 +156,7 @@ const Verification = () => {
                 {/* <button  type="button" onClick={resendCode}>Resend Code</button> */}
               </div>
               {error && (
-                  <p style={{ color: "red", fontSize:"13px",  fontWeight:"600", margin:"0" }}> Check your email inbox for the verification code. </p>
+                  <p style={{ color: "red", fontSize:"13px",  fontWeight:"500", margin:"0" }}> Invalid Verification Code </p>
                 )}
               <p
                 className="by-text mb-0 "

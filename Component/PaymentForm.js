@@ -64,7 +64,7 @@ const PaymentForm = () => {
     var query = await JSON.parse(localStorage.getItem("query"));
     console.log(query);
     // localStorage.setItem("finaldata", JSON.stringify(query));
-    router.push("/linkPage");
+    router.push("/dashboard");
 
     // PaymentForm()
   }

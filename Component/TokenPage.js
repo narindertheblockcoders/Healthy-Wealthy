@@ -92,7 +92,7 @@ const TokenPage = () => {
                   </span>
                 </Link>
                 dashboard  </h3>   */}
-     <Link href={'/linkPage'}>
+     <Link href={'/dashboard'}>
                   <span className="arrows-icon" style={{ position: "relative", left: "-0%", cursor: "pointer" }}  >
                     <img src={Arrow.src} />
                   </span>

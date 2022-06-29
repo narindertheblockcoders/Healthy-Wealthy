@@ -32,12 +32,13 @@ const EmailSubmit = () => {
         notify('Verification code Sent' );
         setVerify(true)
         setIsLoading(false);
-      
+        setLoadingRef(true)
         setTimeout(() => {
           router.push("/forgetPassword");
         }, 3000);
       }
-    } catch (err) {
+    } 
+    catch (err) {
       console.log(err, "Err");
       notifyError("Invalid Email");
       setError(true)
@@ -87,7 +88,7 @@ const EmailSubmit = () => {
       }
     }, [isLoading]);
   
-    const handleClick = () => setLoadingRef(true);
+    const handleClick = () => setLoadingRef(false);
   return (
     <div>
       <section className="profile-sec">
@@ -140,10 +141,10 @@ healthier, happier, longer, and richer.</p>
               {/* <Link href={"/varification"}> */}
 
               {error && (
-                  <p style={{ color: "red", fontWeight:"600", margin:"0" }}> Invalid Email </p>
+                  <p style={{ color: "red", fontWeight:"500", margin:"0" }}> Invalid Email </p>
                 )}
                  {verify && (
-                  <p style={{ color: "green", fontSize:"13px", fontWeight:"600", margin:"0" }}> Verification code Sent </p>
+                  <p style={{ color: "green", fontSize:"13px", fontWeight:"500", margin:"0" }}> Verification code Sent </p>
                 )}
             
               <Button

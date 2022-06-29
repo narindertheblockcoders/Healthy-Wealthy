@@ -47,7 +47,7 @@ const Login = () => {
       } else {
         // setError(null);
       }
-      if (!res.error) {router.push('/linkPage')};
+      if (!res.error) {router.push('/dashboard')};
     
   }
 

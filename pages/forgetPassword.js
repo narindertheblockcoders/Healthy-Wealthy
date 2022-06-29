@@ -14,10 +14,10 @@ export default forgetPassword
 
 export async function getServerSideProps(context) {
   const session = await getSession(context)
-  if (!session) {
+  if (session) {
     return {
       redirect: {
-        destination: "/",
+        destination: "/emailSubmit",
         permanent: false,
       }
     }

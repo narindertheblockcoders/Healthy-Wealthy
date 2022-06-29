@@ -20,6 +20,16 @@ const UserProfile = () => {
   const countryRef = useRef()
   const zipCodeRef = useRef()
   const [verify, setVerify]=useState(false)
+  const [name, setName]= useState()
+  const [lastName, setLastName]= useState()
+  const [contactNumber, setContactNumber]= useState()
+  const [address, setAddress] = useState()
+  const [city, setCity] = useState()
+  const [country, setCountry]= useState()
+  const [state, setState]= useState()
+  const [zipcode, setZipcode]=useState()
+
+
 
 
   const [isLoadingRef, setLoadingRef] = useState(false);
@@ -29,19 +39,29 @@ const [isLoading,setIsLoading]= useState(false)
   // const [profileData,setProfileData] =useState()
   async function userProfile() {
     try {
-      // const token = localStorage.getItem("token")
-      // console.log(token, "for api");
+      
       let res = await axios.post("/api/userProfile");
       const response = res.data;
       console.log(response.data);
-      // localStorage.setItem("token", response.data);
       setIsFinalData(response.data)
-      // window.location.href = "/linkPage";
+      setName(response.data.firstName)
+      setLastName(response.data.lastName)
+      setContactNumber(response.data.contactNumber)
+      setAddress(response.data.address)
+      setCity(response.data.city)
+      setCountry(response.data.country)
+      setState(response.data.state)
+      setZipcode(response.data.zipcode)
+      
+
+
+
+
+
     } catch (err) {
       console.log(err, err);
     }
   }
-  
   
   
   useEffect(() => {
@@ -55,16 +75,16 @@ const [isLoading,setIsLoading]= useState(false)
       const token = localStorage.getItem("token")
       console.log(token, "for api");
       let res = await axios.post("/api/userdata",{token:token,data} );
-      const request = res.data.data;
+      const request = res.data;
       console.log(request.data, 'data fet');
-      // setProfileData (request.data)
       setIsFinalData(request.data)
-      // console.log(profileData,"profile dara")
       setIsLoading(true)
       setVerify(true)
       notify ('User Detail Updated')
+      setLoadingRef(true)
+
       setTimeout(() => {
-        router.push("/linkPage");
+        router.push("/dashboard");
       }, 3000);
       
     } catch (err) {
@@ -142,7 +162,7 @@ const [isLoading,setIsLoading]= useState(false)
       }
     }, [isLoading]);
   
-    const handleClick = () => setLoadingRef(true);
+    const handleClick = () => setLoadingRef(false);
 
 
   return (
@@ -165,7 +185,7 @@ const [isLoading,setIsLoading]= useState(false)
               <div
                 className="line userprofile-line" ></div>
               <h3 className="heading-text pink-text mt-2 mb-5">
-                <Link href={'/linkPage'}>
+                <Link href={'/dashboard'}>
                   <span className="arrows-icon" style={{ position: "relative", left: "-23%", cursor: "pointer" }}  >
                     <img src={Arrow.src} />
                   </span>
@@ -180,13 +200,14 @@ const [isLoading,setIsLoading]= useState(false)
                   <h6 className="item-text">FIRST NAME</h6>
                   <input
                   ref={firstNameRef}
-                    required
-                    // value={profileData?.firstName}
+                    // required
+                    value={name}
+                    onChange={(e)=>setName(e.currentTarget.value)}
               
                     className="textinput"
                     type="name"
                     name="username"
-                    placeholder={isFinalData?.firstName}
+                    // placeholder={isFinalData?.firstName}
 
                   />
                 </div>
@@ -198,12 +219,13 @@ const [isLoading,setIsLoading]= useState(false)
                   <h6 className="item-text">LAST NAME</h6>
                   <input
                   ref={lastNameRef}
-                    required
-                  //  value={profileData?.lastName}
+                    // required
+                   value={lastName}
+                   onChange={(e)=>setLastName(e.currentTarget.value)}
                     className="textinput"
                     type="last name"
                     name="last-name"
-                    placeholder={isFinalData?.lastName}
+                    // placeholder={isFinalData?.lastName}
                   />
                 </div>
               </div>
@@ -215,7 +237,9 @@ const [isLoading,setIsLoading]= useState(false)
               <div className="name-sec" >
                 {/* <h6 className="item-text">EMAIL</h6> */}
                 <div className="input-item item-set" style={{ marginRight: "10px", display: "flex" }} >
-                  <input ref={emailRef} disabled  required className="textinput mt-0" name="email" placeholder={isFinalData?.email} />
+                  <input ref={emailRef} disabled  required className="textinput mt-0" name="email" 
+                  defaultValue={isFinalData?.email}
+                   />
                   <Link href={'/emailChange'}>
 
                     <button type="button" className="btn btn-roundes  btn- w-50  mt-0 ">
@@ -227,30 +251,55 @@ const [isLoading,setIsLoading]= useState(false)
               </div>
               <div className="input-item item-set">
                 <h6 className="item-text">CONTACT NUMBER</h6>
-                <input ref={contactNumberRef}  required  placeholder={isFinalData?.contactNumber} className="textinput" name="contact no" />
+                <input ref={contactNumberRef}  required  
+                onChange={(e)=>setContactNumber(e.currentTarget.value)}
+                value={contactNumber}
+                // placeholder={isFinalData?.contactNumber} 
+                className="textinput" name="contact no" />
               </div>
 
               <div className="input-item item-set">
                 <h6 className="item-text">ADDRESS</h6>
-                <input  ref={addressRef} required placeholder={isFinalData?.address} className="textinput" name="address" />
+                <input  ref={addressRef} required 
+                value={address}
+                onChange={(e)=>setAddress(e.currentTarget.value)}
+
+                // placeholder={isFinalData?.address} 
+                className="textinput" name="address" />
               </div>
               <div className="input-item item-set">
                 <h6 className="item-text">CITY</h6>
-                <input ref={cityRef}  required placeholder={isFinalData?.city} className="textinput" name="city" />
+                <input ref={cityRef}  required 
+                value={city}
+                onChange={(e)=>setCity(e.currentTarget.value)}
+                // placeholder={isFinalData?.city} 
+                className="textinput" name="city" />
               </div>
               <div className="input-item item-set">
                 <h6 className="item-text">STATE/PROVINCE</h6>
-                <input ref={stateRef} required placeholder={isFinalData?.state} className="textinput" name="state" />
+                <input ref={stateRef} required
+                value={state}
+                onChange={(e)=>setState(e.currentTarget.value)}
+                // placeholder={isFinalData?.state} 
+                className="textinput" name="state" />
               </div>
 
               <div className="input-item item-set">
                 <h6 className="item-text"> COUNTRY </h6>
-                <input ref={countryRef} required placeholder={isFinalData?.country} className="textinput" name="country" />
+                <input ref={countryRef} required 
+                  value={country}
+                  onChange={(e)=>setCountry(e.currentTarget.value)}
+                // placeholder={isFinalData?.country} 
+                className="textinput" name="country" />
               </div>
 
               <div className="input-item item-set mb-4">
                 <h6 className="item-text">ZIP Code</h6>
-                <input ref={zipCodeRef} required placeholder={isFinalData?.zipcode} className="textinput" name="zip code" />
+                <input ref={zipCodeRef} required 
+                value={zipcode}
+                onChange={(e)=>setZipcode(e.currentTarget.value)}
+                // placeholder={isFinalData?.zipcode} 
+                className="textinput" name="zip code" />
               </div>
               {/* 
               <div className="input-item item-set">

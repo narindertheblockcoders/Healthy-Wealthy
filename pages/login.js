@@ -12,3 +12,23 @@ const login = () => {
 }
 
 export default login
+
+export async function getServerSideProps(context) {
+  const session = await getSession(context)
+  if (session) {
+    return {
+      redirect: {
+        destination: "/emailSubmit",
+        permanent: false,
+      }
+    }
+  }
+  return {
+    props:{
+      session
+    }
+  }
+}
+
+
+

@@ -60,7 +60,7 @@ const Navbar = () => {
 
                   {session ? (
                     <li className="nav-item">
-                      <Link href={"/linkPage"}>
+                      <Link href={"/dashboard"}>
                         <a
                           className="nav-link active"
                           aria-current="page"

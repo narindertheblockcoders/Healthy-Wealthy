@@ -29,19 +29,18 @@ const FrontPage = () => {
         
         notify("Check your inbox for the verification code email");
         setError(false)
-        setIsLoading(false);
         setVerify(true)
+        setLoadingRef(true)
         setTimeout(() => {
           router.push("/verification");
         }, 3000);
       }
     } catch (err) {
       console.log(err, "Err");
-      
       notifyError("This email exists already. Login below.");
       setError(true)
       setIsLoading(false );
-      setLoadingRef(false);
+      // setLoadingRef(false);
     }
   }
   
@@ -53,6 +52,8 @@ const FrontPage = () => {
     localStorage.setItem("email", email);
     const data = { email };
 
+    // isLoadingRef(false)
+      
     register(data);
     
     
@@ -89,7 +90,10 @@ const FrontPage = () => {
       }
     }, [isLoading]);
   
-    const handleClick = () => setLoadingRef(true);
+    const handleClick = () =>
+    
+    setLoadingRef(false);
+
   return (
     <div>
       <section className="profile-sec">
@@ -142,10 +146,10 @@ healthier, happier, longer, and richer.</p>
 
               {/* <Link href={"/varification"}> */}
               {error && (
-                  <p style={{ color: "red", fontSize:"13px", fontWeight:"600", margin:"0" }}> This email exists already. Login below. </p>
+                  <p style={{ color: "red", fontSize:"13px", fontWeight:"500", margin:"0" }}> This email exists already. Login below. </p>
                 )}
                    {verify && (
-                  <p style={{ color: "green", fontSize:"13px", fontWeight:"600", margin:"0" }}> Check your inbox for the verification code email </p>
+                  <p style={{ color: "green", fontSize:"13px", fontWeight:"500", margin:"0" }}> Check your inbox for the verification code email </p>
                 )}
          
 

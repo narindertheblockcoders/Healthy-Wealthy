@@ -5,7 +5,7 @@ import CredentialsProviders from "next-auth/providers/credentials";
 export default NextAuth({
   session: {
     strategy: "jwt",
-    maxAge: 500,
+    maxAge: 1500,
     secret:"ayC5ej+5fmSNxGt61XXH2uSa61wQgCr2dUwmAoDUzXs="
   },
   providers: [

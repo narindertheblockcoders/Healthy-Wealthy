@@ -7,12 +7,12 @@ import {getSession} from 'next-auth/react'
 
 export default async function handler(req, res) {
   const session = await getSession({req})
-  jc
+
   if (req.method === "POST") {
     try {
       // const{token} = req.body;
       const {data}= req.body;
-      console.log(data)
+      console.log(data, 'data properties')
       var config = {
         method: "post",
         url:  "http://13.215.196.173:3000/api/v1/user/changepassword",

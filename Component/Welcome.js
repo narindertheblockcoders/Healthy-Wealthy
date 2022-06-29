@@ -97,7 +97,7 @@ console.log(tranx)
               <div className="head-partes">
                 </div>
               <div className="heading-parts mt-2">
-                <Link href={"/linkPage"}>
+                <Link href={"/dashboard"}>
                 <button
                   className="btn btn-round btn-warning form-btn w-50 p-0 mb-3"
                   style={{ marginTop: "0px" }}
