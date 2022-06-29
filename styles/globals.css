@@ -342,7 +342,7 @@ sup {
     text-align: left;
     padding-left: 30px;
     padding-top: 10px;
-    font-size: 11px;
+    font-size: 13px;
     margin-bottom: 0;
 }
 
@@ -382,7 +382,7 @@ sup {
 }
 
 .iptset-line {
-    top: -4.4% !important;
+    top: -3.8% !important;
 }
 
 .varification-line {
@@ -603,7 +603,7 @@ sup {
 }
 
 .profile-sec .input-sec .iptpara-text {
-    font-size: 15px;
+    font-size: 13px;
     /* padding-top: 40px; */
     margin: 0;
 }

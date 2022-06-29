@@ -112,7 +112,7 @@ toast.error(msg, {
               <div className="input-item">
               <form onSubmit={handleClick} method="POST">
 
-                    {error && (<p style={{color:"red", textAlign:"center", fontWeight:"500", margin:"0"}}> Invalid amount</p>)}
+                    {error && (<p style={{color:"red", textAlign:"center", fontSize:"15px", fontWeight:"500", margin:"0"}}> Invalid amount</p>)}
                 <button type="submit" disabled={isLoading} className="btn credit-btn">
                   <img className="icon-space" src={Credit.src} /> Pay with
                   Credit Card

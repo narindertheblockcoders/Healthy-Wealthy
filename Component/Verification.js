@@ -150,7 +150,7 @@ const Verification = () => {
                     style={{ cursor: "pointer" }}
                     className="resend-txt "
                   >
-                    Resend code
+                    Resend code.
                   </span>{" "}
                 </p>
                 {/* <button  type="button" onClick={resendCode}>Resend Code</button> */}

@@ -27,7 +27,7 @@ const FrontPage = () => {
       if (rec) {
         console.log(rec);
         
-        notify("Check your inbox for the verification code email");
+        notify("Check your email inbox for the verification code.");
         setError(false)
         setVerify(true)
         setLoadingRef(true)
@@ -117,7 +117,7 @@ const FrontPage = () => {
                 {" "}
                 Join the HealthiWealthi <sup className="sup-text">TM</sup><br></br> Global Community
               </h3>
-              <p style={{fontSize:"10px", paddingTop:"7px", margin:"0"}}>Own RXHEAL and unleash your
+              <p style={{fontSize:"13px", paddingTop:"7px", margin:"0"}}>Own RXHEAL and unleash your
 potential on HealthiWealthi™ living
 healthier, happier, longer, and richer.</p>
 
@@ -146,10 +146,10 @@ healthier, happier, longer, and richer.</p>
 
               {/* <Link href={"/varification"}> */}
               {error && (
-                  <p style={{ color: "red", fontSize:"13px", fontWeight:"500", margin:"0" }}> This email exists already. Login below. </p>
+                  <p style={{ color: "red", fontSize:"15px", fontWeight:"500", margin:"0" }}> This email exists already. Login below. </p>
                 )}
                    {verify && (
-                  <p style={{ color: "green", fontSize:"13px", fontWeight:"500", margin:"0" }}> Check your inbox for the verification code email </p>
+                  <p style={{ color: "green", fontSize:"15px", fontWeight:"500", margin:"0" }}>Check your email inbox for the verification code. </p>
                 )}
          
 

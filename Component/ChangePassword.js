@@ -208,7 +208,7 @@ toast.error(msg, {
                   <p style={{ color: "red" }}> Password doesn't match </p>
                 )}
                     {errorValid && (
-                  <p style={{ color: "red", margin:"0px" }}> Invalid detail </p>
+                  <p style={{ color: "red", fontSize:"15px", fontWeight:"500", margin:"0px" }}> Invalid detail </p>
                 )}
                        {verify && (
                   <p style={{ color: "green", fontSize:"15px", fontWeight:"500", margin:"0" }}>Change Successfuly </p>

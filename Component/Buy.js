@@ -95,28 +95,28 @@ const Buy = () => {
                     
                   />
 
-                  <Dropdown>
-                    <Dropdown.Toggle
+
+<button
+                    className="btn  btn-outline-secondary btn-style"
+                    style={{width:"32%"}}
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    USD
+                  </button>
+
+               {/* <button
                       className="btn-style"
                       style={{
                         height: "53px",
                         paddingRight: "35px !important",
                         borderRadius: "0 0.25rem 0.25rem 0",
-                      }}
-                    >
+                      }}>
+                  
                       USD
-                    </Dropdown.Toggle>
-
-                    <Dropdown.Menu>
-                      <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                      <Dropdown.Item href="#/action-2">
-                        Another action
-                      </Dropdown.Item>
-                      <Dropdown.Item href="#/action-3">
-                        Something else
-                      </Dropdown.Item>
-                    </Dropdown.Menu>
-                  </Dropdown>
+                      </button>
+                  */}
                 </div>
               </div>
 
@@ -180,7 +180,7 @@ const Buy = () => {
               {/* </Link> */}
               <p className="by-text mb-0">
                 By continuing you agree to our{" "}
-                <span style={{ fontWeight: "bold" }}> privacy policy.</span>{" "}
+                privacy policy.{" "}
               </p>
 
               {/* <div className="para-set">

@@ -79,12 +79,8 @@ const Profile = () => {
           <div className="row justify-content-center">
             <form className="input-sec" onSubmit={formSubmitHandler}>
               <div className="line profile-line"></div>
-              <h3 className="heading-text pink-text mt-2"> Secure Your Profile</h3>
-              <p style={{fontSize:"10px", paddingTop:"7px", margin:"0"}}>and access your HealthiWealthi™
-              {/* <br/> */}
-RXHEAL dashboard with a 7 minute
- {/* <br/> */}
-video that will change your life.</p>
+              <h3 className="heading-text pink-text mt-2"> Complete Your Profile</h3>
+              <p style={{fontSize:"14px", paddingTop:"7px",  margin:"0"}}>To access your HealthiWealthi™RXHEAL dashboard and the 7-minute Welcome Video that will change your life.</p>
               <div className="name-sec">
                 <div
                   className="input-item item-set"
@@ -138,7 +134,7 @@ video that will change your life.</p>
               </div>
 
               <div className="input-item item-set">
-                <h6 className="item-text">CONFIRMPASSWORD</h6>
+                <h6 className="item-text">CONFIRM PASSWORD</h6>
                 <input
                   ref={confirmPasswordInputRef}
                   required

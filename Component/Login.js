@@ -43,6 +43,8 @@ const Login = () => {
         // setError(res.error);
         console.log(res.error);
         setValid(true);
+        notifyError("Invalid Detail")
+        
 
       } else {
         // setError(null);
@@ -51,21 +53,55 @@ const Login = () => {
     
   }
 
+  /////////////Toast//////////////////////
+  const notify = (msg) =>
+    toast.success(msg, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+
+  const notifyError = (msg) =>
+    toast.error(msg, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+
   return (
     <div>
-      <section className="profile-sec">
+      <section className="profile-sec pt-0 mt-4 pb-0" >
         <div className="container">
           <div className="row justify-content-center">
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+          />
             <form className="input-sec input-top" onSubmit={formSubmitHandler}>
               <div className="input-line iptset-line"></div>
-              <img src={Heart.src} className="mt-2" />
+              <img src={Heart.src} className="mt-2 " />
               <h3 className="heading-text mt-3">
                 {" "}
-                Join the HealthiWealthi <sup className="sup-text">TM</sup><br></br> Global Community
+              
+                 HealthiWealthi™ LOGIN
               </h3>
-              <p style={{fontSize:"10px", paddingTop:"7px", margin:"0"}}>Own RXHEAL and unleash your
-potential on HealthiWealthi™ living
-healthier, happier, longer, and richer.</p>
+              <p style={{fontSize:"13px", paddingTop:"7px", margin:"0"}}> Unleash your potential on HealthiWealthi™ living healthier, happier, longer, and richer.
+</p>
 
 
 
@@ -82,7 +118,7 @@ healthier, happier, longer, and richer.</p>
                 />
               </div>
 
-              <div className="input-item" style={{ marginTop: "25px" }}>
+              <div className="input-item" style={{ marginTop: "25px", marginBottom:"30px" }}>
                 <h6 className="item-text">PASSWORD</h6>
                 <input
                   className="textinput"
@@ -91,13 +127,13 @@ healthier, happier, longer, and richer.</p>
                   name="last-name"
                   ref={passwordInputRef}
                 />
-                {valid && <p style={{ color: "red" }}> Invalid details. </p>}
+               
               </div>
-
+              {valid && <p style={{ color: "red", margin:"0", fontSize:"15px", fontWeight:"500" }}> Invalid Details. </p>}
               {/* <Link href={"/creditPage"}> */}
               <button
                 className="btn btn-round btn-warning w-100 "
-                style={{ marginTop: "73p" }}
+                style={{ marginTop: "5px" }}
                 type="submit"
               >
                 CONTINUE
