@@ -171,9 +171,9 @@ toast.error(msg, {
 
 
               {/* <Link href={"/login"}> */}
-              {error && (<p style={{ color: "red", fontSize:"15px", fontWeight:"500", margin:"0" }}> Invalid Code </p>)}
+              {error && (<p style={{ color: "red", fontSize:"15px", margin:"0" }}> Invalid Code </p>)}
               {verify && (
-                  <p style={{ color: "green", fontSize:"15px",  fontWeight:"500", margin:"0" }}> Password Changed</p>
+                  <p style={{ color: "green", fontSize:"15px",   margin:"0" }}> Password Changed</p>
                 )}
               <button
                 href="funds-page.html"

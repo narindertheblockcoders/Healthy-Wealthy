@@ -156,7 +156,7 @@ const Verification = () => {
                 {/* <button  type="button" onClick={resendCode}>Resend Code</button> */}
               </div>
               {error && (
-                  <p style={{ color: "red", fontSize:"13px",  fontWeight:"500", margin:"0" }}> Invalid Verification Code </p>
+                  <p style={{ color: "red", fontSize:"13px",  margin:"0" }}> Invalid Verification Code </p>
                 )}
               <p
                 className="by-text mb-0 "

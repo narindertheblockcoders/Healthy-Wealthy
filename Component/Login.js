@@ -100,7 +100,7 @@ const Login = () => {
               
                  HealthiWealthi™ LOGIN
               </h3>
-              <p style={{fontSize:"13px", fontWeight:"600", paddingTop:"7px", margin:"0"}}> Unleash your potential on HealthiWealthi™ living healthier, happier, longer, and richer.
+              <p style={{fontSize:"13px", paddingTop:"7px", margin:"0"}}> Unleash your potential on HealthiWealthi™ living healthier, happier, longer, and richer.
 </p>
 
 
@@ -129,7 +129,7 @@ const Login = () => {
                 />
                
               </div>
-              {valid && <p style={{ color: "red", margin:"0", fontSize:"15px", fontWeight:"500" }}> Invalid Details. </p>}
+              {valid && <p style={{ color: "red", margin:"0", fontSize:"15px" }}> Invalid Details. </p>}
               {/* <Link href={"/creditPage"}> */}
               <button
                 className="btn btn-round btn-warning w-100 "

@@ -3,6 +3,8 @@ import axios from "axios";
 import { Dropdown } from "react-bootstrap";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import Script from "next/script";
+
 
 const Buy = () => {
   const forInputRef = useRef();
@@ -90,7 +92,7 @@ const Buy = () => {
                     // 
                     onChange={onChangeHandler}
                     className="form-control"
-                    placeholder="300"
+                    placeholder="1000"
                     aria-label="Dollar amount (with dot and two decimal places)"
                     
                   />
@@ -146,6 +148,12 @@ const Buy = () => {
                 </div>
               </div>
 
+
+{/* 
+              <a href="#" target="_blank" className="systeme-show-popup-3389131">Click me</a>
+              <Script id="form-script-tag-3389131"  target="_blank" src="https://www.healthiwealthi.net/public/remote/page/48549691423a09a08ff4b1955cbdb0a41ab9559.js"></Script>
+
+              <Script id="form-script-tag-3258113" src="https://www.rxheal.me/public/remote/page/46707985906fa5108279fea0f049cefd9880264.js"></Script> */}
               <div className="input-item">
                 <h6 className="item-text">SUMMARY</h6>
               

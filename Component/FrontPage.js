@@ -146,10 +146,10 @@ healthier, happier, longer, and richer.</p>
 
               {/* <Link href={"/varification"}> */}
               {error && (
-                  <p style={{ color: "red", fontSize:"15px", fontWeight:"500", margin:"0" }}> This email exists already. Login below. </p>
+                  <p style={{ color: "red", fontSize:"15px", margin:"0" }}> This email exists already. Login below. </p>
                 )}
                    {verify && (
-                  <p style={{ color: "green", fontSize:"15px", fontWeight:"500", margin:"0" }}>Check your email inbox for the verification code. </p>
+                  <p style={{ color: "green", fontSize:"15px",  margin:"0" }}>Check your email inbox for the verification code. </p>
                 )}
          
 

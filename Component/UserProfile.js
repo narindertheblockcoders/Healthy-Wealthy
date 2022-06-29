@@ -327,7 +327,7 @@ const [isLoading,setIsLoading]= useState(false)
                 UPDATE
               </button> */}
       {verify && (
-                    <p style={{ color: "green", fontSize:"13px", fontWeight:"600", margin:"0" }}> User Detail Updated </p>
+                    <p style={{ color: "green", fontSize:"15px",  margin:"0" }}> User Detail Updated </p>
                   )}
               <Button
       variant="primary"

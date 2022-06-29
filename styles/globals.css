@@ -335,7 +335,6 @@ sup {
 
 .by-text {
     font-size: 13px;
-    font-weight: 600;
     margin-top: 15px;
 }
 
@@ -573,13 +572,41 @@ sup {
 }
 
 
+/* #invest-sec {background-color: var(--bg-color) !important;} */
+.invest-part {float: left; width: 100%; display: flex; justify-content: space-around; }
+.invest-item {border: 1px solid blue; height: 196px; border-radius: 10px;} 
+.invest-item1 {border: 1px solid blue; height: 300px; border-radius: 10px;}
+.invest-item2 {border: 1px solid blue; border-radius: 10px;}
+.invest-left { height: 100px; display: flex; justify-content: center;}
+.invest-heading { font-size: 30px;  font-weight: bold; color: black;}
+.invest-para {color: black; font-size: 20px; margin: 0;}
+.invest-right { display: flex; justify-content: center; flex-direction: column; padding-left: 3rem;}
+.invest-box{    height: 60px;
+    display: flex;
+    justify-content: center;
+    color: black;
+    border-bottom: 1px solid gray;
+    align-items: center;
+}
+.invest-box1 {   
+    padding: 20px ;
+ 
+}
 
+
+.own-text{font-size: 18px; font-weight: bold; color: var(--bg-color); text-align: center;}
+.rx-text{font-size: 16px; font-weight: 600; padding-top: 5px; }
+.heal-text {margin: 0; font-weight: bold;}
 
 
 /* login-page */
 .profile-sec .input-content {
     margin-top: 37px;
 }
+
+
+
+
 
 .profile-sec .input-sec .input-line {
 
@@ -605,7 +632,7 @@ sup {
 
 .profile-sec .input-sec .iptpara-text {
     font-size: 13px;
-    font-weight: 600;
+    /* font-weight: 600; */
     /* padding-top: 40px; */
     margin: 0;
 }
