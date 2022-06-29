@@ -117,7 +117,7 @@ const FrontPage = () => {
                 {" "}
                 Join the HealthiWealthi <sup className="sup-text">TM</sup><br></br> Global Community
               </h3>
-              <p style={{fontSize:"13px", paddingTop:"7px", margin:"0"}}>Own RXHEAL and unleash your
+              <p style={{fontSize:"14px", paddingTop:"7px", margin:"0"}}>Own RXHEAL and unleash your
 potential on HealthiWealthi™ living
 healthier, happier, longer, and richer.</p>
 
