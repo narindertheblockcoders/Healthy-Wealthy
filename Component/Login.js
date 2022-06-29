@@ -100,7 +100,7 @@ const Login = () => {
               
                  HealthiWealthi™ LOGIN
               </h3>
-              <p style={{fontSize:"14px", paddingTop:"7px", margin:"0"}}> Unleash your potential on HealthiWealthi™ living healthier, happier, longer, and richer.
+              <p style={{fontSize:"13px", fontWeight:"600", paddingTop:"7px", margin:"0"}}> Unleash your potential on HealthiWealthi™ living healthier, happier, longer, and richer.
 </p>
 
 
@@ -144,7 +144,7 @@ const Login = () => {
                 By continuing you agree to our cookie policy.
               </p>
               <Link href={'/emailSubmit'}>
-              <p className="by-text" style={{cursor:"pointer", marginTop:"5px", fontSize:"14px", color:"#2990DF"}}>
+              <p className="by-text" style={{cursor:"pointer", marginTop:"5px", fontSize:"13px", color:"#2990DF"}}>
                 
                 {" "}
              Forget Your Password
@@ -159,7 +159,7 @@ const Login = () => {
                       href="home-page.html"
                       style={{
                         fontWeight: "bold",
-                        fontSize: "15px",
+                        fontSize: "13px",
                         color: "#D32286",
                       }}
                     >

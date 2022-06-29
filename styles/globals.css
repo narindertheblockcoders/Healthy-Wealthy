@@ -334,7 +334,8 @@ sup {
 }
 
 .by-text {
-    font-size: 14px;
+    font-size: 13px;
+    font-weight: 600;
     margin-top: 15px;
 }
 
@@ -603,7 +604,8 @@ sup {
 }
 
 .profile-sec .input-sec .iptpara-text {
-    font-size: 14px;
+    font-size: 13px;
+    font-weight: 600;
     /* padding-top: 40px; */
     margin: 0;
 }
