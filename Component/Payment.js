@@ -89,7 +89,7 @@ const Payment = () => {
         <div className="container">
           <div className="row justify-content-center">
             <form className="input-sec input-top" onSubmit={formSubmitHandler}>
-              <div className="input-line credit-line"></div>
+              <div className="input-line credit-line" id="cred-line"></div>
 
               <h3 className="heading-text mt-0">
                 <Link href={"/creditPage"}>

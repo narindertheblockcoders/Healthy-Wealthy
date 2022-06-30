@@ -4,6 +4,8 @@ import { Dropdown } from "react-bootstrap";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Script from "next/script";
+import Heart from "../public/Heart.svg";
+
 
 
 const Buy = () => {
@@ -62,34 +64,41 @@ const Buy = () => {
               onSubmit={onSubmitHandler}
             >
               <div className="input-line buy-line"></div>
+<div className="buy-header">
 
-              <h3 className="heading-text " style={{ textAlign: "left" }}>
+              <img src={Heart.src} className="mt-2 " />
+              <h3 className="heading-text mt-2" id="ptext-set">
                 {" "}
-                Own RXHEAL{" "}
-              </h3>
-
-              <div className="input-item" style={{display:"flex", alignItems:"center", }}>
-                <h6 className="item-text" id="text-width">Currency Price</h6>
-                <div className="input-group  input-set " style={{height:"unset !important", }}>
-
-                  <h4 className="price-text">
-                    
-                 {tokenPrice}
-                
-                  </h4>
-
               
+                Own RXHEAL
+              </h3>
+              <p className="pt-1" style={{fontSize:"13px",  margin:"0"}}> Own RXHEAL and unleash your potential on HealthiWealthi™ living healthier, happier, longer, and richer.
+
+</p>
+<div className="input-line buy-line" id="buy-line"></div>
+</div>
+
+              <div className="input-item "  id="set-text" >
+                <div className="buy-set">
+                <h6 className="item-text w-100" style={{fontSize:"16px"}}>CURRENT RXHEAL PRICE</h6>
+                <div className="input-group  input-set  set-buy" >
+                  <h4 className="price-text">
+                 {tokenPrice}
+                  </h4>
+                </div>
                 </div>
               </div>
 
-              <div className="input-item mt-3">
+
+<div className="buy-setting">
+              <div className="input-item" id="item-setting" >
                 <h6 className="item-text">FOR</h6>
                 <div className="input-group  input-set mt-2">
                   <input
-                    type="text"
+                    type="number"
                     required
                     ref={forInputRef}
-                    // 
+                    style={{borderRadius: "10px 0 0 10px"}}
                     onChange={onChangeHandler}
                     className="form-control"
                     placeholder="1000"
@@ -98,9 +107,9 @@ const Buy = () => {
                   />
 
 
-<button
+                    <button
                     className="btn  btn-outline-secondary btn-style"
-                    style={{width:"32%"}}
+                    style={{width:"32%",borderRadius:"10px", borderRadius: "0 10px 10px 0" }}
                     type="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
@@ -122,12 +131,13 @@ const Buy = () => {
                 </div>
               </div>
 
-              <div className="input-item">
+              <div className="input-item " id="item-setting">
                 <h6 className="item-text">YOU RECEIVE</h6>
                 <div className="input-group  input-set mt-2">
-                  <input
+                  <input style={{borderRadius: "10px 0 0 10px"}}
                     className="form-control"
                     disabled
+                    
                     // pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$"
                     // data-type="currency"
 
@@ -138,6 +148,7 @@ const Buy = () => {
                   />
 
                   <button
+                    style={{borderRadius: "0 10px 10px 0"}}
                     className="btn  btn-outline-secondary btn-style"
                     type="button"
                     data-bs-toggle="dropdown"
@@ -147,6 +158,14 @@ const Buy = () => {
                   </button>
                 </div>
               </div>
+</div>
+
+<div  className="btn-buysec">
+  <button type="button"   onClick={(e)=>{console.log(forInputRef.current.value = parseInt(forInputRef.current.value) + 100)}} className="buy-btntst">100</button>
+  <button type="button"   onClick={(e)=>{console.log(forInputRef.current.value = parseInt(forInputRef.current.value) + 1000)}} className="buy-btntst" id="num-pad">1000</button>
+  <button type="button"  onClick={(e)=>{console.log(forInputRef.current.value = parseInt(forInputRef.current.value) + 5000)}}  className="buy-btntst" id="num-pad">5000</button>
+
+</div>
 
 
 {/* 
@@ -154,14 +173,9 @@ const Buy = () => {
               <Script id="form-script-tag-3389131"  target="_blank" src="https://www.healthiwealthi.net/public/remote/page/48549691423a09a08ff4b1955cbdb0a41ab9559.js"></Script>
 
               <Script id="form-script-tag-3258113" src="https://www.rxheal.me/public/remote/page/46707985906fa5108279fea0f049cefd9880264.js"></Script> */}
-              <div className="input-item">
+              {/* <div className="input-item">
                 <h6 className="item-text">SUMMARY</h6>
-              
-                {/* <select
-                  className="form-select form-select-lg mb-3 textinput"
-                  style={{ color: "#6a6a7a" }}
-                  aria-label=".form-select-lg example"
-                > */}
+            
                 
                   <option className="form-control  mt-2"   style={{ color: "#6a6a7a", height:"53px", paddingTop:"15px", fontSize:"1rem", backgroundImage:"none !important" }}
                   aria-label=".form-select-lg example">
@@ -171,17 +185,29 @@ const Buy = () => {
   currency: 'USD',
 })} 
                   </option>
-                  {/* <option defaultValue="1">One</option>
-                  <option defaultValue="2">Two</option>
-                  <option defaultValue="3">Three</option> */}
-                {/* </select> */}
-              </div>
+                 
+              </div> */}
 
-              {/* <Link href={"/creditPage"}> */}
+       
+
+              <div className="input-item benefit-type">
+                <h6 className="item-text" style={{fontSize:"18px", fontWeight:"bold", marginBottom:"10px"}}>YOUR BENEFITS</h6>
+                <ul>
+                  <li>Benefit 1</li>
+                  <li>Benefit 2</li>
+                  <li>Benefit 3</li>
+                  <li>Benefit 4</li>
+                  <li>Benefit 5</li>
+                </ul>
+
+                
+                </div>
+
               <button
                 className="btn btn-round btn-warning w-100 "
                 style={{ marginTop: "35px" }}
                 type="submit"
+                id="buy-btnton"
               >
                 CONTINUE
               </button>

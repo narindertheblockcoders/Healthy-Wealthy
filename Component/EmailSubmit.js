@@ -106,13 +106,13 @@ const EmailSubmit = () => {
               pauseOnHover
             />
             <form className="input-sec input-top" onSubmit={onSubmitHandler}>
-              <div className="input-line email-submit"></div>
+              <div className="input-line email-submit" id="email-line"></div>
               <img src={Heart.src} className="mt-2" />
               <h3 className="heading-text mt-3">
                 {" "}
                 Join the HealthiWealthi <sup className="sup-text">TM</sup><br></br> Global Community
               </h3>
-              <p style={{fontSize:"10px", paddingTop:"7px", margin:"0"}}>Own RXHEAL and unleash your
+              <p style={{fontSize:"13px", paddingTop:"7px", margin:"0"}}>Own RXHEAL and unleash your
 potential on HealthiWealthi™ living
 healthier, happier, longer, and richer.</p>
 

@@ -184,7 +184,7 @@ const [isLoading,setIsLoading]= useState(false)
             <form className="input-sec mb-5" onSubmit={formSubmitHandler}>
               <div
                 className="line userprofile-line" ></div>
-              <h3 className="heading-text pink-text mt-2 mb-5">
+              <h3 className="heading-text pink-text mt-2 mb-5" id="mb-mar">
                 <Link href={'/dashboard'}>
                   <span className="arrows-icon" style={{ position: "relative", left: "-23%", cursor: "pointer" }}  >
                     <img src={Arrow.src} />

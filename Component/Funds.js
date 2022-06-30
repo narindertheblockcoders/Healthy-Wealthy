@@ -130,7 +130,6 @@ const Funds = () => {
                       <tr>
                         <th scope="col">ASSETS</th>
                         <th scope="col">COIN PRICE</th>
-
                         <th scope="col">AVAILABLE BALANCE</th>
                         <th scope="col">LOCKED</th>
                         <th scope="col">TOTAL</th>
@@ -154,11 +153,11 @@ const Funds = () => {
                     {/* } */}
                       </td>
                       <td style={{textAlign:"center"}}>{item?.availableToken}</td>
-                      <td>{item.locked}</td>
+                      <td id="padding-set"> {item.locked}</td>
                       <td>
                     {item.total}
                       </td>
-                      <td style={{textAlign:"center"}}>{item?.totalValue}</td>
+                      <td  style={{textAlign:"center"}}>{item?.totalValue}</td>
                       <td>{item.totalValue>0?
                       
                         <button
@@ -187,7 +186,7 @@ const Funds = () => {
                         <th scope="col">STAKING DATE</th>
                         <th scope="col">TOKEN</th>
                         <th scope="col">ROI</th>
-                        <th scope="col">END DATE</th>
+                        <th scope="col" id="padding-set">END DATE</th>
                         <th scope="col"> STATUS</th>
                         {/* <th scope="col" colspan="2" style={{textAlign:"right"}}>
                           ACTION
@@ -416,8 +415,8 @@ const Funds = () => {
                                   </td>
 
                                   <td> {item.usdAmount} </td>
-                                  <td>{item.tokenQuantity}</td>
-                                  <td>
+                                  <td style={{paddingLeft:"0px !important"}}>{item.tokenQuantity}</td>
+                                  <td id="td-set">
                                     {" "}
                                     <strong>{item.tokenPrice}</strong>
                                   </td>

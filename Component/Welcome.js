@@ -83,7 +83,7 @@ console.log(tranx)
               <div className="heading-parts mt-5">
                 <h3 className="order-text" style={{color:"green"}}>ORDER CONFORMATION</h3>
                 <p className="pt-2">Your order has been successfully placed</p>
-                <p className="pt-2 mt-0">Transaction ID : <strong> {transactionID?.trans} </strong>  <CopyToClipboard
+                <p className="pt-2 mt-0 text-break">Transaction ID : <strong> {transactionID?.trans} </strong>  <CopyToClipboard
                         text={transactionID?.trans}
                         onCopy={() => notify("Copied Successfully")}
                       >

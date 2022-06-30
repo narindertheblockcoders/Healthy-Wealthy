@@ -98,7 +98,7 @@ toast.error(msg, {
               pauseOnHover
             />
             <div className="input-sec input-top">
-              <div className="input-line credit-line"></div>
+              <div className="input-line credit-line" id="credit-line"></div>
 
               <h3 className="heading-text mt-0">
                 <Link href={"/buy"}>
@@ -113,7 +113,7 @@ toast.error(msg, {
               <form onSubmit={handleClick} method="POST">
 
                     {error && (<p style={{color:"red", textAlign:"center", fontSize:"15px", margin:"0"}}> Invalid amount</p>)}
-                <button type="submit" disabled={isLoading} className="btn credit-btn">
+                <button type="submit" disabled={isLoading} className="btn credit-btn" id="credit-btn">
                   <img className="icon-space" src={Credit.src} /> Pay with
                   Credit Card
                 </button>

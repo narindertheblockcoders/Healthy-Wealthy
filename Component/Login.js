@@ -43,7 +43,7 @@ const Login = () => {
         // setError(res.error);
         console.log(res.error);
         setValid(true);
-        notifyError("Invalid Detail")
+        notifyError("Invalid login details. Please try again or signup below.")
         
 
       } else {
@@ -78,7 +78,7 @@ const Login = () => {
 
   return (
     <div>
-      <section className="profile-sec pt-0 mt-4 pb-0" >
+      <section className="profile-sec mt-4 pb-0" >
         <div className="container">
           <div className="row justify-content-center">
           <ToastContainer
@@ -129,7 +129,7 @@ const Login = () => {
                 />
                
               </div>
-              {valid && <p style={{ color: "red", margin:"0", fontSize:"15px" }}> Invalid Details. </p>}
+              {valid && <p style={{ color: "red", margin:"0", fontSize:"15px" }}> Invalid login details. Please try again or signup below. </p>}
               {/* <Link href={"/creditPage"}> */}
               <button
                 className="btn btn-round btn-warning w-100 "

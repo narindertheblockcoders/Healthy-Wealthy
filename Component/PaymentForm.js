@@ -96,11 +96,11 @@ const PaymentForm = () => {
                 <h3 className="order-text">ORDER CONFORMATION</h3>
               </div>
 
-              <div className="input-line   paymentForm-line"></div>
+              <div className="input-line   paymentForm-line" id="line-set"></div>
 
               <div className="head-partes">
                 <div className="col-md-5">
-                  <div className="payment-method mt-3">
+                  <div className="payment-method mt-3" id="payment-method">
                     <div className="flex-ipt">
                       <h4 className="payment-text">
                         Currency Rate :{" "}
@@ -143,7 +143,7 @@ const PaymentForm = () => {
                 </div>
 
                 <div className="col-md-7">
-                  <div className="input-item">
+                  <div className="input-item" id="space-ietm">
                     <div className="qr-sec m-0">
                       <Link href={"/varification"}>
                         <img src={Qr.src} className="qr" />
@@ -208,6 +208,7 @@ const PaymentForm = () => {
                   className="btn btn-round btn-warning form-btn w-50 p-0 mb-3"
                   style={{ marginTop: "57px" }}
                   type="submit"
+                  id="space-zero"
                 >
                   CONTINUE
                 </button>

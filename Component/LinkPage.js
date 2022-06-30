@@ -57,7 +57,7 @@ const LinkPage = () => {
                       ENABLE 2FA
                     </div>
                     <Link href={"/funds"}>
-                      <div className="link-item third-sec" id="first-item">
+                      <div className="link-item third-sec first-set" id="first-item ">
                         FUNDS
                       </div>
                     </Link>

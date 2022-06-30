@@ -141,7 +141,7 @@ const Verification = () => {
                   ref={valueRef}
                 />
               </div>
-              <div className="did-txt" style={{marginBottom:"100px"}}>
+              <div className="did-txt">
                 <p>
                   {" "}
                   Didn't receive it?{" "}

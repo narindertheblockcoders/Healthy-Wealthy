@@ -30,12 +30,12 @@ const Navbar = () => {
     <>
       <header>
         <nav className="navbar navbar-expand-lg top-nav navbar-light bg-light">
-          <div className="container-fluid">
-            <a className="navbar-brand" href="#">
+          <div className="container-fluid" id="fluid-set">
+            <a className="navbar-brand" href="#" id="href-set">
               {" "}
-              <img style={{ height: "60px" }} src={Logo.src} />
+              <img style={{ height: "80px" }} src={Logo.src} />
             </a>
-            <button
+            {/* <button
               onClick={() => setOpen(!open)}
               className="navbar-toggler"
               type="button"
@@ -46,18 +46,18 @@ const Navbar = () => {
               aria-label="Toggle navigation"
             >
               <span className="navbar-toggler-icon"></span>
-            </button>
-            <Collapse in={open}>
+            </button> */}
+           {/* <Collapse in={open}>
               <div
                 className="collapse navbar-collapse"
                 id="navbarSupportedContent"
-                style={{ justifyContent: "flex-end" }}
+                style={{ justifyContent: "flex-end", position:"absolute", right:"3%", marginRight:"0px !important", margin:"0" }}
               >
                 <ul
                   className="navbar-nav mb-2 mb-lg-0"
-                  style={{ marginLeft: "auto !important" }}
-                >
-
+                  style={{ marginLeft: "auto !important" }} */}
+                {/* > */}
+  {/*
                   {session ? (
                     <li className="nav-item">
                       <Link href={"/dashboard"}>
@@ -106,9 +106,9 @@ const Navbar = () => {
                         WELCOME {name?.firstName}{" "}
                       </a>
                     </li>
-                  ) : null}
+                  ) : null}*/}
 
-                  {session ? (
+                  {/* {session ? (
                     <li className="nav-item">
                       <Link href={"/login"}>
                         <button
@@ -137,7 +137,7 @@ const Navbar = () => {
                   ) : null}
                 </ul>
               </div>
-            </Collapse>
+            </Collapse>  */}
           </div>
         </nav>
       </header>

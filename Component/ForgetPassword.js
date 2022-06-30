@@ -120,7 +120,7 @@ toast.error(msg, {
             pauseOnHover
           />
             <form className="input-sec" onSubmit={onSubmitHandler}>
-              <div className="line profile-line"></div>
+              <div className="line profile-line" id="prof-line"></div>
               <h3 className="heading-text pink-text mt-2 mb-4">
               <Link href={'/emailSubmit'}>
               <span  className="arrows-icon" style={{ position: "relative", left: "-23%", cursor:"pointer" }}  >
@@ -178,7 +178,7 @@ toast.error(msg, {
               <button
                 href="funds-page.html"
                 className="btn btn-round btn-warning w-100 "
-                style={{ marginTop: "5px", marginBottom: "10px" }}
+                style={{ marginTop: "30px", marginBottom: "10px" }}
                 type="submit"
               >
                 SUBMIT
