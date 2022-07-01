@@ -138,6 +138,21 @@ const Navbar = () => {
                 </ul>
               </div>
             </Collapse>  */}
+
+                 {/* {session ? (
+                    <li className="nav-item">
+                      <Link href={"/login"}>
+                        <button
+                          onClick={logoutHandler}
+                          className="btn btn-outline-success border-btn"
+                          style={{ marginRight: "10px" }}
+                          type="submit"
+                        >
+                          Logout
+                        </button>
+                      </Link>
+                    </li>
+                  ) : null} */}
           </div>
         </nav>
       </header>

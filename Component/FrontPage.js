@@ -96,7 +96,7 @@ const FrontPage = () => {
 
   return (
     <div>
-      <section className="profile-sec">
+      <section className="profile-sec " style={{height:"81vh"}} >
         <div className="container">
           <div className="row justify-content-center">
             <ToastContainer
@@ -110,7 +110,7 @@ const FrontPage = () => {
               draggable
               pauseOnHover
             />
-            <form className="input-sec input-top" onSubmit={onSubmitHandler}>
+            <form className="input-sec input-top" id="form-setup" onSubmit={onSubmitHandler}>
               <div className="input-line"></div>
               <img src={Heart.src} className="mt-2" />
               <h3 className="heading-text mt-3">

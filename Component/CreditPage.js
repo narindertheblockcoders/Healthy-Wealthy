@@ -83,7 +83,7 @@ toast.error(msg, {
 
   return (
     <div>
-      <section className="profile-sec">
+      <section className="profile-sec" id="id-set" style={{height:"81vh"}}>
         <div className="container">
           <div className="row justify-content-center">
           <ToastContainer
@@ -102,11 +102,11 @@ toast.error(msg, {
 
               <h3 className="heading-text mt-0">
                 <Link href={"/buy"}>
-                  <span style={{ position: "relative", left: "-15%" }}>
+                  <span style={{ position: "relative", left: "-5%" }}>
                     <img src={Arrow.src} />
                   </span>
                 </Link>
-                Select Payment Mode
+                Select your preferred payment method:
               </h3>
 
               <div className="input-item">

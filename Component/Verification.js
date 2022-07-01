@@ -101,7 +101,7 @@ const Verification = () => {
 
   return (
     <div>
-      <section className="profile-sec pb-0">
+      <section className="profile-sec pb-0" style={{height:"81vh"}}>
         <div className="container">
           <ToastContainer
             position="top-right"
@@ -117,6 +117,7 @@ const Verification = () => {
           <div className="row justify-content-center">
             <form
               className="input-sec iptset-line ipt-width"
+              id="form-seti"
               onSubmit={formSubmit}
             >
               <div className="input-line  varification-line"></div>

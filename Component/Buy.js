@@ -5,15 +5,23 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import Script from "next/script";
 import Heart from "../public/Heart.svg";
+import Arrow from "../public/arrow.svg";
+import VideoModal from "./ui/VideoModal";
 
 
 
 const Buy = () => {
   const forInputRef = useRef();
   const [tokenPrice, setTokenPrice] = useState(null);
-  const [finalValue, setFinalValue] = useState(null);
-  const [amount, setAmount] = useState(0 );
+  const [finalValue, setFinalValue] = useState(null)
   const router = useRouter();
+  const [amount, setAmount] = useState(router?.query?.amount || 100);
+  const [modalShow,setModalShow]=useState(false)
+  
+
+
+
+console.log(router.query.amount)
 
   async function currencyFunction() {
     try {
@@ -21,6 +29,7 @@ const Buy = () => {
       const crc = res.data;
       console.log(crc);
       setTokenPrice(crc.data.data);
+      
     } catch (err) {
       console.log(err);
     }
@@ -45,79 +54,112 @@ const Buy = () => {
     router.push("/creditPage");
   }
   function onChangeHandler() {
-    (e)=>e.current.value.toLocaleString('en-US', {
+
+    (e) => e.current.value.toLocaleString('en-US', {
       style: 'currency',
       currency: 'USD',
     })
+    console.log(amount, "change")
     const enteredFor = forInputRef.current.value;
     setAmount(enteredFor);
     setFinalValue(enteredFor / tokenPrice);
   }
 
+  function onAddHandler(e) {
+    e.preventDefault()
+    console.log(amount,"add")
+    if (forInputRef.current.value == '') { forInputRef.current.value = e.currentTarget.value; return; }
+    forInputRef.current.value = parseInt(forInputRef.current.value) + parseInt(e.currentTarget.value);
+    setAmount( parseInt(forInputRef.current.value) + parseInt(e.currentTarget.value))
+    setFinalValue(( parseInt(forInputRef.current.value) ) / tokenPrice);
+  }
+
+
   return (
-    <div>
-      <section className="profile-sec pb-3 pt-4 ">
+    <div >
+      <section className="profile-sec pb-3 pt-4">
         <div className="container">
           <div className="row justify-content-center">
             <form
-              className="input-sec iptset-line width-set "
+              className="input-sec iptset-line width-set " id="fom-set" style={{width: "37%",  position:"relative"}}
               onSubmit={onSubmitHandler}
+              
             >
               <div className="input-line buy-line"></div>
-<div className="buy-header">
-
-              <img src={Heart.src} className="mt-2 " />
-              <h3 className="heading-text mt-2" id="ptext-set">
-                {" "}
               
-                Own RXHEAL
-              </h3>
-              <p className="pt-1" style={{fontSize:"13px",  margin:"0"}}> Own RXHEAL and unleash your potential on HealthiWealthi™ living healthier, happier, longer, and richer.
+              <span onClick={()=>router.back()} className="arrows-icon" id="arrows-icn" style={{ position: "absolute", left: "-20%", cursor: "pointer" }}  >
+                    <img src={Arrow.src} />
+                  </span>
+                <img src="/img.png" className=" mukan"  />
+                {/* <img src="/reactangle.png" className="icon-set"  /> */}
 
-</p>
-<div className="input-line buy-line" id="buy-line"></div>
-</div>
+                <button onClick={()=>setModalShow(true)} type="button" className="wht-btn"><img src="/vicon.svg" style={{paddingRight:"6px"}}/> 5 Min</button>
+            <VideoModal    show={modalShow}
+        onHide={() => setModalShow(false)}/>
 
-              <div className="input-item "  id="set-text" >
-                <div className="buy-set">
-                <h6 className="item-text w-100" style={{fontSize:"16px"}}>CURRENT RXHEAL PRICE</h6>
-                <div className="input-group  input-set  set-buy" >
-                  <h4 className="price-text">
-                 {tokenPrice}
-                  </h4>
-                </div>
+                
+                {/* <Link href={'/'}> */}
+                
+                {/* </Link> */}
+              <div className="buy-header mt-3">
+              
+            
+                <h3 className="heading-text" id="ptext-set" style={{fontSize:"20px"}}>
+                  {" "}
+
+                  Own RXHEAL Reward Tokens
+             
+                </h3>
+                <p className="pt-1" style={{ fontSize: "14px", margin: "0" }}> Be a leader in Healthcare 3.0 and receive extensive <br/>benefits (see below)
+
+                </p>
+                {/* <div className="input-line buy-line" id="buy-line"></div> */}
+              </div>
+
+              <div className=" margin-txt" id="set-text">
+                <div className="buy-set" >
+                  <h6 className="item-text w-100" style={{ fontSize: "13px", color:"#0D0D0D", fontWeight:"600", marginBottom:"12px" }}>CURRENT RXHEAL PRICE - ${tokenPrice}</h6>
+                    {/* <h4 className="price-text"> */}
+                  {/* <div className="input-group  input-set  set-buy" > */}
+                     
+                    {/* </h4> */}
+                  {/* </div> */}
                 </div>
               </div>
 
+                  <div className="bottom-line"></div>
 
-<div className="buy-setting">
-              <div className="input-item" id="item-setting" >
-                <h6 className="item-text">FOR</h6>
-                <div className="input-group  input-set mt-2">
-                  <input
-                    type="number"
-                    required
-                    ref={forInputRef}
-                    style={{borderRadius: "10px 0 0 10px"}}
-                    onChange={onChangeHandler}
-                    className="form-control"
-                    placeholder="1000"
-                    aria-label="Dollar amount (with dot and two decimal places)"
-                    
-                  />
+<div className="padding-set">
+
+              <div className="buy-setting " id="buy-sett">
+                <div className="input-item" id="item-setting" >
+                  <h6 className="item-text" style={{color:"#D32286"}}>FOR</h6>
+                  <div className="input-group  input-set mt-2">
+                    <input
+                      type="number"
+                      required
+                      ref={forInputRef}
+                      // style={{ borderRadius: "10px 0 0 10px" }}
+                      onChange={onChangeHandler}
+                      className="form-control"
+                      defaultValue={amount}
+                      min='100'
+                      aria-label="Dollar amount (with dot and two decimal places)"
+
+                    />
 
 
                     <button
-                    className="btn  btn-outline-secondary btn-style"
-                    style={{width:"32%",borderRadius:"10px", borderRadius: "0 10px 10px 0" }}
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    USD
-                  </button>
+                      className="btn  btn-outline-secondary btn-style"
+                      style={{ width: "32%",  }}
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      USD
+                    </button>
 
-               {/* <button
+                    {/* <button
                       className="btn-style"
                       style={{
                         height: "53px",
@@ -128,47 +170,59 @@ const Buy = () => {
                       USD
                       </button>
                   */}
+                  </div>
+                </div>
+
+                <div className="input-item " id="item-setting">
+                  <h6 className="item-text" style={{color:"#D32286"}}>YOU RECEIVE</h6>
+                  <div className="input-group  input-set mt-2">
+                    <input 
+                    // style={{ borderRadius: "10px 0 0 10px" }}
+                      className="form-control"
+                      disabled
+                      // pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$"
+                      // data-type="currency"
+                      defaultValue={finalValue}
+                      placeholder="0.00945"
+                      aria-label=" amount"
+                    />
+
+                    <button
+                      // style={{ borderRadius: "0 10px 10px 0" }}
+                      className="btn  btn-outline-secondary btn-style"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      RXHEAL
+                    </button>
+                  </div>
                 </div>
               </div>
 
-              <div className="input-item " id="item-setting">
-                <h6 className="item-text">YOU RECEIVE</h6>
-                <div className="input-group  input-set mt-2">
-                  <input style={{borderRadius: "10px 0 0 10px"}}
-                    className="form-control"
-                    disabled
-                    
-                    // pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$"
-                    // data-type="currency"
 
-                    defaultValue={finalValue }
 
-                    placeholder="0.00945"
-                    aria-label=" amount"
-                  />
+              <div className="btn-buysec">
+                <button type="button" value={100} onClick={(e) => {
+                  onAddHandler(e)
+                }
 
-                  <button
-                    style={{borderRadius: "0 10px 10px 0"}}
-                    className="btn  btn-outline-secondary btn-style"
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    RXHEAL
-                  </button>
-                </div>
+                } className="buy-btntst font-set" >$100</button>
+                <button    value={1000} type="button" onClick={(e) => {
+                  onAddHandler(e)
+                }
+
+                } className="buy-btntst font-set" id="num-pad">$1000</button>
+
+                <button type="button" value={5000}  onClick={(e) => {
+                  onAddHandler(e)
+                }
+                } className="buy-btntst font-set" id="num-pad">$5000</button>
+
               </div>
-</div>
-
-<div  className="btn-buysec">
-  <button type="button"   onClick={(e)=>{console.log(forInputRef.current.value = parseInt(forInputRef.current.value) + 100)}} className="buy-btntst">100</button>
-  <button type="button"   onClick={(e)=>{console.log(forInputRef.current.value = parseInt(forInputRef.current.value) + 1000)}} className="buy-btntst" id="num-pad">1000</button>
-  <button type="button"  onClick={(e)=>{console.log(forInputRef.current.value = parseInt(forInputRef.current.value) + 5000)}}  className="buy-btntst" id="num-pad">5000</button>
-
-</div>
 
 
-{/* 
+              {/* 
               <a href="#" target="_blank" className="systeme-show-popup-3389131">Click me</a>
               <Script id="form-script-tag-3389131"  target="_blank" src="https://www.healthiwealthi.net/public/remote/page/48549691423a09a08ff4b1955cbdb0a41ab9559.js"></Script>
 
@@ -188,31 +242,56 @@ const Buy = () => {
                  
               </div> */}
 
-       
+
 
               <div className="input-item benefit-type">
-                <h6 className="item-text" style={{fontSize:"18px", fontWeight:"bold", marginBottom:"10px"}}>YOUR BENEFITS</h6>
+                <h6 className="item-text" style={{ fontSize: "17px", fontWeight: "600", marginBottom: "9px", color:"#D32286" }}> BENEFITS</h6>
+                  {
+                    amount >= 100 & amount<1000?
                 <ul>
-                  <li>Benefit 1</li>
-                  <li>Benefit 2</li>
-                  <li>Benefit 3</li>
-                  <li>Benefit 4</li>
-                  <li>Benefit 5</li>
-                </ul>
+                    <li style={{fontSize:"14px", fontWeight:"bold"}}>$100 - $999</li>
+                  <li><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> 100 RXHEAL Bonus Tokens</li>
+                  <li><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> Book HealthiWealthi ($15 value)</li>
+                  <li><img src="/checkPink.svg" style={{paddingRight:"10px"}}/>   Book Lifestyle Medicine Works ($20 value)</li>
+                 </ul>
+                 : null
+                 }
+{amount > 999 && amount< 5000?
+<ul>
+                  <li style={{fontSize:"14px", fontWeight:"bold", marginTop:"10px"}}>    $1,000 - $4,999</li>
+                  <li><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> 1,000 RXHEAL Bonus Tokens</li>
+                  <li><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> Book HealthiWealthi ($15 value)</li>
+                  <li><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> Lifestyle Medicine Summit Premium Ticket ($197 value)</li>
 
-                
-                </div>
+                  <li><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> The Art & Science of Self-Healing 101 Course ($297 value)</li>
+</ul> :null
+}
+{amount>4999 ? <ul>
+                  <li style={{fontSize:"14px", fontWeight:"bold", marginTop:"10px"}}>    $5,000 -  $10,000</li>
+                  <li><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> 5,000 RXHEAL Bonus Tokens</li>
+                  <li><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> Book HealthiWealthi ($15 value)</li>
+                  <li><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> Lifestyle Medicine Summit Premium Ticket ($197 value)</li>
+
+                  <li><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> The Art & Science of Self-Healing 101 Course ($297 value)</li>
+                  <li><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> HealthiWealthi™ Coach Training Course ($997 value)</li>
+                  <li><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> $1,000 Lifestyle Prescriptions® University Training Scholarship</li>
+
+              
+                </ul> : null}
+
+
+              </div>
 
               <button
-                className="btn btn-round btn-warning w-100 "
-                style={{ marginTop: "35px" }}
+                className="btn btn-round btn-warning  "
+                style={{ marginTop: "30px", width:"87%" }}
                 type="submit"
                 id="buy-btnton"
               >
                 CONTINUE
               </button>
               {/* </Link> */}
-              <p className="by-text mb-0">
+              <p className="by-text ">
                 By continuing you agree to our{" "}
                 privacy policy.{" "}
               </p>
@@ -220,13 +299,14 @@ const Buy = () => {
               {/* <div className="para-set">
                 <p className="iptpara-text">Are you new here? <a href="home-page.html" style={{fontWeight: "bold",  fontSize: "15px", color: "#D32286"}}>Sign Up</a></p>
               </div>  */}
+              </div>
             </form>
           </div>
         </div>
       </section>
-      <div className="text-set mt-0">
+      <div className="text-set mt-0" id="skip-page">
         <Link href={'/dashboard'}>
-        <p style={{ cursor: "pointer" }}>Skip for Now</p>
+          <p style={{ cursor: "pointer" }}>Skip for Now</p>
         </Link>
       </div>
     </div>

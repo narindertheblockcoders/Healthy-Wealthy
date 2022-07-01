@@ -141,7 +141,7 @@ toast.error(msg, {
   return (
     
     <div>
-      <section className="profile-sec pb-0 pt-4">
+      <section className="profile-sec pb-0" style={{height:"81vh"}}>
         <div className="container">
           <div className="row justify-content-center">
           <ToastContainer
@@ -155,7 +155,7 @@ toast.error(msg, {
             draggable
             pauseOnHover
           />
-            <form className="input-sec" onSubmit={onSubmitHandler}>
+            <form className="input-sec" id="form-setting" onSubmit={onSubmitHandler} >
               <div className="line profile-line"></div>
               <h3 className="heading-text pink-text mt-2 ">
               <Link href={'/dashboard'}>

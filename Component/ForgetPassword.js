@@ -105,7 +105,7 @@ toast.error(msg, {
   return (
     
     <div>
-      <section className="profile-sec pb-0">
+      <section className="profile-sec pb-0" style={{height:"81vh"}}>
         <div className="container">
           <div className="row justify-content-center">
           <ToastContainer
@@ -122,7 +122,7 @@ toast.error(msg, {
             <form className="input-sec" onSubmit={onSubmitHandler}>
               <div className="line profile-line" id="prof-line"></div>
               <h3 className="heading-text pink-text mt-2 mb-4">
-              <Link href={'/emailSubmit'}>
+              <Link href={'/emailVerify'}>
               <span  className="arrows-icon" style={{ position: "relative", left: "-23%", cursor:"pointer" }}  >
                     <img src={Arrow.src} />
                   </span>

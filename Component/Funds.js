@@ -84,7 +84,7 @@ const Funds = () => {
 
   return (
     <div>
-      <section className="profile-sec">
+      <section className="profile-sec" style={{minHeight:"81vh"}}>
         <div className="container">
           <div className="row justify-content-center">
             <form className="funds-sec" onSubmit={formSubmitHandler}>

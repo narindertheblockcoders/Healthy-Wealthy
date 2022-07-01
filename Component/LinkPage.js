@@ -7,10 +7,16 @@ import Multiple from "../public/multiple.svg";
 import ChangePassword from "../public/changePassword.svg"
 import BuyIcon from "../public/buy-icon.svg";
 import TokenIcon from "../public/token-icon.svg"
+import {signOut} from 'next-auth/react';
+
+
+
 const LinkPage = () => {
 
   // const [rxAmt,setRxAmt ] =useState()
   const [usdAmt, setUsdAmt] = useState()
+  const [name, setName] = useState(null);
+
 
   async function tokenPrice(data) {
     try {
@@ -30,22 +36,54 @@ const LinkPage = () => {
   useEffect(() => {
     tokenPrice()
   }, [])
+function logoutHandler (){
+  signOut()
+}
+
+  async function getUserData() {
+    let data = await axios.post("api/userProfile");
+    setName(data.data.data);
+  }
+
+  useEffect(()=>{
+  getUserData();
+    },[])
 
   function onSubmitHandler(event) {
     event.preventDefault()
   }
 
 
-
   return (
     <div>
 
-      <section className="profile-sec">
+      <section className="profile-sec" style={{height:"81vh"}}>
         <div className="container">
           <div className="row justify-content-center">
             <form className="funds-sec" onSubmit={onSubmitHandler}>
-              <h3 className="funds-heading">DASHBOARD</h3>
-              <div className="col-head">
+              <h3 className="funds-heading">Your Dashboard</h3>
+              <h4 className="wel-text">  Welcome <strong> {name?.firstName}{" "}</strong>Please find below your RXHEAL details. Watch out for our HealthiWealthi™ <br/>email updates. Questions? 
+              <a
+                      href="/contact"
+                      style={{
+                        fontWeight: "bold",
+                        fontSize: "15px",
+                        color: "#D32286",
+                        textDecoration:"none"
+                      }}
+                    >
+                      {" "}
+                      Contact us.
+                    </a>
+                    
+                      </h4>
+
+
+
+
+
+
+              <div className="col-head" id="col-head">
                 <div className="col-md-7 left-headSec">
 
                   <div className="link-head  " id="first-sec">
@@ -53,9 +91,7 @@ const LinkPage = () => {
                       <div className="link-item first-sec">PROFILE</div>
                     </Link>
 
-                    <div className="link-item second-sec" id="first-item">
-                      ENABLE 2FA
-                    </div>
+                    
                     <Link href={"/funds"}>
                       <div className="link-item third-sec first-set" id="first-item ">
                         FUNDS
@@ -63,12 +99,12 @@ const LinkPage = () => {
                     </Link>
 
                     <Link href={'/changePassword'}>
-                      <div className="link-item four-sec" id="second-item">
+                      <div className="link-item four-sec" id="first-item">
                         CHANGE PASSWORD
                       </div>
                     </Link>
                     <Link href={"/buy"}>
-                      <div className="link-item five-sec" id="third-item">
+                      <div className="link-item five-sec" id="second-item">
                         BUY TOKEN
                       </div>
                     </Link>
@@ -78,6 +114,12 @@ const LinkPage = () => {
                       TOKEN
                     </div>
                     </Link>
+                    <Link href={"/login"}>
+                    <div className="link-item second-sec " onClick={logoutHandler} id="third-item">
+                      LOGOUT
+                    </div>
+                    </Link>
+
                   </div>
 
 
@@ -89,8 +131,7 @@ const LinkPage = () => {
                 <div className="col-md-2 right-profile">
                <div className="input-line linkPage-line" ></div>
                   <div className="wallet-box">
-
-                    <h4 className="wallet-heading">WALLET</h4>
+                    <h4 className="wallet-heading">Your Wallet</h4>
                   </div>
 
                   <div className="wallet-box1">

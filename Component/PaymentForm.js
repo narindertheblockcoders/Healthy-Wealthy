@@ -71,7 +71,7 @@ const PaymentForm = () => {
 
   return (
     <div>
-      <section className="profile-sec  pt-5 pb-3">
+      <section className="profile-sec  pt-5 pb-3" style={{height:"81vh"}}>
         <div className="container">
           <div className="row justify-content-center">
             <ToastContainer
@@ -93,7 +93,7 @@ const PaymentForm = () => {
               onSubmit={formSubmitHandler}
             >
               <div className="heading-parts">
-                <h3 className="order-text">ORDER CONFORMATION</h3>
+                <h3 className="order-text">Your Order Confirmation</h3>
               </div>
 
               <div className="input-line   paymentForm-line" id="line-set"></div>
@@ -103,7 +103,7 @@ const PaymentForm = () => {
                   <div className="payment-method mt-3" id="payment-method">
                     <div className="flex-ipt">
                       <h4 className="payment-text">
-                        Currency Rate :{" "}
+                         RXHEAL Price:{" "}
                         <span> {query && query?.tokenPrice}</span>
                       </h4>
                       {/* <input className='ipt-currency' defaultValue={}></input> */}
@@ -111,7 +111,7 @@ const PaymentForm = () => {
 
                     <div className="flex-ipt">
                       <h4 className="payment-text">
-                        Invested Money :{" "}
+                        Amount Paid :{" "}
                         <span> {query && query?.enteredFor}</span>
                       </h4>
                       {/* <input type="text" className='ipt-currency' defaultValue={query?.enteredFor}></input> */}
@@ -119,7 +119,7 @@ const PaymentForm = () => {
 
                     <div className="flex-ipt">
                       <h4 className="payment-text">
-                        Money in RXHEAL:{" "}
+                         RXHEAL OWNED:{" "}
                         <span> {query && query?.finalValue}</span>{" "}
                       </h4>
                       {/* <input type="text" className='ipt-currency' defaultValue={query?.finalValue}></input> */}
@@ -185,7 +185,7 @@ const PaymentForm = () => {
                         {ifSetId?.map((item) => {   
                           if (item.id == via.via) { 
                             return (
-                              <p className="dps-text">{item.description} </p>
+                              <p className="dps-text" style={{paddingLeft:"5px"}}>  {item.description} </p>
                             );
                             
                           }
@@ -195,7 +195,7 @@ const PaymentForm = () => {
                           //   )
                           // }
                             })}
-                        <p style={{ paddingLeft: "5px" }}> for this address</p>
+                        <p style={{ paddingLeft: "5px" }}> to the wallet address</p>
                       </div>
                     </div>
                   </div>

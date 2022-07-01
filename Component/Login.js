@@ -78,7 +78,7 @@ const Login = () => {
 
   return (
     <div>
-      <section className="profile-sec mt-4 pb-0" >
+      <section className="profile-sec mt-4 pb-0" style={{height:"78vh"}}>
         <div className="container">
           <div className="row justify-content-center">
           <ToastContainer
@@ -92,7 +92,7 @@ const Login = () => {
             draggable
             pauseOnHover
           />
-            <form className="input-sec input-top" onSubmit={formSubmitHandler}>
+            <form className="input-sec input-top" id="form-setik" onSubmit={formSubmitHandler}>
               <div className="input-line iptset-line"></div>
               <img src={Heart.src} className="mt-2 " />
               <h3 className="heading-text mt-3">
@@ -143,7 +143,7 @@ const Login = () => {
                 {" "}
                 By continuing you agree to our cookie policy.
               </p>
-              <Link href={'/emailSubmit'}>
+              <Link href={'/emailVerify'}>
               <p className="by-text" style={{cursor:"pointer", marginTop:"5px", fontSize:"13px", color:"#2990DF"}}>
                 
                 {" "}

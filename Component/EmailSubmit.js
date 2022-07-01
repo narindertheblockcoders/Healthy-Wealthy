@@ -6,7 +6,8 @@ import { useRouter } from "next/router";
 import { ToastContainer, toast } from "react-toastify";
 import Link from "next/link";
 import Button from 'react-bootstrap/Button';
-import emailSubmit from "../pages/emailSubmit";
+import emailSubmit from "../pages/emailVerify";
+import Arrow from "../public/arrow.svg";
 
 
 const EmailSubmit = () => {
@@ -91,7 +92,7 @@ const EmailSubmit = () => {
     const handleClick = () => setLoadingRef(false);
   return (
     <div>
-      <section className="profile-sec">
+      <section className="profile-sec" style={{height:"81vh"}}>
         <div className="container">
           <div className="row justify-content-center">
             <ToastContainer
@@ -108,6 +109,11 @@ const EmailSubmit = () => {
             <form className="input-sec input-top" onSubmit={onSubmitHandler}>
               <div className="input-line email-submit" id="email-line"></div>
               <img src={Heart.src} className="mt-2" />
+              <Link href={'/login'}>
+                  <span className="arrows-icon" style={{ position: "relative", left: "-52%", cursor: "pointer" }}  >
+                    <img src={Arrow.src} />
+                  </span>
+                </Link>
               <h3 className="heading-text mt-3">
                 {" "}
                 Join the HealthiWealthi <sup className="sup-text">TM</sup><br></br> Global Community

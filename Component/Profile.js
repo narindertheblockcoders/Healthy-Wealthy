@@ -2,6 +2,10 @@ import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
 import {signIn} from "next-auth/react"
+import Link from "next/link";
+import Arrow from "../public/arrow.svg";
+
+
 const Profile = () => {
   const firstNameInputRef = useRef();
   const lastNameInputRef = useRef();
@@ -35,7 +39,7 @@ const Profile = () => {
         // setError(null);
       }
       if (!rest.error) {
-        router.push("/buy");
+        router.push("/investPage");
       }
       // localStorage.setItem("token", record.data.data);
       // window.location.reload();
@@ -74,12 +78,18 @@ const Profile = () => {
 
   return (
     <div>
-      <section className="profile-sec pt-4 pb-4">
+      <section className="profile-sec  pb-4" style={{height:"81vh"}}>
         <div className="container">
           <div className="row justify-content-center">
             <form className="input-sec" onSubmit={formSubmitHandler}>
               <div className="line profile-line"></div>
-              <h3 className="heading-text pink-text mt-2"> Complete Your Profile</h3>
+              <h3 className="heading-text pink-text mt-2"> 
+              {/* <Link href={'/verification'}>
+                  <span className="arrows-icon" style={{ position: "relative", left: "-15%", cursor: "pointer" }}  >
+                    <img src={Arrow.src} />
+                  </span>
+                </Link> */}
+                Complete Your Profile</h3>
               <p style={{fontSize:"14px", paddingTop:"7px",  margin:"0"}}>To access your HealthiWealthi™RXHEAL dashboard and the 7-minute Welcome Video that will change your life.</p>
               <div className="name-sec">
                 <div

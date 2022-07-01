@@ -128,7 +128,7 @@ const EmailChange = () => {
   return (
     
     <div>
-      <section className="profile-sec pb-0">
+      <section className="profile-sec pb-0" style={{height:"81vh"}}>
         <div className="container">
           <div className="row justify-content-center">
           <ToastContainer
