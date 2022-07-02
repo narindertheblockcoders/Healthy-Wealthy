@@ -128,7 +128,7 @@ const EmailChange = () => {
   return (
     
     <div>
-      <section className="profile-sec pb-0" style={{height:"81vh"}}>
+      <section className="profile-sec pb-0 verify-hight" >
         <div className="container">
           <div className="row justify-content-center">
           <ToastContainer
@@ -211,6 +211,7 @@ const EmailChange = () => {
               <button
                 href="funds-page.html"
                 className="btn btn-round btn-warning w-100 "
+                id="changemail-btn"
                 style={{ marginTop: "126px", marginBottom: "20px" }}
                 type="submit"
               >

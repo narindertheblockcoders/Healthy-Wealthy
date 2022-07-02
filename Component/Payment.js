@@ -85,7 +85,7 @@ const Payment = () => {
   return (
     <div>
         
-      <section className="profile-sec" style={{height:"81vh"}}>
+      <section className="profile-sec verify-hight" >
         <div className="container">
           <div className="row justify-content-center">
             <form className="input-sec input-top" onSubmit={formSubmitHandler}>

@@ -2284,6 +2284,13 @@ header .top-navbar .navbar-toggler-icon {
 
 
 @media screen and (max-width: 414px) {
+    .verify-hight {
+        min-height: 73vh !important;
+    }    .dps {
+        float: left;
+        display: flex;
+        font-size: 14px;
+    }
     #sec-item {
         margin-left: 0px !important;
         margin-top: 20px !important;
@@ -2559,11 +2566,25 @@ header .top-navbar .navbar-toggler-icon {
         width: 15%;
     }
     #four-item{margin-left: 20px !important; margin-top: 20px;}
+    #changemail-btn {margin-top: 50px !important;}
 
 }
 
 
 @media screen and (max-width: 375px) {
+    .profile-line {
+        top: -5% !important;
+    }
+    .userprofile-line {
+        top: -2.5% !important;
+    }
+    .profile-sec .funds-sec{padding: 0px !important;}
+    #cred-line {
+        top: -7% !important;
+    }
+    #credit-line {
+        top: -8.5% !important;
+    }
     .welcome-line {
         top: -2.5% !important;
     }
@@ -2579,4 +2600,28 @@ header .top-navbar .navbar-toggler-icon {
     .payment-form {
         padding: 10px !important;
     }
+    .dps {
+        float: left;
+        display: flex;
+        width: 100%;
+        font-size: 14px;
+        overflow: hidden;
+        margin: 0;
+    }
+    #line-set {
+        top: -2.1% !important;
+    }
+    #padd-set {margin: 0 !important;}
+    .final-data{padding-top: 10px !important;}
+    .heading-parts{padding-top: 10px;}
+}
+@media screen and (max-width: 370px) {
+ 
+    .dps {
+        float: left;
+        display: flex;
+        width: 100%;
+        font-size: 11px;
+        overflow: hidden;}
+       
 }

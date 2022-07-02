@@ -77,7 +77,7 @@ const InvestPage = () => {
                       <div className="input-item benefit-type">
                 <ul>
                     {/* <li style={{fontSize:"14px", fontWeight:"bold"}}>          For pre-sale $0.01 per token price</li> */}
-                  <li  className="rx-text"><img src="/check.png" className="cheking-img"/>    <span>1,000</span> RXHEAL Bonus Tokens</li>
+                  <li  className="rx-text"><img src="/check.png" className="cheking-img"/>    1,000  RXHEAL Bonus Tokens</li>
                   <li  className="rx-text"><img src="/check.png" className="cheking-img"/> Book HealthiWealthi ($15 value)</li>
                   <li  className="rx-text"><img src="/check.png" className="cheking-img"/>    Lifestyle Medicine Summit Premium Ticket ($197 value)</li>
                   <li  className="rx-text"><img src="/check.png" className="cheking-img"/>     The Art & Science of Self-Healing 101 Course ($297 value)</li>
@@ -108,9 +108,9 @@ const InvestPage = () => {
                       <div className="input-item benefit-type">
                 <ul>
                     <li style={{fontSize:"14px", fontWeight:"bold"}}>          For pre-sale $0.01 per token price</li>
-                  <li  className="rx-text"><img src="/check.png" className="cheking-img"/>    <span style={{ color: "#D32286", fontWeight: "bold" }}>
-                          5,000
-                        </span>{" "}      RXHEAL Bonus Tokens</li>
+                  <li  className="rx-text"><img src="/check.png" className="cheking-img"/>    
+                          5,000  
+                         RXHEAL Bonus Tokens</li>
                   <li  className="rx-text"><img src="/check.png" className="cheking-img"/> Book HealthiWealthi ($15 value)</li>
                   <li  className="rx-text"><img src="/check.png" className="cheking-img"/>Lifestyle Medicine Summit Premium Ticket ($197 value)</li>
                   <li  className="rx-text"><img src="/check.png" className="cheking-img"/>The Art & Science of Self-Healing 101 Course ($297 value)</li>

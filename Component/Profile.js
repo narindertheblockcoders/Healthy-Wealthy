@@ -4,6 +4,8 @@ import { useRouter } from "next/router";
 import {signIn} from "next-auth/react"
 import Link from "next/link";
 import Arrow from "../public/arrow.svg";
+import { ToastContainer, toast } from "react-toastify";
+
 
 
 const Profile = () => {
@@ -58,6 +60,8 @@ const Profile = () => {
 
     if (password !== confimPassword) {
       setIsValid(true);
+      notifyError(" Password doesn't match");
+
       return;
     }
     // router.push("/buy");
@@ -76,11 +80,34 @@ const Profile = () => {
     profileFill(local);
   }
 
+  const notifyError = (msg) =>
+    toast.error(msg, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+
   return (
     <div>
       <section className="profile-sec  pb-4" >
         <div className="container">
           <div className="row justify-content-center">
+
+          <ToastContainer
+              position="top-right"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+            />
             <form className="input-sec" onSubmit={formSubmitHandler}>
               <div className="line profile-line"></div>
               <h3 className="heading-text pink-text mt-2"> 

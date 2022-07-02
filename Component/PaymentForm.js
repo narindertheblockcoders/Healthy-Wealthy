@@ -71,7 +71,7 @@ const PaymentForm = () => {
 
   return (
     <div>
-      <section className="profile-sec  pt-5 pb-3" style={{height:"81vh"}}>
+      <section className="profile-sec  pt-5 pb-3" >
         <div className="container">
           <div className="row justify-content-center">
             <ToastContainer
@@ -160,9 +160,10 @@ const PaymentForm = () => {
                         flexWrap: "wrap",
                         justifyContent: "center",
                         marginTop: "0px",
+                        paddingLeft:"20px"
                       }}
                     >
-                      <p className="iptpara-text" style={{ fontSize: "14px" }}>
+                      <p className="iptpara-text text-break" style={{ fontSize: "13px" }}>
                         0x8B9071AAC02ab97b250f66A2aBa629f6e8806e07{" "}
                       </p>
                       <CopyToClipboard
@@ -177,15 +178,15 @@ const PaymentForm = () => {
                     </div> */}
 
                     <div className="final-data">
-                      <div className="dps">
-                        <p className=" dps-text font-weight-bold ">
+                      <div className="dps text-break">
+                        <p className=" dps-text font-weight-bold  text-break" id="padd-set">
                           {" "}
                           DEPOSIT {parseFloat(finalAmount).toFixed(4)}
                         </p>
                         {ifSetId?.map((item) => {   
                           if (item.id == via.via) { 
                             return (
-                              <p className="dps-text" style={{paddingLeft:"5px"}}>  {item.description} </p>
+                              <p className="dps-text" id="padd-set" style={{paddingLeft:"5px"}}>  {item.description} </p>
                             );
                             
                           }
@@ -195,7 +196,7 @@ const PaymentForm = () => {
                           //   )
                           // }
                             })}
-                        <p style={{ paddingLeft: "5px" }}> to the wallet address</p>
+                        <p className="text-break" id="padd-set" style={{ paddingLeft: "5px" }}> to the wallet address</p>
                       </div>
                     </div>
                   </div>
