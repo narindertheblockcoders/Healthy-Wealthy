@@ -90,7 +90,7 @@ const InvestPage = () => {
                     </div>
                   </div>
                   <div className="invest-bsec" id="invest-one">
-                        <button value={100} onClick={(e) => onSelect(e)} className="invest-btn  mb-3"   type="button" >  {" "} CONTINUE</button>
+                        <button value={1000} onClick={(e) => onSelect(e)} className="invest-btn  mb-3"   type="button" >  {" "} CONTINUE</button>
                       </div> 
                 </div> 
 
@@ -124,7 +124,7 @@ const InvestPage = () => {
                     </div>
                   </div>
                   <div className="invest-bsec" id="invest-one">
-                        <button value={100} onClick={(e) => onSelect(e)} className="invest-btn mb-3"   type="button" >  {" "} CONTINUE</button>
+                        <button value={5000} onClick={(e) => onSelect(e)} className="invest-btn mb-3"   type="button" >  {" "} CONTINUE</button>
                       </div> 
                 </div>
               </div>
