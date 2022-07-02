@@ -99,7 +99,7 @@ function logoutHandler (){
                     </Link>
 
                     <Link href={'/changePassword'}>
-                      <div className="link-item four-sec" id="first-item">
+                      <div className="link-item four-sec" id="sec-item">
                         CHANGE PASSWORD
                       </div>
                     </Link>
@@ -115,7 +115,7 @@ function logoutHandler (){
                     </div>
                     </Link>
                     <Link href={"/login"}>
-                    <div className="link-item second-sec " onClick={logoutHandler} id="third-item">
+                    <div className="link-item second-sec " onClick={logoutHandler} id="four-item">
                       LOGOUT
                     </div>
                     </Link>

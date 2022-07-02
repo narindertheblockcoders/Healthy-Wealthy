@@ -1933,12 +1933,19 @@ header .top-navbar .navbar-toggler-icon {
     float: left;
 }
 
-
-
-
-
 #first-item {
     margin-left: 20px !important;
+    margin-top: 0px !important;
+}
+#sec-item {
+    margin-left: 20px !important;
+    margin-top: 0px !important;
+}
+
+
+#four-item {
+    margin-left: 20px !important;
+    margin-top: 20px !important;
 }
 
 #second-item {
@@ -2277,6 +2284,11 @@ header .top-navbar .navbar-toggler-icon {
 
 
 @media screen and (max-width: 414px) {
+    #sec-item {
+        margin-left: 0px !important;
+        margin-top: 20px !important;
+    }
+    
     .welcome-line {
         top: -6.5% !important;
     }
@@ -2332,9 +2344,8 @@ header .top-navbar .navbar-toggler-icon {
     .six-sec {
         margin-left: 20px !important;
     }
-
     #third-item {
-        margin-left: 0px;
+        margin-left: 0px !important;
         margin-top: 20px;
     }
 
@@ -2405,8 +2416,8 @@ header .top-navbar .navbar-toggler-icon {
     }
 
     .first-set {
-        margin-left: 0px !important;
-        margin-top: 20px !important;
+        margin-left: 20px !important;
+        margin-top: 0px !important;
     }
 
     #second-item {
@@ -2547,6 +2558,8 @@ header .top-navbar .navbar-toggler-icon {
     .profile-sec .funds-sec .funds-table th:nth-child(6) {
         width: 15%;
     }
+    #four-item{margin-left: 20px !important; margin-top: 20px;}
+
 }
 
 
