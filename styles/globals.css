@@ -1532,7 +1532,7 @@ sup {
     font-weight: 700;
     text-align: right;
 }
-
+/* 
 .profile-sec .funds-sec .funds-table th:nth-child(1) {
     width: 20%;
     text-align: left;
@@ -1569,7 +1569,7 @@ sup {
 
 .profile-sec .funds-sec .funds-table td:nth-child(2) {
     width: 15%;
-    /* color: #33333; */
+    color: #33333;
 }
 
 .profile-sec .funds-sec .funds-table td:nth-child(3) {
@@ -1586,7 +1586,7 @@ sup {
 
 .profile-sec .funds-sec .funds-table td:nth-child(6) {
     width: 16%;
-}
+} */
 
 
 .profile-sec .funds-sec .funds-table .logo-txt {
@@ -2346,10 +2346,9 @@ header .top-navbar .navbar-toggler-icon {
         padding-left: 40px !important;
     }
 
-    .profile-sec .funds-sec .funds-table td:nth-child(3) {
-        /* width: 50%; */
+    /* .profile-sec .funds-sec .funds-table td:nth-child(3) {
         padding-left: 40px !important;
-    }
+    } */
 
     #right-profile {
         margin-top: 0px;
@@ -2538,9 +2537,9 @@ header .top-navbar .navbar-toggler-icon {
         overflow: scroll;
     }
 
-    .profile-sec .funds-sec .funds-table td:nth-child(2) {
+    /* .profile-sec .funds-sec .funds-table td:nth-child(2) {
         width: 10%;
-    }
+    } */
 
     table.table.transfer-table {
         float: left;
@@ -2548,7 +2547,7 @@ header .top-navbar .navbar-toggler-icon {
         overflow: scroll;
     }
 
-
+/* 
     .profile-sec .funds-sec .funds-table th:nth-child(1) {
         width: 22%;
     }
@@ -2571,7 +2570,7 @@ header .top-navbar .navbar-toggler-icon {
 
     .profile-sec .funds-sec .funds-table th:nth-child(6) {
         width: 15%;
-    }
+    } */
     #four-item{margin-left: 20px !important; margin-top: 20px;}
     #changemail-btn {margin-top: 50px !important;}
 

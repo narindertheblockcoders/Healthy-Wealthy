@@ -372,7 +372,9 @@ const Funds = () => {
                   <table className="table funds-table">
                     <thead>
                       <tr>
-                        <th scope="col" style={{ width: "15%" }}>
+                        <th scope="col" 
+                        // style={{ width: "15%" }}
+                        >
                           DATE
                         </th>
                         <th scope="col">USD AMOUNT</th>
@@ -409,7 +411,7 @@ const Funds = () => {
                                 <tr>
                                   <td
                                     className="logo-txt"
-                                    style={{ width: "15%" }}
+                                    // style={{ width: "15%" }}
                                   >
                                     {new Date().toDateString()}
                                   </td>
