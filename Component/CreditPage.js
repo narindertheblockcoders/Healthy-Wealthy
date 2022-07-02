@@ -117,6 +117,7 @@ toast.error(msg, {
                   <img className="icon-space" src={Credit.src} /> Pay with
                   Credit Card
                 </button>
+                
               </form>
                 <p className="or-text">OR</p>
                 <Link href={"/payment"}>

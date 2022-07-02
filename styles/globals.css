@@ -689,9 +689,10 @@ sup {
     right: 0;
     height: 2px;
     background-color: black;} */
+
     .buy-line {
         top: -0.2% !important;
-        /* left: 0 !important; */
+        left: 10% !important;
         width: 80% !important;
     }
 
@@ -1010,12 +1011,12 @@ sup {
 .profile-sec .input-sec .input-line {
 
     height: 4px;
-    width: 85%;
+    width: 100%;
     border-radius: 100px;
     background-color: var(--bg-color);
     position: relative;
     top: -4.5%;
-    left: 8%;
+    /* left: 8%; */
 }
 
 .profile-sec .input-sec .para-set {
@@ -2057,6 +2058,12 @@ header .top-navbar .navbar-toggler-icon {
 
 
 @media screen and (max-width: 1024px) {
+
+.dps {
+    float: left;
+    display: flex;
+    font-size: 12px;
+}
     .profile-sec .input-sec {
         float: left;
         width: 40.3%;
@@ -2289,7 +2296,7 @@ header .top-navbar .navbar-toggler-icon {
     }    .dps {
         float: left;
         display: flex;
-        font-size: 14px;
+        font-size: 13px;
     }
     #sec-item {
         margin-left: 0px !important;
@@ -2572,6 +2579,11 @@ header .top-navbar .navbar-toggler-icon {
 
 
 @media screen and (max-width: 375px) {
+    #ch-line {top: -4% !important;}
+    
+    #profile-line{top: -4% !important;}
+    #index-line {top: -5% !important;}
+    #login-line {top: -4.2% !important;}
     .profile-line {
         top: -5% !important;
     }
@@ -2621,7 +2633,18 @@ header .top-navbar .navbar-toggler-icon {
         float: left;
         display: flex;
         width: 100%;
-        font-size: 11px;
+        font-size: 14px;
+        overflow: hidden;}
+       
+}
+
+@media screen and (max-width: 353px) {
+ 
+    .dps {
+        float: left;
+        display: flex;
+        width: 100%;
+        font-size: 13px;
         overflow: hidden;}
        
 }

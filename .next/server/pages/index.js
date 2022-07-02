@@ -115,7 +115,7 @@ const FrontPage = ()=>{
     ;
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("section", {
-            className: "profile-sec ",
+            className: "profile-sec verify-hight",
             children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                 className: "container",
                 children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
@@ -138,7 +138,8 @@ const FrontPage = ()=>{
                             onSubmit: onSubmitHandler,
                             children: [
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                    className: "input-line"
+                                    className: "input-line",
+                                    id: "index-line"
                                 }),
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
                                     src: _public_Heart_svg__WEBPACK_IMPORTED_MODULE_2__/* ["default"].src */ .Z.src,

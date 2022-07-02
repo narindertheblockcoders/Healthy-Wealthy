@@ -5,6 +5,7 @@ import {signIn} from "next-auth/react"
 import Link from "next/link";
 import Arrow from "../public/arrow.svg";
 import { ToastContainer, toast } from "react-toastify";
+import Button from 'react-bootstrap/Button';
 
 
 
@@ -14,6 +15,16 @@ const Profile = () => {
   const [email, setEmail] = useState(null);
   const passwordInputRef = useRef();
   const confirmPasswordInputRef = useRef();
+  const [isLoading, setIsLoading] = useState(false);
+  const [isLoadingRef, setLoadingRef] = useState(false);
+
+
+
+
+  function simulateNetworkRequest() {
+    return new Promise((resolve) => setTimeout(resolve, 4000));
+  }
+
   const router = useRouter();
 
   const [isValid, setIsValid] = useState(false);
@@ -41,6 +52,9 @@ const Profile = () => {
         // setError(null);
       }
       if (!rest.error) {
+        setLoadingRef(true)
+        setIsLoading(true)
+    
         router.push("/investPage");
       }
       // localStorage.setItem("token", record.data.data);
@@ -91,6 +105,21 @@ const Profile = () => {
       progress: undefined,
     });
 
+
+
+    useEffect(() => {
+      if (isLoading) {
+        simulateNetworkRequest().then(() => {
+          setLoadingRef(false);
+        });
+      }
+    }, [isLoading]);
+  
+    const handleClick = () =>
+    
+    setLoadingRef(false);
+
+
   return (
     <div>
       <section className="profile-sec  pb-4" >
@@ -109,7 +138,7 @@ const Profile = () => {
               pauseOnHover
             />
             <form className="input-sec" onSubmit={formSubmitHandler}>
-              <div className="line profile-line"></div>
+              <div className="line profile-line" id="profile-line"></div>
               <h3 className="heading-text pink-text mt-2"> 
               {/* <Link href={'/verification'}>
                   <span className="arrows-icon" style={{ position: "relative", left: "-15%", cursor: "pointer" }}  >
@@ -184,14 +213,29 @@ const Profile = () => {
                 )}
               </div>
               {/* <Link href={"/login"}> */}
-              <button
+              {/* <button
                 href="funds-page.html"
                 className="btn btn-round btn-warning w-100 "
                 style={{ marginTop: "30px" }}
                 type="submit"
               >
                 CONTINUE
-              </button>
+              </button> */}
+
+
+              <Button
+      variant="primary"
+      className="btn btn-round btn-warning w-100 "
+      style={{ marginTop: "30px" }}
+      type="submit"
+      disabled={isLoading}
+      onClick={!isLoading ? handleClick : null}
+      >
+      {isLoadingRef ? 'Loading…' : '   CONTINUE'}
+    </Button>
+
+
+
               {/* </Link> */}
             </form>
           </div>

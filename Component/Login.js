@@ -1,16 +1,25 @@
 import axios from "axios";
 import Link from "next/link";
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Heart from "../public/Heart.svg";
 import { useRouter } from "next/router";
 import { ToastContainer, toast } from "react-toastify";
 import { signIn } from "next-auth/react";
+import Button from 'react-bootstrap/Button';
+
 
 const Login = () => {
   const router = useRouter();
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
   const [valid, setValid] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isLoadingRef, setLoadingRef] = useState(false);
+
+
+  function simulateNetworkRequest() {
+    return new Promise((resolve) => setTimeout(resolve, 4000));
+  }
 
   // async function login(dat) {
   //   try {
@@ -36,20 +45,27 @@ const Login = () => {
       redirect: false,
       email,
       password,
-  
     });
+    
       console.log(res)
       if (res?.error) {
         // setError(res.error);
         console.log(res.error);
         setValid(true);
         notifyError("Invalid login details. Please try again or signup below.")
-        
+        setIsLoading(false)
 
       } else {
         // setError(null);
       }
-      if (!res.error) {router.push('/dashboard')};
+      if (!res.error) {
+        setLoadingRef(true)
+    setIsLoading(true)
+
+        setTimeout (()=>{
+          router.push('/dashboard')
+        },2000)
+      };
     
   }
 
@@ -76,9 +92,30 @@ const Login = () => {
       progress: undefined,
     });
 
+
+
+
+
+    useEffect(() => {
+      if (isLoading) {
+        simulateNetworkRequest().then(() => {
+          setLoadingRef(true);
+        });
+      }
+    }, [isLoading]);
+  
+    const handleClick = () =>
+    
+    setLoadingRef(false);
+
+
+
+
+
+
   return (
     <div>
-      <section className="profile-sec mt-4 pb-0" >
+      <section className="profile-sec  " >
         <div className="container">
           <div className="row justify-content-center">
           <ToastContainer
@@ -93,7 +130,7 @@ const Login = () => {
             pauseOnHover
           />
             <form className="input-sec input-top" id="form-setik" onSubmit={formSubmitHandler}>
-              <div className="input-line iptset-line"></div>
+              <div className="input-line iptset-line" id="login-line"></div>
               <img src={Heart.src} className="mt-2 " />
               <h3 className="heading-text mt-3">
                 {" "}
@@ -102,9 +139,6 @@ const Login = () => {
               </h3>
               <p style={{fontSize:"13px", paddingTop:"7px", margin:"0"}}> Unleash your potential on HealthiWealthi™ living healthier, happier, longer, and richer.
 </p>
-
-
-
 
 
               <div className="input-item">
@@ -131,13 +165,17 @@ const Login = () => {
               </div>
               {valid && <p style={{ color: "red", margin:"0", fontSize:"15px" }}> Invalid login details. Please try again or signup below. </p>}
               {/* <Link href={"/creditPage"}> */}
-              <button
-                className="btn btn-round btn-warning w-100 "
-                style={{ marginTop: "5px" }}
-                type="submit"
-              >
-                CONTINUE
-              </button>
+              <Button
+      variant="primary"
+      className="btn btn-round btn-warning w-100 p-0 "
+      style={{ marginTop: "5px" }}
+      type="submit"
+      disabled={isLoading}
+      onClick={!isLoading ? handleClick : null}
+      >
+      {isLoadingRef ? 'Loading…' : '   CONTINUE'}
+    </Button>
+
               {/* </Link> */}
               <p className="by-text mb-0">
                 {" "}

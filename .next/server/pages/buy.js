@@ -59,6 +59,7 @@ var Heart = __webpack_require__(7390);
 var arrow = __webpack_require__(6119);
 // EXTERNAL MODULE: external "react-bootstrap/Button"
 var Button_ = __webpack_require__(1937);
+var Button_default = /*#__PURE__*/__webpack_require__.n(Button_);
 ;// CONCATENATED MODULE: external "react-bootstrap/Modal"
 const Modal_namespaceObject = require("react-bootstrap/Modal");
 var Modal_default = /*#__PURE__*/__webpack_require__.n(Modal_namespaceObject);
@@ -105,6 +106,7 @@ const VideoModal = (props)=>{
 
 
 
+
 const Buy = ()=>{
     const forInputRef = (0,external_react_.useRef)();
     const { 0: tokenPrice , 1: setTokenPrice  } = (0,external_react_.useState)(null);
@@ -112,6 +114,12 @@ const Buy = ()=>{
     const router = (0,router_.useRouter)();
     const { 0: amount , 1: setAmount  } = (0,external_react_.useState)(router?.query?.amount || 100);
     const { 0: modalShow , 1: setModalShow  } = (0,external_react_.useState)(false);
+    const { 0: isLoading , 1: setIsLoading  } = (0,external_react_.useState)(false);
+    const { 0: isLoadingRef , 1: setLoadingRef  } = (0,external_react_.useState)(false);
+    function simulateNetworkRequest() {
+        return new Promise((resolve)=>setTimeout(resolve, 4000)
+        );
+    }
     console.log(router.query.amount);
     async function currencyFunction() {
         try {
@@ -135,6 +143,8 @@ const Buy = ()=>{
             finalValue
         };
         localStorage.setItem("query", JSON.stringify(query));
+        setLoadingRef(true);
+        setIsLoading(true);
         router.push("/creditPage");
     }
     function onChangeHandler() {
@@ -159,6 +169,17 @@ const Buy = ()=>{
         setAmount(parseInt(forInputRef.current.value) + parseInt(e.currentTarget.value));
         setFinalValue(parseInt(forInputRef.current.value) / tokenPrice);
     }
+    (0,external_react_.useEffect)(()=>{
+        if (isLoading) {
+            simulateNetworkRequest().then(()=>{
+                setLoadingRef(true);
+            });
+        }
+    }, [
+        isLoading
+    ]);
+    const handleClick = ()=>setLoadingRef(false)
+    ;
     return /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
         children: [
             /*#__PURE__*/ jsx_runtime_.jsx("section", {
@@ -569,15 +590,17 @@ const Buy = ()=>{
                                                 }) : null
                                             ]
                                         }),
-                                        /*#__PURE__*/ jsx_runtime_.jsx("button", {
+                                        /*#__PURE__*/ jsx_runtime_.jsx((Button_default()), {
+                                            variant: "primary",
                                             className: "btn btn-round btn-warning ",
                                             style: {
                                                 marginTop: "30px",
                                                 width: "87%"
                                             },
                                             type: "submit",
-                                            id: "buy-btnton",
-                                            children: "CONTINUE"
+                                            disabled: isLoading,
+                                            onClick: !isLoading ? handleClick : null,
+                                            children: isLoadingRef ? "Loading\u2026" : "   CONTINUE"
                                         }),
                                         /*#__PURE__*/ (0,jsx_runtime_.jsxs)("p", {
                                             className: "by-text ",

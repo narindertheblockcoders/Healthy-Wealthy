@@ -5,6 +5,8 @@ import { useRouter } from "next/router";
 import { ToastContainer, toast } from "react-toastify";
 import Arrow from "../public/arrow.svg";
 import Link  from "next/link";
+import Button from 'react-bootstrap/Button';
+
 
 
 const ChangePassword = () => {
@@ -15,12 +17,17 @@ const ChangePassword = () => {
   
   const [isValid, setIsValid] = useState(false);
   const [email, setEmail] = useState()
-  const [isLoading, setIsLoading] = useState(false);
   const [error, setError]= useState(false)
   const [errorValid, setErrorValid]= useState(false)
   const [verify, setVerify]=useState(false)
 
-  
+  const [isLoading, setIsLoading] = useState(false);
+  const [isLoadingRef, setLoadingRef] = useState(false);
+
+
+  function simulateNetworkRequest() {
+    return new Promise((resolve) => setTimeout(resolve, 4000));
+  }
 
   
 
@@ -70,8 +77,11 @@ const ChangePassword = () => {
       let res = await axios.post("/api/changepassword",{token:token,data});
       const resend = res.data;
       console.log(resend, "Passsword Change");
+      setLoadingRef(true)
+      setIsLoading(true)
       notify(' Change Successfuly')
       setVerify(true)
+  
       setTimeout(()=>{
 
         router.push('/dashboard')
@@ -138,10 +148,27 @@ toast.error(msg, {
 });
 
 
+
+
+useEffect(() => {
+  if (isLoading) {
+    simulateNetworkRequest().then(() => {
+      setLoadingRef(true);
+    });
+  }
+}, [isLoading]);
+
+const handleClick = () =>
+
+setLoadingRef(false);
+
+
+
+
   return (
     
     <div>
-      <section className="profile-sec pb-0" style={{height:"81vh"}}>
+      <section className="profile-sec pb-0" >
         <div className="container">
           <div className="row justify-content-center">
           <ToastContainer
@@ -156,7 +183,7 @@ toast.error(msg, {
             pauseOnHover
           />
             <form className="input-sec" id="form-setting" onSubmit={onSubmitHandler} >
-              <div className="line profile-line"></div>
+              <div className="line profile-line" id="ch-line"></div>
               <h3 className="heading-text pink-text mt-2 ">
               <Link href={'/dashboard'}>
               <span  className="arrows-icon" style={{ position: "relative", left: "-23%", cursor:"pointer" }}  >
@@ -217,14 +244,25 @@ toast.error(msg, {
                        {verify && (
                   <p style={{ color: "green", fontSize:"15px",  margin:"0" }}>Change Successfuly </p>
                 )}
-              <button
+              {/* <button
                 href="funds-page.html"
                 className="btn btn-round btn-warning w-100 "
                 style={{ marginTop: "0px", marginBottom: "0px" }}
                 type="submit"
               >
                 UPDATE
-              </button>
+              </button> */}
+
+              <Button
+      variant="primary"
+      className="btn btn-round btn-warning w-100 "
+      style={{ marginTop: "0px", marginBottom: "0px" }}
+      type="submit"
+      disabled={isLoading}
+      onClick={!isLoading ? handleClick : null}
+      >
+      {isLoadingRef ? 'Loading…' : '     UPDATE'}
+    </Button>
          
               {/* </Link> */}
             </form>

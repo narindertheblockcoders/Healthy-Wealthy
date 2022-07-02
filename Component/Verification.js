@@ -6,12 +6,22 @@ import React, { useEffect, useRef, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import Arrow from "../public/arrow.svg";
 import $ from "jquery";
+import Button from 'react-bootstrap/Button';
+
 
 const Verification = () => {
   const valueRef = useRef();
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError]= useState(false)
+  const [isLoadingRef, setLoadingRef] = useState(false);
+
+
+
+
+  function simulateNetworkRequest() {
+    return new Promise((resolve) => setTimeout(resolve, 4000));
+  }
 
 
   //l///////////////////////////////////API for the OTP//////////////////////////
@@ -46,6 +56,7 @@ const Verification = () => {
       const data = res.data;
       console.log(data.data.message);
       if (data.data?.message) {
+      
         notify('Verification Code Sent');
       }
       setIsLoading(false);
@@ -57,6 +68,8 @@ const Verification = () => {
   async function formSubmit(e) {
     e.preventDefault();
     setIsLoading(true);
+    setLoadingRef(true)
+
 
     const otp = valueRef.current.value;
     const email = localStorage.getItem("email");
@@ -64,6 +77,7 @@ const Verification = () => {
     if (otp.trim().length < 6) {
       notifyError("Invalid Verification Code ");
       setIsLoading(false);
+      setLoadingRef(false)
       setError(true)
 
 
@@ -98,6 +112,24 @@ const Verification = () => {
       draggable: true,
       progress: undefined,
     });
+
+
+    useEffect(() => {
+      if (isLoading) {
+        simulateNetworkRequest().then(() => {
+          setLoadingRef(false);
+        });
+      }
+    }, [isLoading]);
+  
+    const handleClick = () =>
+    
+    setLoadingRef(false);
+
+
+
+
+
 
   return (
     <div>
@@ -178,14 +210,25 @@ const Verification = () => {
                 I agree with HealthiWealthi™ <a target="_blank" rel="noreferrer" href={"https://healthiwealthi.io/terms-of-use.php"}>Terms of Use</a>  and <a target="_blank" rel="noreferrer" href={"https://healthiwealthi.io/privacy.php"}> Privacy Policy</a>.
               </p>
               {/* <Link href={"/profile"}> */}
-              <button
+
+              <Button
+      variant="primary"
+      className="btn btn-round btn-warning w-100 p-0"
+      style={{ marginTop: "5px" }}
+      type="submit"
+      disabled={isLoading}
+      onClick={!isLoading ? handleClick : null}
+      >
+      {isLoadingRef ? 'Loading…' : '   CONTINUE'}
+    </Button>
+              {/* <button
                 disabled={isLoading}
                 className="btn btn-round btn-warning w-100 p-0"
                 style={{ marginTop: "15px", marginBottom: "5px" }}
                 type="submit"
               >
                 CONTINUE
-              </button>
+              </button> */}
 
               {/* </Link> */}
             </form>

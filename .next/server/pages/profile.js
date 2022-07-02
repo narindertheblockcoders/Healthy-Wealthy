@@ -36,8 +36,11 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _public_arrow_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(6119);
 /* harmony import */ var react_toastify__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(3590);
+/* harmony import */ var react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(1937);
+/* harmony import */ var react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_8__);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([react_toastify__WEBPACK_IMPORTED_MODULE_7__]);
 react_toastify__WEBPACK_IMPORTED_MODULE_7__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+
 
 
 
@@ -52,6 +55,12 @@ const Profile = ()=>{
     const { 0: email1 , 1: setEmail  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(null);
     const passwordInputRef = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)();
     const confirmPasswordInputRef = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)();
+    const { 0: isLoading , 1: setIsLoading  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false);
+    const { 0: isLoadingRef , 1: setLoadingRef  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false);
+    function simulateNetworkRequest() {
+        return new Promise((resolve)=>setTimeout(resolve, 4000)
+        );
+    }
     const router = (0,next_router__WEBPACK_IMPORTED_MODULE_3__.useRouter)();
     const { 0: isValid , 1: setIsValid  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false);
     (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(()=>{
@@ -77,6 +86,8 @@ const Profile = ()=>{
             // setError(null);
             }
             if (!rest.error) {
+                setLoadingRef(true);
+                setIsLoading(true);
                 router.push("/investPage");
             }
         // localStorage.setItem("token", record.data.data);
@@ -118,6 +129,17 @@ const Profile = ()=>{
             progress: undefined
         })
     ;
+    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(()=>{
+        if (isLoading) {
+            simulateNetworkRequest().then(()=>{
+                setLoadingRef(false);
+            });
+        }
+    }, [
+        isLoading
+    ]);
+    const handleClick = ()=>setLoadingRef(false)
+    ;
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("section", {
             className: "profile-sec pb-4",
@@ -142,7 +164,8 @@ const Profile = ()=>{
                             onSubmit: formSubmitHandler,
                             children: [
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                    className: "line profile-line"
+                                    className: "line profile-line",
+                                    id: "profile-line"
                                 }),
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h3", {
                                     className: "heading-text pink-text mt-2",
@@ -253,14 +276,16 @@ const Profile = ()=>{
                                         })
                                     ]
                                 }),
-                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {
-                                    href: "funds-page.html",
+                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_8___default()), {
+                                    variant: "primary",
                                     className: "btn btn-round btn-warning w-100 ",
                                     style: {
                                         marginTop: "30px"
                                     },
                                     type: "submit",
-                                    children: "CONTINUE"
+                                    disabled: isLoading,
+                                    onClick: !isLoading ? handleClick : null,
+                                    children: isLoadingRef ? "Loading\u2026" : "   CONTINUE"
                                 })
                             ]
                         })
@@ -473,6 +498,13 @@ module.exports = require("next/router");
 /***/ ((module) => {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ 1937:
+/***/ ((module) => {
+
+module.exports = require("react-bootstrap/Button");
 
 /***/ }),
 

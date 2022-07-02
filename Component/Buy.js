@@ -7,6 +7,7 @@ import Script from "next/script";
 import Heart from "../public/Heart.svg";
 import Arrow from "../public/arrow.svg";
 import VideoModal from "./ui/VideoModal";
+import Button from 'react-bootstrap/Button';
 
 
 
@@ -17,7 +18,14 @@ const Buy = () => {
   const router = useRouter();
   const [amount, setAmount] = useState(router?.query?.amount || 100);
   const [modalShow,setModalShow]=useState(false)
-  
+  const [isLoading, setIsLoading] = useState(false);
+  const [isLoadingRef, setLoadingRef] = useState(false);
+
+
+  function simulateNetworkRequest() {
+    return new Promise((resolve) => setTimeout(resolve, 4000));
+  }
+
 
 
 
@@ -51,6 +59,9 @@ console.log(router.query.amount)
     };
 
     localStorage.setItem("query", JSON.stringify(query));
+    setLoadingRef(true)
+    setIsLoading(true)
+
     router.push("/creditPage");
   }
   function onChangeHandler() {
@@ -73,6 +84,25 @@ console.log(router.query.amount)
     setAmount( parseInt(forInputRef.current.value) + parseInt(e.currentTarget.value))
     setFinalValue(( parseInt(forInputRef.current.value) ) / tokenPrice);
   }
+
+
+  useEffect(() => {
+    if (isLoading) {
+      simulateNetworkRequest().then(() => {
+        setLoadingRef(true);
+      });
+    }
+  }, [isLoading]);
+
+  const handleClick = () =>
+  
+  setLoadingRef(false);
+
+
+
+
+
+
 
 
   return (
@@ -285,14 +315,30 @@ console.log(router.query.amount)
 
               </div>
 
-              <button
+              {/* <button
                 className="btn btn-round btn-warning  "
                 style={{ marginTop: "30px", width:"87%" }}
                 type="submit"
                 id="buy-btnton"
               >
                 CONTINUE
-              </button>
+              </button> */}
+
+
+
+              <Button
+      variant="primary"
+      className="btn btn-round btn-warning  "
+                style={{ marginTop: "30px", width:"87%" }}
+      type="submit"
+      disabled={isLoading}
+      onClick={!isLoading ? handleClick : null}
+      >
+      {isLoadingRef ? 'Loading…' : '   CONTINUE'}
+    </Button>
+
+
+
               {/* </Link> */}
               <p className="by-text ">
                 By continuing you agree to our{" "}

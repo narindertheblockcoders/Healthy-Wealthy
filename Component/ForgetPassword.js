@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import { ToastContainer, toast } from "react-toastify";
 import Arrow from "../public/arrow.svg";
 import Link  from "next/link";
+import Button from 'react-bootstrap/Button';
 
 
 const ForgetPassword = () => {
@@ -14,8 +15,16 @@ const ForgetPassword = () => {
   const [isValid, setIsValid] = useState(false);
   const [email, setEmail] = useState()
   const [isLoading, setIsLoading] = useState(false);
+  const [isLoadingRef, setLoadingRef] = useState(false);
   const [error, setError]= useState(false)
   const [verify, setVerify]=useState(false)
+
+
+
+
+  function simulateNetworkRequest() {
+    return new Promise((resolve) => setTimeout(resolve, 4000));
+  }
 
 
   const  router = useRouter()
@@ -37,6 +46,8 @@ const ForgetPassword = () => {
       console.log(record, "hii man")
       notify ('Password Changed')
       setVerify(true)
+      setLoadingRef(true)
+      setIsLoading(true)
       setTimeout(()=>{
         router.push('/login')
       },2000)
@@ -102,6 +113,23 @@ toast.error(msg, {
 });
 
 
+
+
+useEffect(() => {
+  if (isLoading) {
+    simulateNetworkRequest().then(() => {
+      setLoadingRef(true);
+    });
+  }
+}, [isLoading]);
+
+const handleClick = () =>
+
+setLoadingRef(false);
+
+
+
+
   return (
     
     <div>
@@ -147,7 +175,7 @@ toast.error(msg, {
               </div>
 
 
-              <div className="input-item item-set ">
+              <div className="input-item item-set " style={{marginBottom:"30px"}}>
                 <h6 className="item-text">Verification Code</h6>
                 <input ref={otpRef}  required className="textinput" type="number" name="password" />
               </div>
@@ -175,14 +203,27 @@ toast.error(msg, {
               {verify && (
                   <p style={{ color: "green", fontSize:"15px",   margin:"0" }}> Password Changed</p>
                 )}
-              <button
+              {/* <button
                 href="funds-page.html"
                 className="btn btn-round btn-warning w-100 "
                 style={{ marginTop: "30px", marginBottom: "10px" }}
                 type="submit"
               >
                 SUBMIT
-              </button>
+              </button> */}
+              <Button
+      variant="primary"
+      className="btn btn-round btn-warning w-100 "
+      style={{ marginTop: "0px", marginBottom: "10px" }}
+      type="submit"
+      disabled={isLoading}
+      onClick={!isLoading ? handleClick : null}
+      >
+      {isLoadingRef ? 'Loading…' : '     SUBMIT'}
+    </Button>
+
+
+
 
               {/* </Link> */}
             </form>

@@ -72,7 +72,7 @@ const EmailSubmit = ()=>{
                 console.log(rec);
                 notify("Verification code Sent");
                 setVerify(true);
-                setIsLoading(false);
+                setIsLoading(true);
                 setLoadingRef(true);
                 setTimeout(()=>{
                     router.push("/forgetPassword");

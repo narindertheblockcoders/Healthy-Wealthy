@@ -145,6 +145,13 @@ module.exports = require("react");
 
 /***/ }),
 
+/***/ 1937:
+/***/ ((module) => {
+
+module.exports = require("react-bootstrap/Button");
+
+/***/ }),
+
 /***/ 997:
 /***/ ((module) => {
 

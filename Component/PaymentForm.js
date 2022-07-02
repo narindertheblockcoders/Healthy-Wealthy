@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { ToastContainer, toast } from "react-toastify";
 import { Spinner } from "react-bootstrap";
+import Button from 'react-bootstrap/Button';
 
 
 const PaymentForm = () => {
@@ -15,6 +16,14 @@ const PaymentForm = () => {
 
   const [query, setQuery] = useState(null);
   const [ifFinalValue, setIfFinalValue] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isLoadingRef, setLoadingRef] = useState(false);
+
+
+  function simulateNetworkRequest() {
+    return new Promise((resolve) => setTimeout(resolve, 4000));
+  }
+
 
   const via = router.query;
 
@@ -64,10 +73,28 @@ const PaymentForm = () => {
     var query = await JSON.parse(localStorage.getItem("query"));
     console.log(query);
     // localStorage.setItem("finaldata", JSON.stringify(query));
+    setLoadingRef(true)
+    setIsLoading(true)
+
     router.push("/dashboard");
 
     // PaymentForm()
   }
+
+
+
+  useEffect(() => {
+    if (isLoading) {
+      simulateNetworkRequest().then(() => {
+        setLoadingRef(false);
+      });
+    }
+  }, [isLoading]);
+
+  const handleClick = () =>
+  
+  setLoadingRef(false);
+
 
   return (
     <div>
@@ -205,14 +232,34 @@ const PaymentForm = () => {
 
               <div className="heading-parts">
                 {/* <Link href={"/login"}> */}
-                <button
+                {/* <button
                   className="btn btn-round btn-warning form-btn w-50 p-0 mb-3"
                   style={{ marginTop: "57px" }}
                   type="submit"
                   id="space-zero"
                 >
                   CONTINUE
-                </button>
+                </button> */}
+
+                <Button
+      variant="primary"
+      className="btn btn-round btn-warning form-btn w-50 p-0 mb-3"
+                  style={{ marginTop: "57px" }}
+                  type="submit"
+                  id="space-zero"
+      disabled={isLoading}
+      onClick={!isLoading ? handleClick : null}
+      >
+      {isLoadingRef ? 'Loading…' : '   CONTINUE'}
+    </Button>
+
+
+
+
+
+
+
+
                 {/* </Link> */}
               </div>
             </form>

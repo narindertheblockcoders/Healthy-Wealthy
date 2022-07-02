@@ -36,6 +36,8 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var _public_arrow_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(6119);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(2947);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(1937);
+/* harmony import */ var react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_8__);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([react_toastify__WEBPACK_IMPORTED_MODULE_5__]);
 react_toastify__WEBPACK_IMPORTED_MODULE_5__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
@@ -47,11 +49,17 @@ react_toastify__WEBPACK_IMPORTED_MODULE_5__ = (__webpack_async_dependencies__.th
 
 
 
+
 const Verification = ()=>{
     const valueRef = (0,react__WEBPACK_IMPORTED_MODULE_4__.useRef)();
     const router = (0,next_router__WEBPACK_IMPORTED_MODULE_3__.useRouter)();
     const { 0: isLoading , 1: setIsLoading  } = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)(false);
     const { 0: error , 1: setError  } = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)(false);
+    const { 0: isLoadingRef , 1: setLoadingRef  } = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)(false);
+    function simulateNetworkRequest() {
+        return new Promise((resolve)=>setTimeout(resolve, 4000)
+        );
+    }
     //l///////////////////////////////////API for the OTP//////////////////////////
     async function verify(data) {
         // e.preventDefault()
@@ -92,11 +100,13 @@ const Verification = ()=>{
     async function formSubmit(e) {
         e.preventDefault();
         setIsLoading(true);
+        setLoadingRef(true);
         const otp = valueRef.current.value;
         const email = localStorage.getItem("email");
         if (otp.trim().length < 6) {
             notifyError("Invalid Verification Code ");
             setIsLoading(false);
+            setLoadingRef(false);
             setError(true);
             return;
         }
@@ -128,6 +138,17 @@ const Verification = ()=>{
             draggable: true,
             progress: undefined
         })
+    ;
+    (0,react__WEBPACK_IMPORTED_MODULE_4__.useEffect)(()=>{
+        if (isLoading) {
+            simulateNetworkRequest().then(()=>{
+                setLoadingRef(false);
+            });
+        }
+    }, [
+        isLoading
+    ]);
+    const handleClick = ()=>setLoadingRef(false)
     ;
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("section", {
@@ -254,15 +275,16 @@ const Verification = ()=>{
                                         "."
                                     ]
                                 }),
-                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {
-                                    disabled: isLoading,
+                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_8___default()), {
+                                    variant: "primary",
                                     className: "btn btn-round btn-warning w-100 p-0",
                                     style: {
-                                        marginTop: "15px",
-                                        marginBottom: "5px"
+                                        marginTop: "5px"
                                     },
                                     type: "submit",
-                                    children: "CONTINUE"
+                                    disabled: isLoading,
+                                    onClick: !isLoading ? handleClick : null,
+                                    children: isLoadingRef ? "Loading\u2026" : "   CONTINUE"
                                 })
                             ]
                         })
@@ -473,6 +495,13 @@ module.exports = require("next/router");
 /***/ ((module) => {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ 1937:
+/***/ ((module) => {
+
+module.exports = require("react-bootstrap/Button");
 
 /***/ }),
 

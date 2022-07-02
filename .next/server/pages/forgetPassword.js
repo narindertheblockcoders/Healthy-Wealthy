@@ -25,8 +25,11 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var _public_arrow_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(6119);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(1664);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(1937);
+/* harmony import */ var react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_8__);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_pages_changePassword__WEBPACK_IMPORTED_MODULE_3__, react_toastify__WEBPACK_IMPORTED_MODULE_5__]);
 ([_pages_changePassword__WEBPACK_IMPORTED_MODULE_3__, react_toastify__WEBPACK_IMPORTED_MODULE_5__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
 
 
 
@@ -42,8 +45,13 @@ const ForgetPassword = ()=>{
     const { 0: isValid , 1: setIsValid  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false);
     const { 0: email , 1: setEmail  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)();
     const { 0: isLoading , 1: setIsLoading  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false);
+    const { 0: isLoadingRef , 1: setLoadingRef  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false);
     const { 0: error , 1: setError  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false);
     const { 0: verify , 1: setVerify  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false);
+    function simulateNetworkRequest() {
+        return new Promise((resolve)=>setTimeout(resolve, 4000)
+        );
+    }
     const router = (0,next_router__WEBPACK_IMPORTED_MODULE_4__.useRouter)();
     // const [enterfield, setEnterField] = useState(false);
     (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(()=>{
@@ -59,6 +67,8 @@ const ForgetPassword = ()=>{
             console.log(record, "hii man");
             notify("Password Changed");
             setVerify(true);
+            setLoadingRef(true);
+            setIsLoading(true);
             setTimeout(()=>{
                 router.push("/login");
             }, 2000);
@@ -107,6 +117,17 @@ const ForgetPassword = ()=>{
             draggable: true,
             progress: undefined
         })
+    ;
+    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(()=>{
+        if (isLoading) {
+            simulateNetworkRequest().then(()=>{
+                setLoadingRef(true);
+            });
+        }
+    }, [
+        isLoading
+    ]);
+    const handleClick = ()=>setLoadingRef(false)
     ;
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("section", {
@@ -215,6 +236,9 @@ const ForgetPassword = ()=>{
                                 }),
                                 /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                                     className: "input-item item-set ",
+                                    style: {
+                                        marginBottom: "30px"
+                                    },
                                     children: [
                                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h6", {
                                             className: "item-text",
@@ -245,15 +269,17 @@ const ForgetPassword = ()=>{
                                     },
                                     children: " Password Changed"
                                 }),
-                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {
-                                    href: "funds-page.html",
+                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_8___default()), {
+                                    variant: "primary",
                                     className: "btn btn-round btn-warning w-100 ",
                                     style: {
-                                        marginTop: "30px",
+                                        marginTop: "0px",
                                         marginBottom: "10px"
                                     },
                                     type: "submit",
-                                    children: "SUBMIT"
+                                    disabled: isLoading,
+                                    onClick: !isLoading ? handleClick : null,
+                                    children: isLoadingRef ? "Loading\u2026" : "     SUBMIT"
                                 })
                             ]
                         })
@@ -457,6 +483,13 @@ module.exports = require("next/router");
 /***/ ((module) => {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ 1937:
+/***/ ((module) => {
+
+module.exports = require("react-bootstrap/Button");
 
 /***/ }),
 

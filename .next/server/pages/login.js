@@ -36,8 +36,11 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var react_toastify__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(3590);
 /* harmony import */ var next_auth_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(1649);
 /* harmony import */ var next_auth_react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(next_auth_react__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(1937);
+/* harmony import */ var react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_8__);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([react_toastify__WEBPACK_IMPORTED_MODULE_6__]);
 react_toastify__WEBPACK_IMPORTED_MODULE_6__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+
 
 
 
@@ -51,6 +54,12 @@ const Login = ()=>{
     const emailInputRef = (0,react__WEBPACK_IMPORTED_MODULE_3__.useRef)();
     const passwordInputRef = (0,react__WEBPACK_IMPORTED_MODULE_3__.useRef)();
     const { 0: valid , 1: setValid  } = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)(false);
+    const { 0: isLoading , 1: setIsLoading  } = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)(false);
+    const { 0: isLoadingRef , 1: setLoadingRef  } = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)(false);
+    function simulateNetworkRequest() {
+        return new Promise((resolve)=>setTimeout(resolve, 4000)
+        );
+    }
     // async function login(dat) {
     //   try {
     //     let res = await axios.post("/api/login", dat);
@@ -80,11 +89,16 @@ const Login = ()=>{
             console.log(res.error);
             setValid(true);
             notifyError("Invalid login details. Please try again or signup below.");
+            setIsLoading(false);
         } else {
         // setError(null);
         }
         if (!res.error) {
-            router.push("/dashboard");
+            setLoadingRef(true);
+            setIsLoading(true);
+            setTimeout(()=>{
+                router.push("/dashboard");
+            }, 2000);
         }
         ;
     }
@@ -109,9 +123,20 @@ const Login = ()=>{
             progress: undefined
         })
     ;
+    (0,react__WEBPACK_IMPORTED_MODULE_3__.useEffect)(()=>{
+        if (isLoading) {
+            simulateNetworkRequest().then(()=>{
+                setLoadingRef(true);
+            });
+        }
+    }, [
+        isLoading
+    ]);
+    const handleClick = ()=>setLoadingRef(false)
+    ;
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("section", {
-            className: "profile-sec mt-4 pb-0",
+            className: "profile-sec ",
             children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                 className: "container",
                 children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
@@ -134,7 +159,8 @@ const Login = ()=>{
                             onSubmit: formSubmitHandler,
                             children: [
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                    className: "input-line iptset-line"
+                                    className: "input-line iptset-line",
+                                    id: "login-line"
                                 }),
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
                                     src: _public_Heart_svg__WEBPACK_IMPORTED_MODULE_4__/* ["default"].src */ .Z.src,
@@ -199,13 +225,16 @@ const Login = ()=>{
                                     },
                                     children: " Invalid login details. Please try again or signup below. "
                                 }),
-                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {
-                                    className: "btn btn-round btn-warning w-100 ",
+                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_8___default()), {
+                                    variant: "primary",
+                                    className: "btn btn-round btn-warning w-100 p-0 ",
                                     style: {
                                         marginTop: "5px"
                                     },
                                     type: "submit",
-                                    children: "CONTINUE"
+                                    disabled: isLoading,
+                                    onClick: !isLoading ? handleClick : null,
+                                    children: isLoadingRef ? "Loading\u2026" : "   CONTINUE"
                                 }),
                                 /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", {
                                     className: "by-text mb-0",
@@ -454,6 +483,13 @@ module.exports = require("next/router");
 /***/ ((module) => {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ 1937:
+/***/ ((module) => {
+
+module.exports = require("react-bootstrap/Button");
 
 /***/ }),
 

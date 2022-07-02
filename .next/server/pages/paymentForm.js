@@ -29,8 +29,11 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var react_toastify__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(3590);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(358);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(1937);
+/* harmony import */ var react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_10__);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([react_toastify__WEBPACK_IMPORTED_MODULE_8__]);
 react_toastify__WEBPACK_IMPORTED_MODULE_8__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+
 
 
 
@@ -46,6 +49,12 @@ const PaymentForm = ()=>{
     const { 0: ifSetId , 1: setIfSetId  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(null);
     const { 0: query1 , 1: setQuery  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(null);
     const { 0: ifFinalValue , 1: setIfFinalValue  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(null);
+    const { 0: isLoading , 1: setIsLoading  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false);
+    const { 0: isLoadingRef , 1: setLoadingRef  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false);
+    function simulateNetworkRequest() {
+        return new Promise((resolve)=>setTimeout(resolve, 4000)
+        );
+    }
     const via = router.query;
     const { finalAmount  } = router.query;
     async function payment() {
@@ -86,9 +95,22 @@ const PaymentForm = ()=>{
         var query = await JSON.parse(localStorage.getItem("query"));
         console.log(query);
         // localStorage.setItem("finaldata", JSON.stringify(query));
+        setLoadingRef(true);
+        setIsLoading(true);
         router.push("/dashboard");
     // PaymentForm()
     }
+    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(()=>{
+        if (isLoading) {
+            simulateNetworkRequest().then(()=>{
+                setLoadingRef(false);
+            });
+        }
+    }, [
+        isLoading
+    ]);
+    const handleClick = ()=>setLoadingRef(false)
+    ;
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("section", {
             className: "profile-sec pt-5 pb-3",
@@ -299,14 +321,17 @@ const PaymentForm = ()=>{
                                 }),
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                     className: "heading-parts",
-                                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {
+                                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_10___default()), {
+                                        variant: "primary",
                                         className: "btn btn-round btn-warning form-btn w-50 p-0 mb-3",
                                         style: {
                                             marginTop: "57px"
                                         },
                                         type: "submit",
                                         id: "space-zero",
-                                        children: "CONTINUE"
+                                        disabled: isLoading,
+                                        onClick: !isLoading ? handleClick : null,
+                                        children: isLoadingRef ? "Loading\u2026" : "   CONTINUE"
                                     })
                                 })
                             ]
@@ -518,6 +543,13 @@ module.exports = require("react");
 /***/ ((module) => {
 
 module.exports = require("react-bootstrap");
+
+/***/ }),
+
+/***/ 1937:
+/***/ ((module) => {
+
+module.exports = require("react-bootstrap/Button");
 
 /***/ }),
 

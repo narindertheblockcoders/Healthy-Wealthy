@@ -25,6 +25,7 @@
   "/contact": "pages/contact.html",
   "/footer": "pages/footer.html",
   "/investPage": "pages/investPage.html",
+  "/_document": "pages/_document.js",
   "/api/payment/session": "pages/api/payment/session.js",
   "/api/payment/success": "pages/api/payment/success.js",
   "/buy": "pages/buy.js",
@@ -45,6 +46,5 @@
   "/tokenPage": "pages/tokenPage.js",
   "/userProfile": "pages/userProfile.js",
   "/verification": "pages/verification.js",
-  "/_document": "pages/_document.js",
   "/404": "pages/404.html"
 }
