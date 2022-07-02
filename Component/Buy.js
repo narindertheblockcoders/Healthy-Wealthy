@@ -81,7 +81,7 @@ console.log(router.query.amount)
         <div className="container">
           <div className="row justify-content-center">
             <form
-              className="input-sec iptset-line width-set " id="fom-set" style={{width: "37%",  position:"relative"}}
+              className="input-sec iptset-line width-set " id="fom-set" style={{width: "36%",  position:"relative"}}
               onSubmit={onSubmitHandler}
               
             >
@@ -90,10 +90,13 @@ console.log(router.query.amount)
               <span onClick={()=>router.back()} className="arrows-icon" id="arrows-icn" style={{ position: "absolute", left: "-20%", cursor: "pointer" }}  >
                     <img src={Arrow.src} />
                   </span>
-                <img src="/img.png" className=" mukan"  />
+                {/* <img src="/img.png" className=" mukan"  /> */}
                 {/* <img src="/reactangle.png" className="icon-set"  /> */}
-
-                <button onClick={()=>setModalShow(true)} type="button" className="wht-btn"><img src="/vicon.svg" style={{paddingRight:"6px"}}/> 5 Min</button>
+                <iframe
+                 style={{marginTop: "-5px", borderRadius: "10px 10px 0 0"}} 
+                 className="iframe-setting"
+    src="https://player.vimeo.com/video/711429641?h=51271188df&title=0&byline=0&portrait=0" width="100%" height="270px" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                {/* <button onClick={()=>setModalShow(true)} type="button" className="wht-btn"><img src="/vicon.svg" style={{paddingRight:"6px"}}/> 5 Min</button> */}
             <VideoModal    show={modalShow}
         onHide={() => setModalShow(false)}/>
 
@@ -101,7 +104,7 @@ console.log(router.query.amount)
                 {/* <Link href={'/'}> */}
                 
                 {/* </Link> */}
-              <div className="buy-header mt-3">
+              <div className="buy-header mt-3" id="buy-header">
               
             
                 <h3 className="heading-text" id="ptext-set" style={{fontSize:"20px"}}>
@@ -110,7 +113,7 @@ console.log(router.query.amount)
                   Own RXHEAL Reward Tokens
              
                 </h3>
-                <p className="pt-1" style={{ fontSize: "14px", margin: "0" }}> Be a leader in Healthcare 3.0 and receive extensive <br/>benefits (see below)
+                <p className="pt-1" style={{ fontSize: "14px", margin: "0" }}> Be a leader in Healthcare 3.0 and receive extensive benefits (see below)
 
                 </p>
                 {/* <div className="input-line buy-line" id="buy-line"></div> */}

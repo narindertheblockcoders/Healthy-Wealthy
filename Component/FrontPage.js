@@ -96,7 +96,7 @@ const FrontPage = () => {
 
   return (
     <div>
-      <section className="profile-sec " style={{height:"81vh"}} >
+      <section className="profile-sec " >
         <div className="container">
           <div className="row justify-content-center">
             <ToastContainer

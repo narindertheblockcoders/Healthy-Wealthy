@@ -83,7 +83,7 @@ toast.error(msg, {
 
   return (
     <div>
-      <section className="profile-sec" id="id-set" style={{height:"81vh"}}>
+      <section className="profile-sec" id="id-set" >
         <div className="container">
           <div className="row justify-content-center">
           <ToastContainer

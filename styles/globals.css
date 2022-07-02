@@ -35,7 +35,12 @@ div {
     font-weight: bold;
     color: var(--bg-color);
 }
-.mukan {height: 274px;
+#buy-header {
+    padding: 0px 20px;
+}
+
+.mukan {
+    /* height: 274px; */
     margin-top: -4px !important;}
 /* .icon-set::before{
     content: "";
@@ -47,7 +52,7 @@ div {
 } */
 .wht-btn {
     position: absolute;
-    top: 21%;
+    top: 30%;
     float: left;
     border-radius: 100px;
     padding: 5px 11px;
@@ -843,6 +848,9 @@ sup {
     border: 1px solid #DFDFDF;
     float: left;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .invest-bsec {
@@ -850,6 +858,7 @@ sup {
     width: 100%;
     display: flex;
     justify-content: center;
+    padding: 0 20px;
 }
 
 .invest-btn {
@@ -897,9 +906,9 @@ sup {
     border-radius: 10px;
 } */
 
-#invest-one {
+/* #invest-one {
     margin-top: 110px;
-}
+} */
 
 #invest-two {
     margin-top: 79px;
@@ -971,12 +980,17 @@ sup {
 }
 
 .rx-text {
-    font-size: 13px;
-    font-weight: 600;
-    padding-top: 5px;
-    margin-bottom: 3px;
+    font-size: 13px  !important;
+    font-weight: 600 !important;
+    padding-top: 5px !important;
+    margin-bottom: 3px !important;
+    display: flex;
 }
-
+.cheking-img {
+    padding-right:10px;
+    height:15px;
+    margin-top: 3px;
+}
 .heal-text {
     margin: 0;
     font-size: 18px;
@@ -2000,14 +2014,16 @@ header .top-navbar .navbar-toggler-icon {
 .welcome-line {
     top: -7.2% !important;
 }
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 1200px) {
     /* .margin-txt {
         float: left;
         width: 113%;}    */
+        .iframe-setting{height: 224px !important;}
 }
 
 
 @media screen and (max-width: 1199px) {
+    .iframe-setting{height: 203px !important;}
     /* .margin-txt {
         float: left;
         width: 113%;} */
@@ -2026,7 +2042,9 @@ header .top-navbar .navbar-toggler-icon {
     .profile-sec .input-sec .heading-text {
         font-size: 18px;
     }
-
+    /* #invest-one {
+        margin-top: 94px;
+    } */
 
 }
 
@@ -2081,6 +2099,16 @@ header .top-navbar .navbar-toggler-icon {
         float: left;
         width: 106%;
     } */
+    /* .mukan {
+        height: 404px;} */
+
+        .iframe-setting {
+            height: 400px !important;
+        }
+
+    #invest-res{flex-wrap: wrap !important; margin-top: 0px !important;}
+    .invest-head{width: 100% !important; margin-top: 30px;}
+    .invest-part{padding: 0 !important;}
     .navbar-nav {
         display: flex !;
         margin-top: 15px !important;
@@ -2216,6 +2244,9 @@ header .top-navbar .navbar-toggler-icon {
 }
 
 @media screen and (max-width: 576px) {
+    .iframe-setting {
+        height: 312px !important;
+    }
  
     /* .margin-txt {
         float: left;
@@ -2246,9 +2277,18 @@ header .top-navbar .navbar-toggler-icon {
 
 
 @media screen and (max-width: 414px) {
+    .welcome-line {
+        top: -6.5% !important;
+    }
+    .iframe-setting {
+        height: 225px !important;
+    }
+    #invest-one {
+        margin-top: 0px;
+    }
     #arrows-icn{left: 4% !important; top: 1%; background-color: white; padding: 10px 15px; border-radius: 100px;}
     .mukan {
-        height: 220px;
+        /* height: 220px; */
         margin-top: -4px !important;
     }
     .buy-setting{flex-wrap: wrap !important; margin-top: 0px !important;}
@@ -2511,7 +2551,14 @@ header .top-navbar .navbar-toggler-icon {
 
 
 @media screen and (max-width: 375px) {
+    .welcome-line {
+        top: -2.5% !important;
+    }
 
+    .iframe-setting {
+        height: 203px !important;
+    }
+.buy-header{padding: 0px 10px !important;}
     .arrow-icon {
         left: -10% !important;
     }

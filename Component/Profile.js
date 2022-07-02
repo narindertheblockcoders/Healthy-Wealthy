@@ -78,7 +78,7 @@ const Profile = () => {
 
   return (
     <div>
-      <section className="profile-sec  pb-4" style={{height:"81vh"}}>
+      <section className="profile-sec  pb-4" >
         <div className="container">
           <div className="row justify-content-center">
             <form className="input-sec" onSubmit={formSubmitHandler}>

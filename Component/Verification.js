@@ -101,7 +101,7 @@ const Verification = () => {
 
   return (
     <div>
-      <section className="profile-sec pb-0" style={{height:"81vh"}}>
+      <section className="profile-sec pb-0" >
         <div className="container">
           <ToastContainer
             position="top-right"

@@ -57,7 +57,7 @@ function logoutHandler (){
   return (
     <div>
 
-      <section className="profile-sec" style={{height:"81vh"}}>
+      <section className="profile-sec">
         <div className="container">
           <div className="row justify-content-center">
             <form className="funds-sec" onSubmit={onSubmitHandler}>

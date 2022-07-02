@@ -38,7 +38,7 @@ const InvestPage = () => {
                 {/* </div> */}
               </div>
 
-              <div className="invest-part mt-5">
+              <div className="invest-part mt-5" id="invest-res">
                 <div className="col-md-4   invest-head">
                   <div className="invest-item">
                     <div className="input-line  "></div>
@@ -46,48 +46,25 @@ const InvestPage = () => {
                       <h4 className="heal-text">RXHEAL $100+</h4>
                     </div>
                     <div className="invest-box1">
-                      <h4 className="own-text">Own 100,000 RXHEAL </h4>
-                      <h5 className="rx-text">
-                        For pre-sale $0.01 per token price
-                      </h5>
-                      <div className="tick-sec">
-                        <div className="check-head mt-2" id="tick-sec"></div>
-                        <h5 className="rx-text">
-                          {" "}
-                          100 RXHEAL Bonus Tokens
-                        </h5>
-                        
-                      </div>
-                      <div className="tick-sec">
-                        <div className="check-head mt-2" id="tick-sec"></div>
-                        <h5 className="rx-text">
-                          {" "}
-                          Book HealthiWealthi ($15 value)
-                        </h5>
-                        
-                      </div>
-                      <div className="tick-sec">
-                        <div className="check-head mt-2" id="tick-sec"></div>
-                        <h5 className="rx-text">
-                          {" "}
-                          Book Lifestyle Medicine Works ($20 value)
-                        </h5>
-                        
-                      </div>
-                      {/* <h5 className='rx-text'>+ Book HealthiWealthi ($15 value)</h5> */}
-                      <div className="invest-bsec" id="invest-one">
-                        <button
-                          value={100}
-                          onClick={(e) => onSelect(e)}
-                          className="invest-btn mt-4 mb-3"
-                          type="button"
-                        >
-                          {" "}
-                          CONTINUE
-                        </button>
-                      </div>
+                     <h4 className="own-text">Own 100,000 RXHEAL </h4> 
+                     
+
+
+                      <div className="input-item benefit-type">
+                <ul>
+                    <li style={{fontSize:"14px", fontWeight:"bold"}}>          For pre-sale $0.01 per token price</li>
+                  <li  className="rx-text"><img src="/check.png" className="cheking-img"/> 100 RXHEAL Bonus Tokens</li>
+                  <li  className="rx-text"><img src="/check.png" className="cheking-img"/> Book HealthiWealthi ($15 value)</li>
+                  <li  className="rx-text"><img src="/check.png" className="cheking-img"/>   Book Lifestyle Medicine Works ($20 value)</li>
+                 </ul>
+
+              </div>
                     </div>
-                  </div>
+                         </div>
+
+                  <div className="invest-bsec" id="invest-one">
+                        <button value={100} onClick={(e) => onSelect(e)} className="invest-btn mb-3"   type="button" >  {" "} CONTINUE</button>
+                      </div> 
                 </div>
 
                 <div className="col-md-4   invest-head">
@@ -97,52 +74,26 @@ const InvestPage = () => {
                     </div>
                     <div className="invest-box1">
                       <h4 className="own-text">Own 100,000 RXHEAL </h4>
-                      <h5 className="rx-text" id="tick-sec">
-                        {" "}
-                        <span>1,000</span> RXHEAL Bonus Tokens
-                      </h5>
-                      <h5 className="rx-text">
-                        {" "}
-                        <div id="tick-sec">
-                          {" "}
-                          Book HealthiWealthi ($15 value)
-                        </div>{" "}
-                      </h5>
+                      <div className="input-item benefit-type">
+                <ul>
+                    {/* <li style={{fontSize:"14px", fontWeight:"bold"}}>          For pre-sale $0.01 per token price</li> */}
+                  <li  className="rx-text"><img src="/check.png" className="cheking-img"/>    <span>1,000</span> RXHEAL Bonus Tokens</li>
+                  <li  className="rx-text"><img src="/check.png" className="cheking-img"/> Book HealthiWealthi ($15 value)</li>
+                  <li  className="rx-text"><img src="/check.png" className="cheking-img"/>    Lifestyle Medicine Summit Premium Ticket ($197 value)</li>
+                  <li  className="rx-text"><img src="/check.png" className="cheking-img"/>     The Art & Science of Self-Healing 101 Course ($297 value)</li>
 
-                      <div className="tick-sec">
-                        <div className="check-head mt-2" id="tick-sec"></div>
-                        <h5 className="rx-text">
-                          {" "}
-                          Lifestyle Medicine Summit Premium Ticket ($197 value)
-                        </h5>
-                      </div>
-                      <div className="tick-sec">
-                        <div className="check-head mt-2" id="tick-sec"></div>
-                        <h5 className="rx-text">
-                          {" "}
-                          The Art & Science of Self-Healing 101 Course ($297
-                          value)
-                        </h5>
-                      </div>
-                   
-                      {/* <h5 className='rx-text'>  HealthiWealthi™ Coach Training Course ($997 value)</h5> */}
+                 </ul>
 
-                      <div className="invest-bsec" id="invest-two">
-                        <button
-                          value={1000}
-                          onClick={(e) => onSelect(e)}
-                          className="invest-btn mt-4 mb-3"
-                          type="button"
-                        >
-                          {" "}
-                          CONTINUE
-                        </button>
-                      </div>
+                
+              </div>
+
                     </div>
                   </div>
-                </div>
+                  <div className="invest-bsec" id="invest-one">
+                        <button value={100} onClick={(e) => onSelect(e)} className="invest-btn  mb-3"   type="button" >  {" "} CONTINUE</button>
+                      </div> 
+                </div> 
 
-                {/* <img className='logo' style={{height:"100px"}} src='/logo.png'></img></div> */}
 
                 <div className="col-md-4   invest-head">
                   <div className=" invest-item2">
@@ -151,68 +102,30 @@ const InvestPage = () => {
                     </div>
                     <div className="invest-box1">
                       <h4 className="own-text">Own 100,000 RXHEAL </h4>
-                      <h5 className="rx-text" id="tick-sec">
-                        {" "}
-                        <span style={{ color: "#D32286", fontWeight: "bold" }}>
+
+
+
+                      <div className="input-item benefit-type">
+                <ul>
+                    <li style={{fontSize:"14px", fontWeight:"bold"}}>          For pre-sale $0.01 per token price</li>
+                  <li  className="rx-text"><img src="/check.png" className="cheking-img"/>    <span style={{ color: "#D32286", fontWeight: "bold" }}>
                           5,000
-                        </span>{" "}
-                        RXHEAL Bonus Tokens
-                      </h5>
-                      <h5 className="rx-text">
-                        {" "}
-                        <div id="tick-sec">
-                          {" "}
-                          Book HealthiWealthi ($15 value)
-                        </div>{" "}
-                      </h5>
-                      <div className="tick-sec">
-                        <div className="check-head mt-2" id="tick-sec"></div>
-                        <h5 className="rx-text">
-                          {" "}
-                          Lifestyle Medicine Summit Premium Ticket ($197 value)
-                        </h5>
-                      </div>
-                      <div className="tick-sec">
-                        <div className="check-head mt-2" id="tick-sec"></div>
-                        <h5 className="rx-text">
-                          {" "}
-                          The Art & Science of Self-Healing 101 Course ($297
-                          value)
-                        </h5>
-                      </div>
-                      <div className="tick-sec">
-                        <div className="check-head mt-2" id="tick-sec"></div>
-                        <h5 className="rx-text">
-                          {" "}
-                          HealthiWealthi™ Coach Training Course ($997 value)
-                        </h5>
-                      </div>
-                      <div className="tick-sec">
-                        <div className="check-head mt-2" id="tick-sec"></div>
-                        <h5 className="rx-text">
-                          {" "}
-                          <span style={{ color: "#D32286" }}>
+                        </span>{" "}      RXHEAL Bonus Tokens</li>
+                  <li  className="rx-text"><img src="/check.png" className="cheking-img"/> Book HealthiWealthi ($15 value)</li>
+                  <li  className="rx-text"><img src="/check.png" className="cheking-img"/>Lifestyle Medicine Summit Premium Ticket ($197 value)</li>
+                  <li  className="rx-text"><img src="/check.png" className="cheking-img"/>The Art & Science of Self-Healing 101 Course ($297 value)</li>
+                  <li  className="rx-text"><img src="/check.png" className="cheking-img"/>HealthiWealthi™ Coach Training Course ($997 value)</li>
+                  <li  className="rx-text"><img src="/check.png" className="cheking-img"/>  <span style={{ color: "#D32286" }}>
                             $1,000 Lifestyle Prescriptions University Degree
                             Scholarship
-                          </span>
-                        </h5>
-                      </div>
-                      {/* <h5 className='rx-text'>+ <span style={{color:"#D32286"}}>$1,000 Lifestyle Prescriptions University Degree Scholarship</span></h5> */}
-
-                      <div className="invest-bsec">
-                        <button
-                          value={5000}
-                          onClick={(e) => onSelect(e)}
-                          className="invest-btn mt-4 mb-3"
-                          type="button"
-                        >
-                          {" "}
-                          CONTINUE
-                        </button>
-                      </div>
+                          </span></li>
+                 </ul>
+              </div>
                     </div>
-                    {/* <img className='logo' style={{height:"100px"}} src='/logo.png'></img></div> */}
                   </div>
+                  <div className="invest-bsec" id="invest-one">
+                        <button value={100} onClick={(e) => onSelect(e)} className="invest-btn mb-3"   type="button" >  {" "} CONTINUE</button>
+                      </div> 
                 </div>
               </div>
             </form>

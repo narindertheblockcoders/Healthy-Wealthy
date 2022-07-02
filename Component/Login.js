@@ -78,7 +78,7 @@ const Login = () => {
 
   return (
     <div>
-      <section className="profile-sec mt-4 pb-0" style={{height:"78vh"}}>
+      <section className="profile-sec mt-4 pb-0" >
         <div className="container">
           <div className="row justify-content-center">
           <ToastContainer
