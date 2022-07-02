@@ -133,7 +133,7 @@ setLoadingRef(false);
   return (
     
     <div>
-      <section className="profile-sec pb-0" style={{height:"81vh"}}>
+      <section className="profile-sec verify-hight" >
         <div className="container">
           <div className="row justify-content-center">
           <ToastContainer

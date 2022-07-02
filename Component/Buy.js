@@ -283,31 +283,31 @@ console.log(router.query.amount)
                     amount >= 100 & amount<1000?
                 <ul>
                     <li style={{fontSize:"14px", fontWeight:"bold"}}>$100 - $999</li>
-                  <li><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> 100 RXHEAL Bonus Tokens</li>
-                  <li><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> Book HealthiWealthi ($15 value)</li>
-                  <li><img src="/checkPink.svg" style={{paddingRight:"10px"}}/>   Book Lifestyle Medicine Works ($20 value)</li>
+                  <li className="rx-text"><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> 100 RXHEAL Bonus Tokens</li>
+                  <li className="rx-text"><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> Book HealthiWealthi ($15 value)</li>
+                  <li className="rx-text"><img src="/checkPink.svg" style={{paddingRight:"10px"}}/>   Book Lifestyle Medicine Works ($20 value)</li>
                  </ul>
                  : null
                  }
 {amount > 999 && amount< 5000?
 <ul>
                   <li style={{fontSize:"14px", fontWeight:"bold", marginTop:"10px"}}>    $1,000 - $4,999</li>
-                  <li><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> 1,000 RXHEAL Bonus Tokens</li>
-                  <li><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> Book HealthiWealthi ($15 value)</li>
-                  <li><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> Lifestyle Medicine Summit Premium Ticket ($197 value)</li>
+                  <li className="rx-text"><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> 1,000 RXHEAL Bonus Tokens</li>
+                  <li className="rx-text"><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> Book HealthiWealthi ($15 value)</li>
+                  <li className="rx-text"><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> Lifestyle Medicine Summit Premium Ticket ($197 value)</li>
 
                   <li><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> The Art & Science of Self-Healing 101 Course ($297 value)</li>
 </ul> :null
 }
 {amount>4999 ? <ul>
                   <li style={{fontSize:"14px", fontWeight:"bold", marginTop:"10px"}}>    $5,000 -  $10,000</li>
-                  <li><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> 5,000 RXHEAL Bonus Tokens</li>
-                  <li><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> Book HealthiWealthi ($15 value)</li>
-                  <li><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> Lifestyle Medicine Summit Premium Ticket ($197 value)</li>
+                  <li className="rx-text"><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> 5,000 RXHEAL Bonus Tokens</li>
+                  <li className="rx-text"><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> Book HealthiWealthi ($15 value)</li>
+                  <li className="rx-text"><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> Lifestyle Medicine Summit Premium Ticket ($197 value)</li>
 
-                  <li><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> The Art & Science of Self-Healing 101 Course ($297 value)</li>
-                  <li><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> HealthiWealthi™ Coach Training Course ($997 value)</li>
-                  <li><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> $1,000 Lifestyle Prescriptions® University Training Scholarship</li>
+                  <li className="rx-text"><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> The Art & Science of Self-Healing 101 Course ($297 value)</li>
+                  <li className="rx-text"><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> HealthiWealthi™ Coach Training Course ($997 value)</li>
+                  <li className="rx-text"><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> $1,000 Lifestyle Prescriptions® University Training Scholarship</li>
 
               
                 </ul> : null}
@@ -329,7 +329,7 @@ console.log(router.query.amount)
               <Button
       variant="primary"
       className="btn btn-round btn-warning  "
-                style={{ marginTop: "30px", width:"87%" }}
+                style={{ marginTop: "30px", width:"90%" }}
       type="submit"
       disabled={isLoading}
       onClick={!isLoading ? handleClick : null}

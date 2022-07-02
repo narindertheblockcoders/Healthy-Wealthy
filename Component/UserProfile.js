@@ -236,7 +236,7 @@ const [isLoading,setIsLoading]= useState(false)
               <div className="name-sec" >
                 {/* <h6 className="item-text">EMAIL</h6> */}
                 <div className="input-item item-set" style={{ marginRight: "10px", display: "flex" }} >
-                  <input ref={emailRef} disabled  required className="textinput mt-0" name="email" 
+                  <input style={{    borderRadius: "4px 0 0 4px"}} ref={emailRef} disabled  required className="textinput mt-0" name="email" 
                   defaultValue={isFinalData?.email}
                    />
                   <Link href={'/emailChange'}>

@@ -50,6 +50,11 @@ div {
     width: 100px;
 
 } */
+
+.btn-check:focus + .btn, .btn:focus {
+    outline: 0;
+    box-shadow: unset !important;
+}
 .wht-btn {
     position: absolute;
     top: 30%;
@@ -2638,7 +2643,9 @@ header .top-navbar .navbar-toggler-icon {
 }
 
 @media screen and (max-width: 353px) {
- 
+    .iframe-setting {
+        height: 190px !important;
+    }
     .dps {
         float: left;
         display: flex;

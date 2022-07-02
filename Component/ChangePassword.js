@@ -168,7 +168,7 @@ setLoadingRef(false);
   return (
     
     <div>
-      <section className="profile-sec pb-0" >
+      <section className="profile-sec" >
         <div className="container">
           <div className="row justify-content-center">
           <ToastContainer
