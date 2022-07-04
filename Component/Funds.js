@@ -88,7 +88,11 @@ const Funds = () => {
         <div className="container">
           <div className="row justify-content-center">
             <form className="funds-sec" onSubmit={formSubmitHandler}>
-              <h3 className="funds-heading">FUNDS AND TRANSACTION</h3>
+              <h3 className="funds-heading">
+              <span className="arrows-icon" onClick={()=>router.back()}  style={{ position: "absolute", left: "14%", cursor: "pointer" }}  >
+                    <img src={Arrow.src} />
+                  </span>
+                 FUNDS AND TRANSACTION</h3>
 
               <Tabs
                 defaultActiveKey="Funds"
@@ -347,7 +351,7 @@ const Funds = () => {
                       {/* </tr> */}
                     {/* </tbody> */}
                   {/* </table> */}
-                      <div className='hydration'>
+                      {/* <div className='hydration'>
                         <Link href={'/dashboard'}>
                         <h5>   <span
                     className="arrow-icon"
@@ -356,9 +360,9 @@ const Funds = () => {
                     <img src={Arrow.src} />
                   </span>  back</h5>
                   </Link>
+  </div> */}
 
 {/* <button href="funds-page.html" className="btn btn-round btn-warning usebutton " type="submit">CONTINUE</button> */}
-  </div>
 
                   {/* </div> */}
                 </Tab>

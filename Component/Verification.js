@@ -57,7 +57,7 @@ const Verification = () => {
       console.log(data.data.message);
       if (data.data?.message) {
       
-        notify('Verification Code Sent');
+        notify('New verification code sent.');
       }
       setIsLoading(false);
     } catch (err) {
@@ -172,6 +172,7 @@ const Verification = () => {
                   required
                   type="number"
                   ref={valueRef}
+                  style={{ }}
                 />
               </div>
               <div className="did-txt">

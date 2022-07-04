@@ -62,7 +62,13 @@ console.log(router.query.amount)
     setLoadingRef(true)
     setIsLoading(true)
 
-    router.push("/creditPage");
+    router.push({
+      
+        pathname:  "/creditPage",
+      query:{USD:enteredFor,total:finalValue}
+    }
+      
+);
   }
   function onChangeHandler() {
 
@@ -329,7 +335,7 @@ console.log(router.query.amount)
               <Button
       variant="primary"
       className="btn btn-round btn-warning  "
-                style={{ marginTop: "30px", width:"90%" }}
+                style={{ marginTop: "36px", width:"90%" }}
       type="submit"
       disabled={isLoading}
       onClick={!isLoading ? handleClick : null}

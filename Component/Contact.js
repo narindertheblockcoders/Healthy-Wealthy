@@ -1,12 +1,8 @@
-import axios from "axios";
-import Link from "next/link";
-import React, { useRef, useState } from "react";
-import Heart from "../public/Heart.svg";
-import { useRouter } from "next/router";
-import { ToastContainer, toast } from "react-toastify";
-import { signIn } from "next-auth/react";
-import Arrow from "../public/arrow.svg";
 
+import React, { useRef, useState } from "react";
+import { useRouter } from "next/router";
+import Script from "next/script";
+import Arrow from "../public/arrow.svg";
 
 
 const Login = () => {
@@ -16,20 +12,77 @@ const Login = () => {
   const router = useRouter()
 
   return (
-    <div><br/><br/>
+    <div>
+      <section className="profile-sec">
+        <div className="container">
+          <div className="row justify-content-center">
+            
+            <form
+              className="input-sec  payment-form "
+              id="form-pay"
+              style={{ width: "35%", padding: "30px" }}
+            >
+              <div className="input-line   welcome-line"></div>
+                <span className="arrows-icon" onClick={()=>router.back()}  style={{ position: "relative", left: "-41%", cursor: "pointer" }}  >
+                    <img style={{width:"2.5%"}} src={Arrow.src} />
+                  </span>
+                <div className="wel-head mt-4">
+<img src="email.png"/>
+                </div>
+              <div className="heading-parts mt-5">
+                <h3 className="order-text" style={{color:"#D32286", fontSize:"24px !important"}}>Contact Us</h3>
+                <p className="pt-2">We're here for you to answer your questions and support you on your path to be HealthiWealthi™.</p>
+           
+                      {/* <p lassName="pt-2 mt-0"> {transactionID?.id}  </p> */}
+              </div>
+
+
+              <div className="head-partes">
+                </div>
+              <div className="heading-parts mt-2">
+                {/* <Link href={"/dashboard"}> */}
+                <Script id="form-script-tag-3443593" src="https://www.healthiwealthi.net/public/remote/page/4931931cf737288ba0e8b30a751ad4c276fd7bc.js"></Script>
+                <button
+                  className="btn btn-round btn-warning form-btn w-50 p-0 mb-3 systeme-show-popup-3443593"
+                  style={{ marginTop: "0px" }}
+                  type="submit"
+                >
+               Email
+                </button>
+                {/* </Link> */}
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+      
+      
+      
+      
+      
+      
+      );
+    };
+    
+    export default Login;
+    
+      
+      
+      
+      {/* <br/><br/>
       <section className="profile-sec pt-0 mt-4 pb-0" >
         <div className="container">
           <div className="row justify-content-center ipst">
         
-            {/* {/ <form className="input-sec input-top"> /} */}
               <div className="input-line iptset-line"></div>
-              {/* {/ <img src={Heart.src} className="mt-2 " /> /} */}
-              <span onClick={()=>router.back()} className="arrows-icon" style={{ position: "absolute", left: "-20%", cursor: "pointer" }}  >
+            
+       
+              <h1 class="u-custom-font u-text u-text-default u-text-1 mt-10" style={{color:"#D32286"}}>
+              <span className="arrows-icon" onClick={()=>router.back()}  style={{ position: "relative", left: "-15%", cursor: "pointer" }}  >
                     <img style={{width:"1.5%"}} src={Arrow.src} />
                   </span>
-              <h1 class="u-custom-font u-text u-text-default u-text-1 mt-10" style={{color:"#D32286"}}>
-           
-                Contact Us</h1><br/><br/>
+               Contact Us</h1>
               <h5><strog> We're here for you to answer your questions and support you on your path to be HealthiWealthi™.</strog></h5><br/>
               <div className="mainbox">
               <ul>
@@ -38,37 +91,11 @@ const Login = () => {
                 <a href="#" class="systeme-show-popup-3443593 mail-btn" style={{textDecoration:"none", color:"#D32286", fontWeight:"600"}}>Email</a>
                 <script id="form-script-tag-3443593" src="https://www.healthiwealthi.net/public/remote/page/4931931cf737288ba0e8b30a751ad4c276fd7bc.js"></script>
                   </li>
-                
-                {/* <li  style={{textDecoration:"none", color:"#D32286", fontWeight:"600"}} id="position-set"> or via HealthiWealthi™ RXHEAL<img src="/contactus.svg"></img>
-                <a href=" https://systeme.io/dashboard/funnel/1066254/edit#step3443593" target="_blank" style={{textDecoration:"none", color:"#D32286", fontWeight:"600", paddingLeft:"5px"}}>Contact US</a></li> */}
               </ul>
               </div>
               <script src="//code.tidio.co/cxqo3ntmn8twp6qa7xomks3yhutwseht.js" async></script>
-             
-{/* 
-              {/ <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 60 60" style=""><use xlink:href="#svg-1f10"></use></svg> /}
-                {/* Contact us via <a href="#" class="systeme-show-popup-3443593" style={{textDecoration:"none", color:"#D32286", fontWeight:"600"}}>email</a>  
-                  <script id="form-script-tag-3443593" src="https://www.healthiwealthi.net/public/remote/page/4931931cf737288ba0e8b30a751ad4c276fd7bc.js"></script> or see HealthiWealthi™ RXHEAL
-                  <a href=" https://systeme.io/dashboard/funnel/1066254/edit#step3443593" target="_blank" style={{textDecoration:"none", color:"#D32286", fontWeight:"600", paddingLeft:"5px"}}> Contact Us</a>
-                
-                    <script src="//code.tidio.co/cxqo3ntmn8twp6qa7xomks3yhutwseht.js" async></script>  *
-
-              <p>
-              <script id="form-script-tag-3443593" src="https://www.healthiwealthi.net/public/remote/page/4931931cf737288ba0e8b30a751ad4c276fd7bc.js"></script>
-              </p>
-              {/* <button 
-                className="btn btn-round btn-warning w-100"
-                style={{ marginTop: "5px" }}
-                type="submit"
-              >
-                Contact Us
-              </button> */}
-            {/* {/ </form> /} */}
+     
           </div>
           </div>
-      </section>
-    </div>
-  );
-};
+      </section> */}
 
-export default Login;

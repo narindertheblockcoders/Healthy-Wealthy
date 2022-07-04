@@ -17,6 +17,7 @@ const Login = () => {
   const [isLoadingRef, setLoadingRef] = useState(false);
 
 
+
   function simulateNetworkRequest() {
     return new Promise((resolve) => setTimeout(resolve, 4000));
   }
@@ -37,6 +38,7 @@ const Login = () => {
   // }
 
   async function formSubmitHandler(event) {
+
     event.preventDefault();
     const email = emailInputRef.current.value;
     const password = passwordInputRef.current.value;
@@ -55,7 +57,12 @@ const Login = () => {
         notifyError("Invalid login details. Please try again or signup below.")
         setIsLoading(false)
 
-      } else {
+      } 
+      
+    
+
+      
+      else {
         // setError(null);
       }
       if (!res.error) {
@@ -149,6 +156,7 @@ const Login = () => {
                   type="email"
                   name="username"
                   ref={emailInputRef}
+                  autoComplete="on"
                 />
               </div>
 
@@ -160,10 +168,14 @@ const Login = () => {
                   type="password"
                   name="last-name"
                   ref={passwordInputRef}
+                  autoComplete="on"
+                  // pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                  // title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" 
                 />
                
               </div>
               {valid && <p style={{ color: "red", margin:"0", fontSize:"15px" }}> Invalid login details. Please try again or signup below. </p>}
+
               {/* <Link href={"/creditPage"}> */}
               <Button
       variant="primary"

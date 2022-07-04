@@ -81,8 +81,8 @@ console.log(tranx)
 <img src={Success.src}/>
                 </div>
               <div className="heading-parts mt-5">
-                <h3 className="order-text" style={{color:"green"}}>ORDER CONFORMATION</h3>
-                <p className="pt-2">Your order has been successfully placed</p>
+                <h3 className="order-text" style={{color:"green"}}>ORDER CONFIRMATION</h3>
+                <p className="pt-2">Your order has been successfully submitted.</p>
                 <p className="pt-2 mt-0 text-break">Transaction ID : <strong> {transactionID?.trans} </strong>  <CopyToClipboard
                         text={transactionID?.trans}
                         onCopy={() => notify("Copied Successfully")}

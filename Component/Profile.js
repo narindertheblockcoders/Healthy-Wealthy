@@ -6,6 +6,7 @@ import Link from "next/link";
 import Arrow from "../public/arrow.svg";
 import { ToastContainer, toast } from "react-toastify";
 import Button from 'react-bootstrap/Button';
+import { Alert } from "react-bootstrap";
 
 
 
@@ -17,9 +18,7 @@ const Profile = () => {
   const confirmPasswordInputRef = useRef();
   const [isLoading, setIsLoading] = useState(false);
   const [isLoadingRef, setLoadingRef] = useState(false);
-
-
-
+  const [isPasswordValid, setIsPasswordValid ] = useState(false)
 
   function simulateNetworkRequest() {
     return new Promise((resolve) => setTimeout(resolve, 4000));
@@ -65,6 +64,8 @@ const Profile = () => {
   }
 
   function formSubmitHandler(event) {
+    var regularExpression = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+
     event.preventDefault();
 
     const firstName = firstNameInputRef.current.value;
@@ -78,6 +79,11 @@ const Profile = () => {
 
       return;
     }
+
+    if(!regularExpression.test(password)) {
+      setIsPasswordValid(true)
+      return false;
+    }
     // router.push("/buy");
 
     const local = {
@@ -90,6 +96,7 @@ const Profile = () => {
     console.log(local, "sxqwdqwdx");
 
     localStorage.setItem("profile", JSON.stringify(local));
+    setIsPasswordValid  (false)
 
     profileFill(local);
   }
@@ -122,7 +129,7 @@ const Profile = () => {
 
   return (
     <div>
-      <section className="profile-sec  pb-4" >
+      <section className="profile-sec  " >
         <div className="container">
           <div className="row justify-content-center">
 
@@ -146,7 +153,7 @@ const Profile = () => {
                   </span>
                 </Link> */}
                 Complete Your Profile</h3>
-              <p style={{fontSize:"14px", paddingTop:"7px",  margin:"0"}}>To access your HealthiWealthi™RXHEAL dashboard and the 7-minute Welcome Video that will change your life.</p>
+              <p style={{fontSize:"14px", paddingTop:"7px",  margin:"0"}}>Access your HealthiWealthi™ RXHEAL Dashboard and the Welcome Video</p>
               <div className="name-sec">
                 <div
                   className="input-item item-set"
@@ -154,11 +161,11 @@ const Profile = () => {
                 >
                   <h6 className="item-text">FIRST </h6>
                   <input
+                    name="fname"
                     ref={firstNameInputRef}
                     required
                     className="textinput"
                     type="name"
-                    name="username"
                   />
                 </div>
 
@@ -168,11 +175,11 @@ const Profile = () => {
                 >
                   <h6 className="item-text">LAST </h6>
                   <input
+                    name="lname"
                     ref={lastNameInputRef}
                     required
                     className="textinput"
                     type="last name"
-                    name="last-name"
                   />
                 </div>
               </div>
@@ -196,7 +203,10 @@ const Profile = () => {
                   className="textinput"
                   type="password"
                   name="password"
+                  // pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                  // title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" 
                 />
+              {isPasswordValid && <Alert variant={"danger"}>Your password must be at least 8 characters long, should contain at least  one number and special character have a mixture of uppercase and lowercase letters.</Alert>}
               </div>
 
               <div className="input-item item-set">

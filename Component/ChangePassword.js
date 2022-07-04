@@ -205,7 +205,7 @@ setLoadingRef(false);
               </div>
 
               <div className="input-item item-set">
-                <h6 className="item-text">CONFIRMPASSWORD</h6>
+                <h6 className="item-text">CONFIRM PASSWORD</h6>
                 <input ref={confirmPasswordRef} required className="textinput" type="password" name="confirmpassword" />
                 {isValid && (<p style={{ color: "red" }}> Password doesn't match </p>)}
               </div>

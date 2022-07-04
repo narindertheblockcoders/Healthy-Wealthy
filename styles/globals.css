@@ -120,6 +120,15 @@ div {
 #skip-page {
     float: left !important;
     width: 100% !important;
+    margin-bottom: 30px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
 }
 
 .footer-head {
@@ -392,7 +401,7 @@ header .navbar-light .navbar-nav .nav-link {
 .profile-sec {
     float: left;
     width: 100%;
-    padding: 55px 0;
+    padding: 58px 0;
     text-align: center;
     min-height: 81vh;
 }
@@ -1734,7 +1743,7 @@ header .top-navbar .navbar-toggler-icon {
 }
 
 .credit-line {
-    top: -7% !important;
+    top: -3.8% !important;
     left: 0 !important;
     width: 100% !important;
 }
@@ -2476,7 +2485,7 @@ header .top-navbar .navbar-toggler-icon {
 
     .profile-sec {
         padding: 30px 10px;
-        padding-bottom: 30px !important;
+        padding-bottom: 35px !important;
     }
 
     .profile-sec .input-content .text-sec {
