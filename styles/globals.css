@@ -2309,6 +2309,7 @@ header .top-navbar .navbar-toggler-icon {
 
 
 @media screen and (max-width: 414px) {
+    #span-back {left: -7% !important;}
     #arrow-icon {width: 6.5% !important; margin-top: 20px !important; margin-left: -10px !important;}
     #heading-part{
         margin-top: 1rem  !important;
@@ -2610,6 +2611,7 @@ header .top-navbar .navbar-toggler-icon {
 
 
 @media screen and (max-width: 375px) {
+    #span-back {left: -14% !important;}
     #ch-line {top: -4% !important;}
     
     #profile-line{top: -4% !important;}

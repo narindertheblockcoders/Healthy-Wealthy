@@ -13,7 +13,7 @@ const Login = () => {
 
   return (
     <div>
-      <section className="profile-sec" id="ps-set">
+      <section className="profile-sec">
         <div className="container">
           <div className="row justify-content-center">
             
