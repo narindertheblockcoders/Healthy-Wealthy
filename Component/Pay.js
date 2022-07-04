@@ -5,8 +5,11 @@ import MDI from "../public/mdi.png";
 import Link from "next/link";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { ToastContainer, toast } from "react-toastify";
+import { useRouter } from "next/router";
 
 const Pay = () => {
+
+  const router = useRouter()
   ///////////toast////////////////
   const notify = (msg) =>
     toast.success(msg, {
@@ -40,9 +43,15 @@ const Pay = () => {
 
               {/* <h3 className="heading-text mt-0"><span style={{position:"relative", left:"-30%"}}><img src={Arrow.src}/></span> Pay <span style={{color:"#D32286", fontWeight:"boldW"}}>2.334 BTC</span></h3> */}
 
-              <div className="input-item">
+              <span className="arrows-icon" onClick={()=>router.back()}  style={{ position: "relative", left: "-45%", cursor: "pointer" }}  >
+                    <img id="arrow-icon" style={{width:"3.5%"}} src={Arrow.src} />
+                  </span>
+              <div className="mt-1 input-item ">
                 <div className="qr-sec">
+              
+
                   <Link href={"/varification"}>
+
                     <img src={Qr.src} className="qr" />
                   </Link>
                 </div>

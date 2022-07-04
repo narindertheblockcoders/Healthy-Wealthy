@@ -81,6 +81,7 @@ const ChangePassword = () => {
       setIsLoading(true)
       notify(' Change Successfuly')
       setVerify(true)
+      setErrorValid(false)
   
       setTimeout(()=>{
 
@@ -239,10 +240,10 @@ setLoadingRef(false);
                   <p style={{ color: "red" }}> Password doesn't match </p>
                 )}
                     {errorValid && (
-                  <p style={{ color: "red", fontSize:"15px",  margin:"0px" }}> Invalid detail </p>
+                  <p style={{ color: "red", fontSize:"15px", }}> Invalid detail </p>
                 )}
                        {verify && (
-                  <p style={{ color: "green", fontSize:"15px",  margin:"0" }}>Change Successfuly </p>
+                  <p style={{ color: "green", fontSize:"15px",  }}>Change Successfuly </p>
                 )}
               {/* <button
                 href="funds-page.html"

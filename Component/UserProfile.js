@@ -239,12 +239,12 @@ const [isLoading,setIsLoading]= useState(false)
                   <input style={{    borderRadius: "4px 0 0 4px"}} ref={emailRef} disabled  required className="textinput mt-0" name="email" 
                   defaultValue={isFinalData?.email}
                    />
-                  <Link href={'/emailChange'}>
+                  {/* <Link href={'/emailChange'}> */}
 
                     <button type="button" className="btn btn-roundes  btn- w-50  mt-0 ">
                       MODIFY
                     </button>
-                  </Link>
+                  {/* </Link> */}
 
                 </div>
               </div>

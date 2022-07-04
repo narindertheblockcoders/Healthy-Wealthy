@@ -44,26 +44,29 @@ const Profile = () => {
       });
       console.log(rest, "anything");
       if (rest?.error) {
-        // setError(res.error);
+      
         console.log(rest.error);
-        // setValid(true);
       } else {
         // setError(null);
       }
       if (!rest.error) {
-        setLoadingRef(true)
-        setIsLoading(true)
-    
+        setLoadingRef(false)
+        setIsLoading(false)
         router.push("/buy");
       }
       // localStorage.setItem("token", record.data.data);
       // window.location.reload();
     } catch (err) {
       console.log(err, "hello");
+      setLoadingRef(false)
+      setIsLoading(false)
     }
+
   }
 
   function formSubmitHandler(event) {
+    setLoadingRef(true)
+    setIsLoading(true)
     var regularExpression = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
 
     event.preventDefault();
@@ -76,13 +79,17 @@ const Profile = () => {
     if (password !== confimPassword) {
       setIsValid(true);
       notifyError(" Password doesn't match");
-
+      setLoadingRef(false)
+      setIsLoading(false)
       return;
     }
 
     if(!regularExpression.test(password)) {
       setIsPasswordValid(true)
+      setLoadingRef(false)
+      setIsLoading(false)
       return false;
+
     }
     // router.push("/buy");
 
