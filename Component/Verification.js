@@ -52,7 +52,7 @@ const Verification = () => {
       return;
     }
     try {
-      let res = await axios.post("/api/register", { email: email });
+      let res = await axios.post("/api/resend", { email: email });
       const data = res.data;
       console.log(data.data.message);
       if (data.data?.message) {

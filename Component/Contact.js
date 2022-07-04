@@ -13,7 +13,7 @@ const Login = () => {
 
   return (
     <div>
-      <section className="profile-sec">
+      <section className="profile-sec" id="ps-set">
         <div className="container">
           <div className="row justify-content-center">
             
@@ -29,18 +29,27 @@ const Login = () => {
                 <div className="wel-head mt-4"  id="heading-part">
 <img src="email.png"/>
                 </div>
-              <div className="heading-parts mt-5"  id="heading-part">
+              <div className="heading-parts "  id="heading-part">
                 <h3 className="order-text" style={{color:"#D32286", fontSize:"24px !important"}}>Contact Us</h3>
-                <p className="pt-2">We're here for you to answer your questions and support you on your path to be HealthiWealthi™.</p>
+                <p className="pt-2">We're here for you to answer your questions and support you on your path to being HealthiWealthi™. Email us or use the chat below.
+
+
+
+</p>
            
                       {/* <p lassName="pt-2 mt-0"> {transactionID?.id}  </p> */}
               </div>
+              <script src="//code.tidio.co/cxqo3ntmn8twp6qa7xomks3yhutwseht.js" async></script>
+
+
+
 
 
               <div className="head-partes">
                 </div>
               <div className="heading-parts mt-2">
                 {/* <Link href={"/dashboard"}> */}
+              
                 <Script id="form-script-tag-3443593" src="https://www.healthiwealthi.net/public/remote/page/4931931cf737288ba0e8b30a751ad4c276fd7bc.js"></Script>
                 <button
                   className="btn btn-round btn-warning form-btn w-50 p-0 mb-3 systeme-show-popup-3443593"

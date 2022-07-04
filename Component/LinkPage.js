@@ -57,12 +57,12 @@ function logoutHandler (){
   return (
     <div>
 
-      <section className="profile-sec">
+      <section className="profile-sec" id="ps-set">
         <div className="container">
           <div className="row justify-content-center">
             <form className="funds-sec" onSubmit={onSubmitHandler}>
               <h3 className="funds-heading">Your Dashboard</h3>
-              <h4 className="wel-text">  Welcome <strong> {name?.firstName}{" "}</strong>Please find below your RXHEAL details. Watch out for our HealthiWealthi™ <br/>email updates. Questions? 
+              <h4 className="wel-text">  Welcome  <strong> {name?.firstName}{" "}</strong> Please find below your RXHEAL details. Watch out for our HealthiWealthi™ email updates. Questions? 
               <a
                       href="/contact"
                       style={{

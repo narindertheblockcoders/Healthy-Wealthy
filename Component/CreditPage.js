@@ -50,14 +50,8 @@ const handleClick = async (e) => {
        let datas = JSON.stringify({transId:response.data.id,id:dataa.id})
 
        localStorage.setItem("tranx",datas)
-
-
-
+       
     const stripe = await stripePromise;
-
-    
-
-
     const {error}  =await stripe.redirectToCheckout({
       sessionId: response.data.id
       
@@ -88,7 +82,7 @@ toast.error(msg, {
 
   return (
     <div>
-      <section className="profile-sec verify-hight" id="id-set  "   >
+      <section className="profile-sec verify-hight " id="id-set  "   >
         <div className="container">
           <div className="row justify-content-center">
           <ToastContainer
@@ -117,11 +111,11 @@ toast.error(msg, {
               <div className="input-item benefit-type">
                 <h6 className="item-text" style={{ fontSize: "17px", fontWeight: "600", marginBottom: "5px", color:"#D32286" }}> Your Order Details</h6>
 
-<p>You receive {total} RXHEAL tokens for USD {Usd}</p>
+<p style={{margin:"0"}}>You receive {total} RXHEAL tokens for USD {Usd}</p>
                   {Usd >= 100 && Usd<1000? 
                 <ul>
                     {/* <li style={{fontSize:"14px", fontWeight:"bold"}}>$100 - $999</li> */}
-                  <li className="rx-text"><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> 100 RXHEAL Bonus Tokens</li>
+                  <li className="rx-text"><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> PLUS 100 RXHEAL Bonus Tokens</li>
                   <li className="rx-text"><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> Book HealthiWealthi ($15 value)</li>
                   <li className="rx-text"><img src="/checkPink.svg" style={{paddingRight:"10px"}}/>   Book Lifestyle Medicine Works ($20 value)</li>
                  </ul>
@@ -130,7 +124,7 @@ toast.error(msg, {
 {Usd > 999 && Usd< 5000?
 <ul>
                   {/* <li style={{fontSize:"14px", fontWeight:"bold", marginTop:"10px"}}>    $1,000 - $4,999</li> */}
-                  <li className="rx-text"><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> 1,000 RXHEAL Bonus Tokens</li>
+                  <li className="rx-text"><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> PLUS 1,000 RXHEAL Bonus Tokens</li>
                   <li className="rx-text"><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> Book HealthiWealthi ($15 value)</li>
                   <li className="rx-text"><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> Lifestyle Medicine Summit Premium Ticket ($197 value)</li>
 
@@ -141,7 +135,7 @@ toast.error(msg, {
 { Usd > 4999 ? 
 <ul>
                   {/* <li style={{fontSize:"14px", fontWeight:"bold", marginTop:"10px"}}>    $5,000 -  $10,000</li> */}
-                  <li className="rx-text"><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> 5,000 RXHEAL Bonus Tokens</li>
+                  <li className="rx-text"><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> PLUS 5,000 RXHEAL Bonus Tokens</li>
                   <li className="rx-text"><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> Book HealthiWealthi ($15 value)</li>
                   <li className="rx-text"><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> Lifestyle Medicine Summit Premium Ticket ($197 value)</li>
                   <li className="rx-text"><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> The Art & Science of Self-Healing 101 Course ($297 value)</li>
@@ -162,7 +156,7 @@ toast.error(msg, {
               <form onSubmit={handleClick} method="POST">
 
                     {error && (<p style={{color:"red", textAlign:"center", fontSize:"15px", margin:"0"}}> Invalid amount</p>)}
-                <button type="submit" disabled={isLoading} className="btn credit-btn" id="credit-btn">
+                <button type="submit" disabled={isLoading} className="btn credit-btn mt-0" id="credit-btn">
                   <img className="icon-space" src={Credit.src} /> Pay with
                   Credit Card
                 </button>

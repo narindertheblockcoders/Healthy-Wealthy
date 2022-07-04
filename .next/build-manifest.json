@@ -25,20 +25,20 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/buy": [
+    "/dashboard": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/buy.js"
+      "static/chunks/pages/dashboard.js"
     ],
-    "/creditPage": [
+    "/paymentForm": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/creditPage.js"
+      "static/chunks/pages/paymentForm.js"
     ],
-    "/payment": [
+    "/success": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/payment.js"
+      "static/chunks/pages/success.js"
     ]
   },
   "ampFirstPages": []

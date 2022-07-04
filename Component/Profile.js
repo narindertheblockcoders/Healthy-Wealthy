@@ -54,7 +54,7 @@ const Profile = () => {
         setLoadingRef(true)
         setIsLoading(true)
     
-        router.push("/investPage");
+        router.push("/buy");
       }
       // localStorage.setItem("token", record.data.data);
       // window.location.reload();
