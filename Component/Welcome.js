@@ -77,10 +77,10 @@ console.log(tranx)
               style={{ width: "35%", padding: "30px" }}
             >
               <div className="input-line   welcome-line"></div>
-                <div className="wel-head mt-5">
+                <div className="wel-head mt-5"  id="heading-part">
 <img src={Success.src}/>
                 </div>
-              <div className="heading-parts mt-5">
+              <div className="heading-parts mt-5" id="heading-part">
                 <h3 className="order-text" style={{color:"green"}}>ORDER CONFIRMATION</h3>
                 <p className="pt-2">Your order has been successfully submitted.</p>
                 <p className="pt-2 mt-0 text-break">Transaction ID : <strong> {transactionID?.trans} </strong>  <CopyToClipboard

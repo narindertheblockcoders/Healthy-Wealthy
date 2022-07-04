@@ -2305,6 +2305,10 @@ header .top-navbar .navbar-toggler-icon {
 
 
 @media screen and (max-width: 414px) {
+    #arrow-icon {width: 6.5% !important; margin-top: 20px !important; margin-left: -10px !important;}
+    #heading-part{
+        margin-top: 1rem  !important;
+    }
     .verify-hight {
         min-height: 73vh !important;
     }    .dps {
@@ -2435,7 +2439,7 @@ header .top-navbar .navbar-toggler-icon {
     }
 
     .profile-sec .input-sec .input-item {
-        margin-top: 15px !important;
+        margin-top: 25px !important;
     }
 
     #mb-set {
@@ -2543,7 +2547,7 @@ header .top-navbar .navbar-toggler-icon {
     }
 
     .profile-sec .funds-sec .funds-heading {
-        font-size: 25px;
+        font-size: 20px;
     }
 
     .profile-sec .funds-sec .funds-table {
@@ -2589,6 +2593,15 @@ header .top-navbar .navbar-toggler-icon {
     #changemail-btn {margin-top: 50px !important;}
 
 }
+
+
+@media screen and (max-width: 400px) {
+
+.iframe-setting {
+    height: 210px !important;
+}
+}
+
 
 
 @media screen and (max-width: 375px) {
@@ -2663,3 +2676,11 @@ header .top-navbar .navbar-toggler-icon {
         overflow: hidden;}
        
 }
+
+
+@media screen and (max-width: 340px) {
+
+    .iframe-setting {
+        height: 175px !important;
+    }
+    }

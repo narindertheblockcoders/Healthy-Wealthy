@@ -24,12 +24,12 @@ const Login = () => {
             >
               <div className="input-line   welcome-line"></div>
                 <span className="arrows-icon" onClick={()=>router.back()}  style={{ position: "relative", left: "-41%", cursor: "pointer" }}  >
-                    <img style={{width:"2.5%"}} src={Arrow.src} />
+                    <img id="arrow-icon" style={{width:"2.5%"}} src={Arrow.src} />
                   </span>
-                <div className="wel-head mt-4">
+                <div className="wel-head mt-4"  id="heading-part">
 <img src="email.png"/>
                 </div>
-              <div className="heading-parts mt-5">
+              <div className="heading-parts mt-5"  id="heading-part">
                 <h3 className="order-text" style={{color:"#D32286", fontSize:"24px !important"}}>Contact Us</h3>
                 <p className="pt-2">We're here for you to answer your questions and support you on your path to be HealthiWealthi™.</p>
            

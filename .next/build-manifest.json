@@ -35,15 +35,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/creditPage.js"
     ],
-    "/dashboard": [
+    "/payment": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/dashboard.js"
-    ],
-    "/login": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/login.js"
+      "static/chunks/pages/payment.js"
     ]
   },
   "ampFirstPages": []

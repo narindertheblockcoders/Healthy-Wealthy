@@ -133,7 +133,7 @@ const Verification = () => {
 
   return (
     <div>
-      <section className="profile-sec pb-0 verify-hight" >
+      <section className="profile-sec  verify-hight" >
         <div className="container">
           <ToastContainer
             position="top-right"

@@ -103,7 +103,7 @@ toast.error(msg, {
               pauseOnHover
             />
             <div className="input-sec input-top">
-              <div className="input-line credit-line" id="credit-line"></div>
+              <div className="input-line credit-line"></div>
 
               <h3 className="heading-text mt-0">
                 <Link href={"/buy"}>

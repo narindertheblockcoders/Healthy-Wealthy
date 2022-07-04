@@ -89,7 +89,7 @@ const Funds = () => {
           <div className="row justify-content-center">
             <form className="funds-sec" onSubmit={formSubmitHandler}>
               <h3 className="funds-heading">
-              <span className="arrows-icon" onClick={()=>router.back()}  style={{ position: "absolute", left: "14%", cursor: "pointer" }}  >
+              <span className="arrows-icon"  onClick={()=>router.back()}  style={{ position: "relative", left: "-1%", cursor: "pointer" }}  >
                     <img src={Arrow.src} />
                   </span>
                  FUNDS AND TRANSACTION</h3>
