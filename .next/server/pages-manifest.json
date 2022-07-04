@@ -2,12 +2,6 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/api/auth/[...nextauth]": "pages/api/auth/[...nextauth].js",
-  "/api/userProfile": "pages/api/userProfile.js",
-  "/dashboard": "pages/dashboard.js",
-  "/api/mytokens": "pages/api/mytokens.js",
-  "/success": "pages/success.js",
-  "/api/payment/success": "pages/api/payment/success.js",
-  "/paymentForm": "pages/paymentForm.js",
-  "/api/payment": "pages/api/payment.js"
+  "/emailChange": "pages/emailChange.js",
+  "/api/auth/[...nextauth]": "pages/api/auth/[...nextauth].js"
 }

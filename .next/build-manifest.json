@@ -30,15 +30,15 @@
       "static/chunks/main.js",
       "static/chunks/pages/dashboard.js"
     ],
-    "/paymentForm": [
+    "/emailChange": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/paymentForm.js"
+      "static/chunks/pages/emailChange.js"
     ],
-    "/success": [
+    "/userProfile": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/success.js"
+      "static/chunks/pages/userProfile.js"
     ]
   },
   "ampFirstPages": []
