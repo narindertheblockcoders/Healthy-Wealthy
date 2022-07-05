@@ -53,10 +53,10 @@ toast.error(msg, {
             <form className="input-sec"
             //  onSubmit={onSubmitHandler}
              >
-              <div className="line profile-line"></div>
+              <div className="line profile-line" id="e-change"></div>
               <h3 className="heading-text pink-text mt-2">
               <Link href={'/userProfile'}>
-              <span  className="arrows-icon" style={{ position: "relative", left: "-27%", cursor:"pointer" }}  >
+              <span  className="arrows-icon" style={{ position: "relative", left: "-28%", cursor:"pointer" }}  >
                     <img src={Arrow.src} />
                   </span>
                   </Link>
@@ -94,7 +94,7 @@ toast.error(msg, {
                 href="funds-page.html"
                 className="btn btn-round btn-warning w-100 "
                 id="changemail-btn"
-                style={{ marginTop: "100px", marginBottom: "0px" }}
+                style={{ marginTop: "50px", marginBottom: "0px" }}
                 type="submit"
               >
                 UPDATE

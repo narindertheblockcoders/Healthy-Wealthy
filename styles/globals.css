@@ -77,6 +77,9 @@ div {
     margin-top: 10px;
 }
 
+
+
+
 .buy-header {
     float: left;
     width: 100%;
@@ -408,7 +411,7 @@ header .navbar-light .navbar-nav .nav-link {
 }
 
 .pay-line {
-    top: -6.8% !important;
+    top: -6.4% !important;
 }
 
 .height-set {
@@ -488,7 +491,16 @@ sup {
     font-weight: 600;
     font-size: 13px;
 } */
-
+/* #form-setup::before {
+    content: "";
+    height: 4px;
+    position: absolute;
+    width: 18%;
+    border-radius: 100px;
+    background-color: var(--bg-color);
+    top: 17.2%;
+    left: 41%;
+} */
 .profile-sec .input-sec .line {
     height: 4px;
     width: 100%;
@@ -641,7 +653,7 @@ sup {
 }
 
 .iptset-line {
-    top: -3.8% !important;
+    top: -4% !important;
 }
 
 .varification-line {
@@ -651,7 +663,9 @@ sup {
 .profile-line {
     top: -3.7% !important;
 }
-
+#e-change{
+    top: -4.7% !important;
+}
 .userprofile-line {
     top: -2.3% !important;
 }
@@ -1743,8 +1757,9 @@ header .top-navbar .navbar-toggler-icon {
     height: 53px !important;
 }
 
+
 .credit-line {
-    top: -4.5% !important;
+    top: -4.3% !important;
     left: 0 !important;
     width: 100% !important;
 }

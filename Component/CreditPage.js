@@ -96,22 +96,30 @@ toast.error(msg, {
               draggable
               pauseOnHover
             />
-            <div className="input-sec input-top">
+            <div className="input-sec input-top" style={{height:"563px"}}>
               <div className="input-line credit-line"></div>
 
-              <h3 className="heading-text mt-0">
-                <Link href={"/buy"}>
-                  <span id="span-back" style={{ position: "relative", left: "-5%" }}>
+              {/* <h3 className="heading-text mt-0">
+               
+                Order preview */}
+                {/* {total} RXHEAL */}
+                {/* Select your preferred payment method: */}
+              {/* </h3> */}
+
+
+
+              <h6 className="item-text" style={{ fontSize: "22px", fontWeight: "600", marginBottom: "0px", color:"#D32286" }}> 
+              <Link href={"/buy"}>
+                  <span id="span-back" style={{ position: "relative", left: "-24%" }}>
                     <img src={Arrow.src} />
                   </span>
-                </Link>
-                Select your preferred payment method:
-              </h3>
+                </Link>  Order preview </h6>
 
-              <div className="input-item benefit-type">
-                <h6 className="item-text" style={{ fontSize: "17px", fontWeight: "600", marginBottom: "5px", color:"#D32286" }}> Your Order Details</h6>
+              <div className="input-item benefit-type " style={{marginTop:"25px !important"}}>
+                {/* <h6 className="item-text" style={{ fontSize: "17px", fontWeight: "600", marginBottom: "5px", color:"#D32286" }}> 
+                 Order preview </h6> */}
 
-<p style={{margin:"0"}}>You receive {total} RXHEAL tokens for USD {Usd}</p>
+<p style={{marginBottom:"10px",  fontSize:"14px", }}>  <b>You receive </b>{total} <b>RXHEAL tokens for USD</b> {Usd}</p>
                   {Usd >= 100 && Usd<1000? 
                 <ul>
                     {/* <li style={{fontSize:"14px", fontWeight:"bold"}}>$100 - $999</li> */}
@@ -166,7 +174,7 @@ toast.error(msg, {
 
      
 
-                <p className="or-text">OR</p>
+                {/* <p className="or-text">OR</p> */}
                 <Link href={"/payment"}>
                   <button type="button" disabled={isLoading} className="btn  connect-btn mb-2" >
                     <img

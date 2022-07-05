@@ -31,7 +31,7 @@ const Navbar = () => {
       <header>
         <nav className="navbar navbar-expand-lg top-nav navbar-light bg-light">
           <div className="container-fluid" id="fluid-set">
-            <a className="navbar-brand" href="#" id="href-set">
+            <a className="navbar-brand" href="/" id="href-set">
               {" "}
               <img style={{ height: "80px" }} src={Logo.src} />
             </a>

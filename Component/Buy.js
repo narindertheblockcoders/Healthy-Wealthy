@@ -86,8 +86,8 @@ console.log(router.query.amount)
     e.preventDefault()
     console.log(amount,"add")
     if (forInputRef.current.value == '') { forInputRef.current.value = e.currentTarget.value; return; }
-    forInputRef.current.value = parseInt(forInputRef.current.value) + parseInt(e.currentTarget.value);
-    setAmount( parseInt(forInputRef.current.value) + parseInt(e.currentTarget.value))
+    forInputRef.current.value =  parseInt(e.currentTarget.value);
+    setAmount( parseInt(e.currentTarget.value))
     setFinalValue(( parseInt(forInputRef.current.value) ) / tokenPrice);
   }
 
@@ -222,7 +222,7 @@ console.log(router.query.amount)
                       // pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$"
                       // data-type="currency"
                       defaultValue={finalValue}
-                      placeholder="0.00945"
+                      placeholder="10000"
                       aria-label=" amount"
                     />
 

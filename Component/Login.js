@@ -61,14 +61,16 @@ const Login = () => {
       
     
 
+
       
       else {
         // setError(null);
       }
+   
       if (!res.error) {
         setLoadingRef(true)
     setIsLoading(true)
-
+    setValid(false);
         setTimeout (()=>{
           router.push('/dashboard')
         },2000)

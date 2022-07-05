@@ -84,6 +84,8 @@ const Profile = () => {
       return;
     }
 
+    setIsValid(false);
+
     if(!regularExpression.test(password)) {
       setIsPasswordValid(true)
       setLoadingRef(false)

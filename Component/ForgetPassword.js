@@ -44,6 +44,8 @@ const ForgetPassword = () => {
       const record = res.data;
  
       console.log(record, "hii man")
+      setError(false)
+
       notify ('Password Changed')
       setVerify(true)
       setLoadingRef(true)
@@ -83,7 +85,7 @@ if (!(password===confirmPassword)) {
   return;
 }
 
-
+setIsValid(false);
 forgetPassword(data)
 
 
@@ -151,7 +153,7 @@ setLoadingRef(false);
               <div className="line profile-line" id="prof-line"></div>
               <h3 className="heading-text pink-text mt-2 mb-4">
               <Link href={'/emailVerify'}>
-              <span  className="arrows-icon" style={{ position: "relative", left: "-23%", cursor:"pointer" }}  >
+              <span  className="arrows-icon" style={{ position: "relative", left: "-17%", cursor:"pointer" }}  >
                     <img src={Arrow.src} />
                   </span>
                   </Link>
