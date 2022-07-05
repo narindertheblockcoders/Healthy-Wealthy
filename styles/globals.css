@@ -663,6 +663,8 @@ sup {
 .profile-line {
     top: -3.7% !important;
 }
+#forget-line{  top: -4% !important;
+}
 #e-change{
     top: -4.7% !important;
 }

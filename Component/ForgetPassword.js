@@ -6,6 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import Arrow from "../public/arrow.svg";
 import Link  from "next/link";
 import Button from 'react-bootstrap/Button';
+import { Alert } from "react-bootstrap";
 
 
 const ForgetPassword = () => {
@@ -18,6 +19,7 @@ const ForgetPassword = () => {
   const [isLoadingRef, setLoadingRef] = useState(false);
   const [error, setError]= useState(false)
   const [verify, setVerify]=useState(false)
+  const [isPasswordValid, setIsPasswordValid ] = useState(false)
 
 
 
@@ -64,6 +66,8 @@ const ForgetPassword = () => {
   
 
 function onSubmitHandler(e){
+  var regularExpression = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+
   e.preventDefault()
   // const oldPassword = oldPasswordRef.current.value
   const password = passwordRef.current.value
@@ -81,9 +85,19 @@ console.log(data,'data here')
 
 if (!(password===confirmPassword)) {
   notifyError("Password doesn't match")
-  setIsValid(true);
+  setIsValid(true)
+  setError(false)
   return;
 }
+
+if(!regularExpression.test(password)) {
+  setIsPasswordValid(true)
+  setLoadingRef(false)
+  setIsLoading(false)
+  return false;
+
+}
+setIsPasswordValid(false)
 
 setIsValid(false);
 forgetPassword(data)
@@ -150,10 +164,10 @@ setLoadingRef(false);
             pauseOnHover
           />
             <form className="input-sec" onSubmit={onSubmitHandler}>
-              <div className="line profile-line" id="prof-line"></div>
+              <div className="line profile-line" id="forget-line"></div>
               <h3 className="heading-text pink-text mt-2 mb-4">
               <Link href={'/emailVerify'}>
-              <span  className="arrows-icon" style={{ position: "relative", left: "-17%", cursor:"pointer" }}  >
+              <span  className="arrows-icon"  style={{ position: "relative", left: "-23%", cursor:"pointer" }}  >
                     <img src={Arrow.src} />
                   </span>
                   </Link>
@@ -168,6 +182,8 @@ setLoadingRef(false);
               <div className="input-item item-set ">
                 <h6 className="item-text">PASSWORD</h6>
                 <input ref={passwordRef}  required className="textinput" type="password" name="password" />
+                {isPasswordValid && <Alert style={{margin:"0"}} variant={"danger"}>Your password must be at least 8 characters long, should contain at least  one number and special character have a mixture of uppercase and lowercase letters.</Alert>}
+
               </div>
 
               <div className="input-item item-set">

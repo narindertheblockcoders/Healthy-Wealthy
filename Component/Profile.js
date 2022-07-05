@@ -94,6 +94,7 @@ const Profile = () => {
 
     }
     // router.push("/buy");
+    setIsPasswordValid  (false)
 
     const local = {
       firstName,
@@ -104,8 +105,8 @@ const Profile = () => {
     };
     console.log(local, "sxqwdqwdx");
 
-    localStorage.setItem("profile", JSON.stringify(local));
     setIsPasswordValid  (false)
+    localStorage.setItem("profile", JSON.stringify(local));
 
     profileFill(local);
   }

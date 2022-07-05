@@ -6,6 +6,8 @@ import { ToastContainer, toast } from "react-toastify";
 import Arrow from "../public/arrow.svg";
 import Link  from "next/link";
 import Button from 'react-bootstrap/Button';
+import { Alert } from "react-bootstrap";
+
 
 
 
@@ -20,6 +22,7 @@ const ChangePassword = () => {
   const [error, setError]= useState(false)
   const [errorValid, setErrorValid]= useState(false)
   const [verify, setVerify]=useState(false)
+  const [isPasswordValid, setIsPasswordValid ] = useState(false)
 
   const [isLoading, setIsLoading] = useState(false);
   const [isLoadingRef, setLoadingRef] = useState(false);
@@ -62,7 +65,8 @@ const ChangePassword = () => {
     }
     if (!(password===confirmPassword)) {
       notifyError("Password doesn't match")
-      
+      setErrorValid(false)
+
       return;
     }
     setIsLoading(false);
@@ -82,6 +86,7 @@ const ChangePassword = () => {
       notify(' Change Successfuly')
       setVerify(true)
       setErrorValid(false)
+      
   
       setTimeout(()=>{
 
@@ -95,10 +100,13 @@ const ChangePassword = () => {
       setErrorValid(true)
   
     }
+
   }
 
 
 function onSubmitHandler(e){
+  var regularExpression = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+
   e.preventDefault()
   const oldPassword = oldPasswordRef.current.value
   const password = newPasswordRef.current.value
@@ -113,14 +121,25 @@ const data = {
 }
 console.log(data,'data here')
 setError(false)
-
+setErrorValid(false)
 
 if (!(password===confirmPassword)) {
   notifyError("Password doesn't match")
   setError(true)
+  setErrorValid(false)
 
   return;
 }
+
+
+if(!regularExpression.test(password)) {
+  setIsPasswordValid(true)
+  setLoadingRef(false)
+  setIsLoading(false)
+  return false;
+
+}
+setIsPasswordValid(false)
 changePass(data)
 
 
@@ -203,6 +222,7 @@ setLoadingRef(false);
               <div className="input-item item-set">
                 <h6 className="item-text">NEW PASSWORD</h6>
                 <input ref={newPasswordRef} required className="textinput" type="password" name="password" />
+              {isPasswordValid && <Alert style={{margin:"0"}} variant={"danger"}>Your password must be at least 8 characters long, should contain at least  one number and special character have a mixture of uppercase and lowercase letters.</Alert>}
               </div>
 
               <div className="input-item item-set">

@@ -2,11 +2,8 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/dashboard": "pages/dashboard.js",
+  "/forgetPassword": "pages/forgetPassword.js",
+  "/emailVerify": "pages/emailVerify.js",
   "/api/auth/[...nextauth]": "pages/api/auth/[...nextauth].js",
-  "/funds": "pages/funds.js",
-  "/api/staking": "pages/api/staking.js",
-  "/api/funds": "pages/api/funds.js",
-  "/api/mytokens": "pages/api/mytokens.js",
-  "/api/userProfile": "pages/api/userProfile.js"
+  "/login": "pages/login.js"
 }
