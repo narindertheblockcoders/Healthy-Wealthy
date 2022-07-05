@@ -2326,6 +2326,7 @@ header .top-navbar .navbar-toggler-icon {
 
 
 @media screen and (max-width: 414px) {
+    #top-class{height: 587px !important;}
     #span-back {left: -7% !important;}
     #arrow-icon {width: 6.5% !important; margin-top: 20px !important; margin-left: -10px !important;}
     #heading-part{

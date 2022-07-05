@@ -260,10 +260,10 @@ setLoadingRef(false);
                   <p style={{ color: "red" }}> Password doesn't match </p>
                 )}
                     {errorValid && (
-                  <p style={{ color: "red", fontSize:"15px", }}> Invalid detail </p>
+                  <p style={{ color: "red",  }}> Invalid detail </p>
                 )}
                        {verify && (
-                  <p style={{ color: "green", fontSize:"15px",  }}>Change Successfuly </p>
+                  <p style={{ color: "green",  }}>Change Successfuly </p>
                 )}
               {/* <button
                 href="funds-page.html"

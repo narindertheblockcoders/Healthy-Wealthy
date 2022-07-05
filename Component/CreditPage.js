@@ -96,7 +96,7 @@ toast.error(msg, {
               draggable
               pauseOnHover
             />
-            <div className="input-sec input-top" style={{height:"563px"}}>
+            <div className="input-sec input-top" id="top-class" style={{height:"563px"}}>
               <div className="input-line credit-line"></div>
 
               {/* <h3 className="heading-text mt-0">
@@ -110,7 +110,7 @@ toast.error(msg, {
 
               <h6 className="item-text" style={{ fontSize: "22px", fontWeight: "600", marginBottom: "0px", color:"#D32286" }}> 
               <Link href={"/buy"}>
-                  <span id="span-back" style={{ position: "relative", left: "-24%" }}>
+                  <span  style={{ position: "relative", left: "-24%" }}>
                     <img src={Arrow.src} />
                   </span>
                 </Link>  Order preview </h6>

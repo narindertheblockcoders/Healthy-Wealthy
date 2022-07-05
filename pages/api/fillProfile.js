@@ -17,7 +17,8 @@ export default async function handler(req, res) {
       // console.log(reference, "string");
       res.status(200).json({ data: reference });
     } catch (err) {
-      // console.log(err);
+      // console.log(err);        "http://13.215.196.173:3000/api/v1/auth/signup",
+
       res.status(500).json({ Error: err });
     }
   }
