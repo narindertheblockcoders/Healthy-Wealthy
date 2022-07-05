@@ -25,20 +25,15 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/emailVerify": [
+    "/buy": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/emailVerify.js"
+      "static/chunks/pages/buy.js"
     ],
-    "/forgetPassword": [
+    "/creditPage": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/forgetPassword.js"
-    ],
-    "/login": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/login.js"
+      "static/chunks/pages/creditPage.js"
     ]
   },
   "ampFirstPages": []

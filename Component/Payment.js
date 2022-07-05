@@ -9,6 +9,8 @@ const Payment = () => {
   const [usd, setUSD] = useState(0);
   const [finalRes, setFinalRes] = useState();
   const [price, setPrice] = useState(null);
+  const [isLoading,setIsLoading]=useState(false)
+
   const router = useRouter();
 
   async function payment() {
@@ -50,7 +52,7 @@ const Payment = () => {
       let res = await axios.post("/api/formfill", data);
       const response = res.data;
       console.log(response.data.message);
-
+      setIsLoading(true)
       router.push({
         pathname: "/paymentForm",
         query: { via: currency, finalAmount: finalAmount },
@@ -111,6 +113,7 @@ const Payment = () => {
                         {/* <Link href={'/paymentForm'}> */}
                         <button
                           type="button"
+                          disabled={isLoading}
                           onClick={(e) => {
                             formPut(e);
                          

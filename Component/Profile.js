@@ -81,6 +81,8 @@ const Profile = () => {
       notifyError(" Password doesn't match");
       setLoadingRef(false)
       setIsLoading(false)
+      setIsPasswordValid(false)
+
       return;
     }
 
