@@ -33,8 +33,8 @@ const Profile = () => {
   }, []);
   async function profileFill(data) {
     try {
-      let res = await axios.post("/api/fillP                                                                                                                                                                                                                    qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq```````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````111111111111111111111111111111111111111111111111111111111111111111rofile", data);
-      const record = res.data;
+      let res = await axios.post("/api/fillProfile",data)
+       const record = res.data;
       console.log(record, "hii man");
       let { email, password } = data;
       const rest = await signIn("credentials", {
