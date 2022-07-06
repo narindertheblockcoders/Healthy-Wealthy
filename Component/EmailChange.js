@@ -63,12 +63,6 @@ toast.error(msg, {
                  Update Email</h3>
                  
 
-
-              <div className="input-item item-set mt-5">
-                <h6 className="item-text">NEW EMAIL</h6>
-                <input   required className="textinput" type="email" name="password" />
-              </div>
-
               <div className="input-item item-set" >
                 <h6 className="item-text">OLD EMAIL</h6>
                 <div className="input-item item-set mt-0" id="item-setting" style={{ marginRight: "10px", display: "flex" }} >
@@ -80,11 +74,18 @@ toast.error(msg, {
                 </div>
               </div>
 
+              
+
+
               <div className="input-item item-set">
                 <h6 className="item-text">CODE</h6>
                 <input  required className="textinput" type="number" name="password" />
               </div>
 
+              <div className="input-item item-set mt-5">
+                <h6 className="item-text">NEW EMAIL</h6>
+                <input   required className="textinput" type="email" name="password" />
+              </div>
                    {/* {enterfield && (<p style={{ color: "red" }}> Invalid detail </p>)} */}
 
 
