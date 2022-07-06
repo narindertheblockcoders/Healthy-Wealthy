@@ -199,7 +199,7 @@ const [isLoading,setIsLoading]= useState(false)
                   <h6 className="item-text">FIRST NAME</h6>
                   <input
                   ref={firstNameRef}
-                    required
+                    // required
                     value={name}
                     onChange={(e)=>setName(e.currentTarget.value)}
               
@@ -218,7 +218,7 @@ const [isLoading,setIsLoading]= useState(false)
                   <h6 className="item-text">LAST NAME</h6>
                   <input
                   ref={lastNameRef}
-                    required
+                    // required
                    value={lastName}
                    onChange={(e)=>setLastName(e.currentTarget.value)}
                     className="textinput"
@@ -236,7 +236,7 @@ const [isLoading,setIsLoading]= useState(false)
               <div className="name-sec" >
                 {/* <h6 className="item-text">EMAIL</h6> */}
                 <div className="input-item item-set" style={{ marginRight: "10px", display: "flex" }} >
-                  <input style={{    borderRadius: "4px 0 0 4px"}} ref={emailRef} disabled  required className="textinput mt-0" name="email" 
+                  <input style={{    borderRadius: "4px 0 0 4px"}} ref={emailRef} disabled  className="textinput mt-0" name="email" 
                   defaultValue={isFinalData?.email}
                    />
                   <Link href={'/emailChange'}>
@@ -250,7 +250,7 @@ const [isLoading,setIsLoading]= useState(false)
               </div>
               <div className="input-item item-set">
                 <h6 className="item-text">CONTACT NUMBER</h6>
-                <input ref={contactNumberRef}  required  
+                <input ref={contactNumberRef} 
                 onChange={(e)=>setContactNumber(e.currentTarget.value)}
                 value={contactNumber}
                 // placeholder={isFinalData?.contactNumber} 
@@ -259,7 +259,7 @@ const [isLoading,setIsLoading]= useState(false)
 
               <div className="input-item item-set">
                 <h6 className="item-text">ADDRESS</h6>
-                <input  ref={addressRef} required 
+                <input  ref={addressRef} 
                 value={address}
                 onChange={(e)=>setAddress(e.currentTarget.value)}
 
@@ -268,7 +268,7 @@ const [isLoading,setIsLoading]= useState(false)
               </div>
               <div className="input-item item-set">
                 <h6 className="item-text">CITY</h6>
-                <input ref={cityRef}  required 
+                <input ref={cityRef}  
                 value={city}
                 onChange={(e)=>setCity(e.currentTarget.value)}
                 // placeholder={isFinalData?.city} 
@@ -276,7 +276,7 @@ const [isLoading,setIsLoading]= useState(false)
               </div>
               <div className="input-item item-set">
                 <h6 className="item-text">STATE/PROVINCE</h6>
-                <input ref={stateRef} required
+                <input ref={stateRef} 
                 value={state}
                 onChange={(e)=>setState(e.currentTarget.value)}
                 // placeholder={isFinalData?.state} 
@@ -285,7 +285,7 @@ const [isLoading,setIsLoading]= useState(false)
 
               <div className="input-item item-set">
                 <h6 className="item-text"> COUNTRY </h6>
-                <input ref={countryRef} required 
+                <input ref={countryRef} 
                   value={country}
                   onChange={(e)=>setCountry(e.currentTarget.value)}
                 // placeholder={isFinalData?.country} 
@@ -294,7 +294,7 @@ const [isLoading,setIsLoading]= useState(false)
 
               <div className="input-item item-set mb-4">
                 <h6 className="item-text">ZIP Code</h6>
-                <input ref={zipCodeRef} required 
+                <input ref={zipCodeRef} 
                 value={zipcode}
                 onChange={(e)=>setZipcode(e.currentTarget.value)}
                 // placeholder={isFinalData?.zipcode} 

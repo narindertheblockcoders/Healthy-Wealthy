@@ -83,7 +83,7 @@ const ChangePassword = () => {
       console.log(resend, "Passsword Change");
       setLoadingRef(true)
       setIsLoading(true)
-      notify(' Change Successfuly')
+      notify(' Successfully changed password')
       setVerify(true)
       setErrorValid(false)
       
@@ -263,7 +263,7 @@ setLoadingRef(false);
                   <p style={{ color: "red",  }}> Invalid detail </p>
                 )}
                        {verify && (
-                  <p style={{ color: "green",  }}>Change Successfuly </p>
+                  <p style={{ color: "green",  }}> Successfully changed password </p>
                 )}
               {/* <button
                 href="funds-page.html"

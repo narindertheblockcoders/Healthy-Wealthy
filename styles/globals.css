@@ -1561,7 +1561,7 @@ sup {
     color: white;
     font-size: 12px;
     font-weight: 700;
-    text-align: right;
+    text-align: center;
 }
 /* 
 .profile-sec .funds-sec .funds-table th:nth-child(1) {
@@ -1623,7 +1623,7 @@ sup {
 .profile-sec .funds-sec .funds-table .logo-txt {
     text-align: left;
     font-weight: 700;
-    padding: 18px;
+    padding: 0.5rem 0.5rem;
 }
 
 .profile-sec .funds-sec .funds-table #btc {
@@ -1631,7 +1631,7 @@ sup {
 }
 
 .profile-sec .funds-sec .funds-table td {
-    text-align: right;
+    text-align: center;
     vertical-align: middle;
     font-size: 14px;
     font-weight: 500;
@@ -1672,7 +1672,7 @@ sup {
 }
 
 .profile-sec .funds-sec .transfer-table td {
-    text-align: left;
+    text-align: center;
     vertical-align: middle;
     font-size: 14px;
     font-weight: 500;
@@ -2322,10 +2322,24 @@ header .top-navbar .navbar-toggler-icon {
     .arrow-icon {
         left: -25% !important;
     }
+    .profile-sec .funds-sec .funds-table .logo-txt{
+        text-align: center;
+    }
+    .profile-sec .funds-sec .funds-table th{
+        text-align: center;
+    }
+    .profile-sec .funds-sec .funds-table {
+        display: unset;
+    }
+    .profile-sec .funds-sec .funds-table td{
+        text-align: center;
+    }
+#logo-padd{padding-left: 0 !important; padding-right: 0 !important;}
 }
 
 
 @media screen and (max-width: 414px) {
+    #logo-padd {text-align: left !important;}
     #top-class{height: 587px !important;}
     #span-back {left: -7% !important;}
     #arrow-icon {width: 6.5% !important; margin-top: 20px !important; margin-left: -10px !important;}
@@ -2383,9 +2397,9 @@ header .top-navbar .navbar-toggler-icon {
         padding-left: 40px !important;
     }
 
-    td#td-set {
+    /* td#td-set {
         padding-left: 40px !important;
-    }
+    } */
 
     /* .profile-sec .funds-sec .funds-table td:nth-child(3) {
         padding-left: 40px !important;

@@ -132,7 +132,7 @@ const Funds = () => {
                   <table class="table funds-table" >
                     <thead>
                       <tr>
-                        <th scope="col">ASSETS</th>
+                        <th scope="col" style={{textAlign:"left"}}> ASSETS</th>
                         <th scope="col">COIN PRICE</th>
                         <th scope="col">AVAILABLE BALANCE</th>
                         <th scope="col">LOCKED</th>
@@ -162,12 +162,13 @@ const Funds = () => {
                     {item.total}
                       </td>
                       <td  style={{textAlign:"center"}}>{item?.totalValue}</td>
-                      <td>{item.totalValue>0?
+                      <td   style={{textAlign:"right"}}>{item.totalValue>0?
                       
                         <button
                           type="button"
                           class="btn deposit-btn"
                           role="button"
+                        
                           onClick={()=>router.push('/pay')}
                         >
                           Withdraw
@@ -187,11 +188,12 @@ const Funds = () => {
                     
                     <thead>
                       <tr>
-                        <th scope="col">STAKING DATE</th>
+                        <th scope="col" style={{textAlign:"left"}}>STAKING DATE</th>
                         <th scope="col">TOKEN</th>
                         <th scope="col">ROI</th>
                         <th scope="col" id="padding-set">END DATE</th>
-                        <th scope="col"> STATUS</th>
+                        <th scope="col" style={{textAlign:"right"}}> STATUS</th>
+                        
                         {/* <th scope="col" colspan="2" style={{textAlign:"right"}}>
                           ACTION
                         </th> */}
@@ -214,7 +216,7 @@ const Funds = () => {
                           {new Date(item.endDate).toLocaleString('en-us', { year:"numeric", month:"numeric",day:"numeric", }) }
                        
                         </td>
-                        <td>Approved</td>
+                        <td style={{textAlign:"right"}}>Approved</td>
                         
                       </tr>
                         )
@@ -377,7 +379,7 @@ const Funds = () => {
                     <thead>
                       <tr>
                         <th scope="col" 
-                        // style={{ width: "15%" }}
+                        // style={{ textAlign:"left" }}
                         >
                           DATE
                         </th>
@@ -387,6 +389,7 @@ const Funds = () => {
                         <th scope="col">PAYMENT MODE</th>
                         <th
                           scope="col"
+                          id="coin-padd"
                           style={{ width: "10%", paddingRight: "0" }}
                         >
                           COIN
@@ -414,8 +417,8 @@ const Funds = () => {
                               <>
                                 <tr>
                                   <td
-                                    className="logo-txt"
-                                    // style={{ width: "15%" }}
+                                    className="logo-txt" id="logo-padd"
+                                    style={{ textAlign:"center" }}
                                   >
                                     {new Date().toDateString()}
                                   </td>
