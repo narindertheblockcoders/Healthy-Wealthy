@@ -88,6 +88,7 @@ const FrontPage = () => {
         console.log("first")
         localStorage.setItem("rfCode",router.query.refferalcode)
       }
+  
       if (isLoading) {
         simulateNetworkRequest().then(() => {
           setLoadingRef(false);
@@ -122,9 +123,10 @@ const FrontPage = () => {
                 {" "}
                 Join the HealthiWealthi <sup className="sup-text">TM</sup><br></br> Global Community
               </h3>
-              <p style={{fontSize:"13px", paddingTop:"7px", margin:"0"}}>Own RXHEAL and unleash your
+              <p style={{fontSize:"13px", paddingTop:"7px", margin:"0"}}>Register now and receive 100 RXHEAL reward tokens.</p>
+              {/* <p style={{fontSize:"13px", paddingTop:"7px", margin:"0"}}>Own RXHEAL and unleash your
 potential on HealthiWealthi™ living
-healthier, happier, longer, and richer.</p>
+healthier, happier, longer, and richer.</p> */}
 
 
 

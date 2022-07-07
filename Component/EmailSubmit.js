@@ -116,15 +116,16 @@ const EmailSubmit = () => {
                 </Link>
               <h3 className="heading-text mt-3">
                 {" "}
-                Join the HealthiWealthi <sup className="sup-text">TM</sup><br></br> Global Community
+                Reset your Passsword
+                {/* Join the HealthiWealthi <sup className="sup-text">TM</sup><br></br> Global Community */}
               </h3>
-              <p style={{fontSize:"13px", paddingTop:"7px", margin:"0"}}>Own RXHEAL and unleash your
+              {/* <p style={{fontSize:"13px", paddingTop:"7px", margin:"0"}}>Own RXHEAL and unleash your
 potential on HealthiWealthi™ living
-healthier, happier, longer, and richer.</p>
+healthier, happier, longer, and richer.</p> */}
 
 
               <div className="input-item" style={{ marginTop: "50px" }}>
-                <h6 className="item-text">ENTER YOUR EMAIL</h6>
+                <h6 className="item-text">Enter your registered email and then check your inbox.</h6>
                 <div className="input-group height-set flex-nowrap mt-2 mb-4">
                   <span
                     className="input-group-text input-border"

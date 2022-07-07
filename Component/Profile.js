@@ -81,9 +81,11 @@ const Profile = () => {
     const lastName = lastNameInputRef.current.value;
     const password = passwordInputRef.current.value;
     const confirmPassword = confirmPasswordInputRef.current.value;
-    const referredBy = reffralByRef.current.value;
+    let  referredBy = reffralByRef.current?.value;
 
-
+if(!referredBy){
+  referredBy = ''
+}
     if (password !== confirmPassword) {
       setIsValid(true);
       notifyError(" Password doesn't match");
@@ -249,7 +251,7 @@ const Profile = () => {
                 <h6 className="item-text">Referred By</h6>
                 <input
                   ref={reffralByRef}
-                  defaultValue={refCode}
+                  defaultValue={refCode||''}
                   className="textinput"
                   type="text"
 disabled
