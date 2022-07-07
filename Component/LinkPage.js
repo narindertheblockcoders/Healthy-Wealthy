@@ -109,7 +109,7 @@ function logoutHandler (){
             />
 
               <div className="col-head" id="col-head">
-              <h6 className="">Your Refer Code : <strong> https://healthy-wealthy.vercel.app?refferalcode={props.session.user.email} </strong><CopyToClipboard
+              <h6 className="">Your Refer Code : <strong style={{fontSize:"0.8rem"}}> https://healthy-wealthy.vercel.app?refferalcode={props.session.user.email} </strong><CopyToClipboard
                         text={`https://healthy-wealthy.vercel.app?refferalcode=${props.session.user.email}`}
                         onCopy={() =>{ notify("Copied Successfully"); }}
                       >
