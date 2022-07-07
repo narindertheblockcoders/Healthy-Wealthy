@@ -84,7 +84,10 @@ const FrontPage = () => {
     });
 
     useEffect(() => {
-      localStorage.setItem("rfCode",router.query.refferalcode)
+      if(router.query.refferalcode){
+        console.log("first")
+        localStorage.setItem("rfCode",router.query.refferalcode)
+      }
       if (isLoading) {
         simulateNetworkRequest().then(() => {
           setLoadingRef(false);

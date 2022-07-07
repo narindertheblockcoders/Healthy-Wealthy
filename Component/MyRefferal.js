@@ -25,21 +25,21 @@ useEffect(()=>{
             {/* <div className="line profile-line" id="ch-line"></div> */}
             <h3 className="heading-text pink-text mt-2 ">
             <Link href={'/dashboard'}>
-            <span  className="arrows-icon" style={{ position: "relative", left: "-40%", cursor:"pointer" }}  >
+            <span  className="arrows-icon" style={{ position: "relative", left: "-41%", cursor:"pointer" }}  >
             <img src={Arrow.src} />
                 </span>
                 </Link>
                 My Referal&apos;s</h3>
                
-                <table className="table funds-table mt-5">
+                <table className="table funds-table mt-5" id='funds-color'>
                     
                     <thead>
                       <tr>
-                        <th scope="col" >Sr. No.</th>
-                        <th scope="col">First Name</th>
-                        <th scope="col">Last Name</th>
-                        <th scope="col" id="padding-set">Email</th>
-                        <th scope="col" >Registeration Date</th>
+                        <th id='fuds' scope="col" >Sr. No.</th>
+                        <th id='fuds' scope="col">First Name</th>
+                        <th id='fuds' scope="col">Last Name</th>
+                        <th id='fuds' scope="col">Email</th>
+                        <th id='fuds' scope="col" >Registeration Date</th>
                         
                         {/* <th scope="col" colspan="2" style={{textAlign:"right"}}>
                           ACTION

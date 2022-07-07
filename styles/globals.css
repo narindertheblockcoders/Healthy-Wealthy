@@ -2058,6 +2058,7 @@ header .top-navbar .navbar-toggler-icon {
 
 #item-setting{margin-top: 0px !important;}
 #ref-code {width: 100% !important;}
+#fuds{background-color: black !important; color: white !important;}
 
 
 @media screen and (max-width: 1200px) {
