@@ -18,6 +18,7 @@ const FrontPage = () => {
     return new Promise((resolve) => setTimeout(resolve, 4000));
   }
   const router = useRouter();
+  console.log(router.query)
   async function register(data) {
     try {
       let res = await axios.post("/api/register", data);

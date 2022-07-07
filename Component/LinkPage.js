@@ -8,15 +8,28 @@ import ChangePassword from "../public/changePassword.svg"
 import BuyIcon from "../public/buy-icon.svg";
 import TokenIcon from "../public/token-icon.svg"
 import {signOut} from 'next-auth/react';
+import { CopyToClipboard } from "react-copy-to-clipboard";
+import { ToastContainer, toast } from "react-toastify";
 
 
 
-const LinkPage = () => {
+const LinkPage = ({props}) => {
+console.log(props.session.user.email)
 
   // const [rxAmt,setRxAmt ] =useState()
   const [usdAmt, setUsdAmt] = useState()
   const [name, setName] = useState(null);
 
+  const notify = (msg) =>
+  toast.success(msg, {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  });
 
   async function tokenPrice(data) {
     try {
@@ -63,6 +76,8 @@ function logoutHandler (){
             <form className="funds-sec" onSubmit={onSubmitHandler}>
               <h3 className="funds-heading">Your Dashboard</h3>
               <h4 className="wel-text">  Welcome  <strong> {name?.firstName}{" "}</strong> Please find below your RXHEAL details. Watch out for our HealthiWealthi™ email updates. Questions? 
+             
+             
               <a
                       href="/contact"
                       style={{
@@ -81,9 +96,26 @@ function logoutHandler (){
 
 
 
-
+                      <ToastContainer
+              position="top-right"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+            />
 
               <div className="col-head" id="col-head">
+              <h6 className="">Your Reffer Code : https://healthy-wealthy-1m2wa2qhf-narindertheblockcoders.vercel.app?refferalcode={props.session.user.email} <CopyToClipboard
+                        text={`https://healthy-wealthy-1m2wa2qhf-narindertheblockcoders.vercel.app?refferalcode=${props.session.user.email}`}
+                        onCopy={() =>{ notify("Copied Successfully"); }}
+                      >
+                        <img style={{ marginLeft: "10px" }} src={'/mdi.png'} />
+                      </CopyToClipboard>   </h6>
+
                 <div className="col-md-7 left-headSec">
 
                   <div className="link-head  " id="first-sec">

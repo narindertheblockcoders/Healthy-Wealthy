@@ -3,10 +3,10 @@ import React from 'react'
 import {getSession} from 'next-auth/react'
 import LinkPage from '../Component/LinkPage'
 
-const dashboard = () => {
+const dashboard = (props) => {
   return (
     <div>
-    <LinkPage/>
+    <LinkPage props={props} />
     </div>
   )
 }
@@ -23,6 +23,7 @@ export async function getServerSideProps(context) {
       }
     }
   }
+
   return {
     props:{
       session
