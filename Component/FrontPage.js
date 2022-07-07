@@ -18,7 +18,7 @@ const FrontPage = () => {
     return new Promise((resolve) => setTimeout(resolve, 4000));
   }
   const router = useRouter();
-  console.log(router.query)
+  console.log(router.query.refferalcode)
   async function register(data) {
     try {
       let res = await axios.post("/api/register", data);
@@ -84,6 +84,7 @@ const FrontPage = () => {
     });
 
     useEffect(() => {
+      localStorage.setItem("rfCode",router.query.refferalcode)
       if (isLoading) {
         simulateNetworkRequest().then(() => {
           setLoadingRef(false);

@@ -18,6 +18,7 @@ const Profile = () => {
   const reffralByRef = useRef();
 
   const confirmPasswordInputRef = useRef();
+  const [refCode,setRefCode]=useState('')
   const [isLoading, setIsLoading] = useState(false);
   const [isLoadingRef, setLoadingRef] = useState(false);
   const [isPasswordValid, setIsPasswordValid ] = useState(false)
@@ -32,6 +33,7 @@ const Profile = () => {
   const [isValid, setIsValid] = useState(false);
 
     useEffect(() => {
+      setRefCode(localStorage.getItem('rfCode'))
     setEmail(localStorage.getItem("email"));
   }, []);
   async function profileFill(data) {
@@ -243,16 +245,18 @@ const Profile = () => {
                 )}
               </div>
 
-              <div className="input-item item-set">
+           {  refCode? <div className="input-item item-set">
                 <h6 className="item-text">Referred By</h6>
                 <input
                   ref={reffralByRef}
+                  defaultValue={refCode}
                   className="textinput"
                   type="text"
+disabled
                   name="Refferedby"
                 />
             
-              </div>
+              </div>: null }
               {/* <Link href={"/login"}> */}
               {/* <button
                 href="funds-page.html"
