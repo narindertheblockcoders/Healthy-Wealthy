@@ -2057,6 +2057,9 @@ header .top-navbar .navbar-toggler-icon {
 
 
 #item-setting{margin-top: 0px !important;}
+#ref-code {width: 100% !important;}
+
+
 @media screen and (max-width: 1200px) {
     /* .margin-txt {
         float: left;

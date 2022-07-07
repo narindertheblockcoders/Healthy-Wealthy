@@ -109,7 +109,7 @@ function logoutHandler (){
             />
 
               <div className="col-head" id="col-head">
-              <h6 className="">Your Reffer Code : <strong> https://healthy-wealthy.vercel.app?refferalcode={props.session.user.email} </strong><CopyToClipboard
+              <h6 className="">Your Refer Code : <strong> https://healthy-wealthy.vercel.app?refferalcode={props.session.user.email} </strong><CopyToClipboard
                         text={`https://healthy-wealthy.vercel.app?refferalcode=${props.session.user.email}`}
                         onCopy={() =>{ notify("Copied Successfully"); }}
                       >
@@ -146,8 +146,16 @@ function logoutHandler (){
                       TOKEN
                     </div>
                     </Link>
+
+                    <Link href={'/myrefers'}>
+
+                    <div className="link-item first-sec" id="third-item">
+                      My Refferal&apos;s
+                    </div>
+                    </Link>
+
                     <Link href={"/login"}>
-                    <div className="link-item second-sec " onClick={logoutHandler} id="four-item">
+                    <div className="link-item second-sec " onClick={logoutHandler} id="second-item">
                       LOGOUT
                     </div>
                     </Link>
