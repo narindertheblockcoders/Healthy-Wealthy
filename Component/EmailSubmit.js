@@ -125,7 +125,7 @@ healthier, happier, longer, and richer.</p> */}
 
 
               <div className="input-item" style={{ marginTop: "50px" }}>
-                <h6 className="item-text">Enter your registered email and then check your inbox.</h6>
+                <h6 className="item-text" style={{fontWeight:"normal"}}>Enter your registered email and then check your inbox.</h6>
                 <div className="input-group height-set flex-nowrap mt-2 mb-4">
                   <span
                     className="input-group-text input-border"

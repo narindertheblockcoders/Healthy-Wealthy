@@ -152,7 +152,7 @@ function logoutHandler (){
 
                     <Link href={'/myrefers'}>
 
-                    <div className="link-item second-sec" id="four-item">
+                    <div className="link-item seven-sec" id="four-item">
                       My Refferal&apos;s
                     </div>
                     </Link>

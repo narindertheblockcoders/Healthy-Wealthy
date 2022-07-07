@@ -1914,6 +1914,18 @@ header .top-navbar .navbar-toggler-icon {
     background-size: cover;
 }
 
+.seven-sec::before {
+    content: "";
+    display: flex;
+    justify-content: center;
+    height: 27.69px;
+    width: 40.7px;
+    background-image: url(/man.png);
+    position: absolute;
+    top: 25%;
+    float: left;
+    background-size: cover;
+}
 .third-sec {
     margin-left: 20px !important;
 }

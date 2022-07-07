@@ -180,21 +180,21 @@ setLoadingRef(false);
 
 
               <div className="input-item item-set ">
-                <h6 className="item-text">PASSWORD</h6>
+                <h6 className="item-text">NEW PASSWORD</h6>
                 <input ref={passwordRef}  required className="textinput" type="password" name="password" />
                 {isPasswordValid && <Alert style={{margin:"0"}} variant={"danger"}>Your password must be at least 8 characters long, should contain at least  one number and special character have a mixture of uppercase and lowercase letters.</Alert>}
 
               </div>
 
               <div className="input-item item-set">
-                <h6 className="item-text">CONFIRM PASSWORD</h6>
+                <h6 className="item-text">CONFIRM NEW PASSWORD</h6>
                 <input ref={confirmPasswordRef} required className="textinput" type="password" name="confirmpassword" />
                 {isValid && (<p style={{ color: "red" }}> Password doesn't match </p>)}
               </div>
 
 
               <div className="input-item item-set " style={{marginBottom:"30px"}}>
-                <h6 className="item-text">Verification Code</h6>
+                <h6 className="item-text">VERIFICATION CODE</h6>
                 <input ref={otpRef}  required className="textinput" type="number" name="password" />
               </div>
               {/* <div className="name-sec" >
