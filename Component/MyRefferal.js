@@ -25,7 +25,7 @@ useEffect(()=>{
             {/* <div className="line profile-line" id="ch-line"></div> */}
             <h3 className="heading-text pink-text mt-2 ">
             <Link href={'/dashboard'}>
-            <span  className="arrows-icon" style={{ position: "relative", left: "-41%", cursor:"pointer" }}  >
+            <span  className="arrows-icon" id='left-rfset' style={{ position: "relative", left: "-44%", cursor:"pointer" }}  >
             <img src={Arrow.src} />
                 </span>
                 </Link>

@@ -75,10 +75,12 @@ function logoutHandler (){
           <div className="row justify-content-center">
             <form className="funds-sec" onSubmit={onSubmitHandler}>
               <h3 className="funds-heading">Your Dashboard</h3>
-              <h4 className="wel-text">  Welcome  <strong> {name?.firstName}{" "}</strong> Please find below your RXHEAL details. Watch out for our HealthiWealthi™ email updates. Questions? 
+              <h4 className="wel-text">  Welcome  <strong> {name?.firstName}{". "}</strong> 
+              You're now part of a passionate community of health lovers & professionals ready to reimagine, democratize and build the new healthcare 3.0.
+              {/* Please find below your RXHEAL details. Watch out for our HealthiWealthi™ email updates. Questions?  */}
              
              
-              <a
+              {/* <a
                       href="/contact"
                       style={{
                         fontWeight: "bold",
@@ -89,7 +91,7 @@ function logoutHandler (){
                     >
                       {" "}
                       Contact us.
-                    </a>
+                    </a> */}
                     
                       </h4>
 
@@ -108,13 +110,14 @@ function logoutHandler (){
               pauseOnHover
             />
 
-              <div className="col-head" id="col-head">
-              <h6 className="">Your Refer Code : <strong style={{fontSize:"0.8rem"}}> https://healthy-wealthy.vercel.app?refferalcode={props.session.user.email} </strong><CopyToClipboard
-                        text={`https://healthy-wealthy.vercel.app?refferalcode=${props.session.user.email}`}
+              <div className="col-head mt-3" id="col-head">
+              <h6 className="mb-0">Share, inspire & earn using your Influencer Referral Link:<strong style={{fontSize:"0.8rem"}}> https://healthy-wealthy.vercel.app?referal={props.session.user.email} </strong><CopyToClipboard
+                        text={`https://healthy-wealthy.vercel.app?referal=${props.session.user.email}`}
                         onCopy={() =>{ notify("Copied Successfully"); }}
                       >
-                        <img style={{ marginLeft: "10px" }} src={'/mdi.png'} />
+                        <img style={{ marginLeft: "0px" }} src={'/mdi.png'} />
                       </CopyToClipboard>   </h6>
+                      <h6 className="mb-3">Questions? <a style={{color:"black", }} href=" https://healthiwealthi.io/contact-us" target="_blank" rel="noreferrer"> Contact us</a> |  <a style={{color:"black",}} href="https://healthiwealthi.io/influencer-program/" target="_blank" rel="noreferrer"> Influencer Details</a> </h6>
 
                 <div className="col-md-7 left-headSec">
 
@@ -140,7 +143,7 @@ function logoutHandler (){
                         BUY TOKEN
                       </div>
                     </Link>
-                    <Link href={'/tokenPage'}>
+                    <Link href={'https://healthiwealthi.io/blog'}>
 
                     <div className="link-item six-sec" id="third-item">
                       TOKEN
@@ -149,13 +152,13 @@ function logoutHandler (){
 
                     <Link href={'/myrefers'}>
 
-                    <div className="link-item first-sec" id="second-item">
+                    <div className="link-item second-sec" id="four-item">
                       My Refferal&apos;s
                     </div>
                     </Link>
 
                     <Link href={"/login"}>
-                    <div className="link-item second-sec " onClick={logoutHandler} id="second-item">
+                    <div className="link-item second-sec " onClick={logoutHandler} id="fifth-item">
                       LOGOUT
                     </div>
                     </Link>

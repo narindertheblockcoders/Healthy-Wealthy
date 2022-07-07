@@ -208,7 +208,7 @@ const Verification = () => {
                   style={{ marginRight: "7px", height: "16px", width: "16px" }}
                   id="flexCheckDefault"
                   />
-                I agree with HealthiWealthi™ <a target="_blank" rel="noreferrer" href={"https://healthiwealthi.io/terms-of-use.php"}>Terms of Use</a>  and <a target="_blank" rel="noreferrer" href={"https://healthiwealthi.io/privacy.php"}> Privacy Policy</a>.
+                I agree with HealthiWealthi™ <a style={{color:"black",textDecoration:"none"}} target="_blank" rel="noreferrer" href={"https://healthiwealthi.io/terms-of-use.php"}>Terms of Use</a>  and <a style={{color:"black",textDecoration:"none"}}  target="_blank" rel="noreferrer" href={"https://healthiwealthi.io/privacy.php"}> Privacy Policy</a>.
               </p>
               {/* <Link href={"/profile"}> */}
 

@@ -18,7 +18,7 @@ const FrontPage = () => {
     return new Promise((resolve) => setTimeout(resolve, 4000));
   }
   const router = useRouter();
-  console.log(router.query.refferalcode)
+  console.log(router.query.referal)
   async function register(data) {
     try {
       let res = await axios.post("/api/register", data);
@@ -84,9 +84,9 @@ const FrontPage = () => {
     });
 
     useEffect(() => {
-      if(router.query.refferalcode){
+      if(router.query.referal){
         console.log("first")
-        localStorage.setItem("rfCode",router.query.refferalcode)
+        localStorage.setItem("rfCode",router.query.referal)
       }
   
       if (isLoading) {

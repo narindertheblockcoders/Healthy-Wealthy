@@ -145,11 +145,11 @@ console.log(router.query.amount)
             
                 <h3 className="heading-text" id="ptext-set" style={{fontSize:"20px"}}>
                   {" "}
-
                   Own RXHEAL Reward Tokens
+                  
              
                 </h3>
-                <p className="pt-1" style={{ fontSize: "14px", margin: "0" }}> Be a leader in Healthcare 3.0 and receive extensive benefits (see below)
+                <p className="pt-1" style={{ fontSize: "14px", margin: "0" }}> Invest in what's important. YOU. Purchase RXHEAL starting with $100 and receive extensive benefits and bonus RXHEAL.
 
                 </p>
                 {/* <div className="input-line buy-line" id="buy-line"></div> */}
@@ -289,7 +289,7 @@ console.log(router.query.amount)
                     amount >= 100 & amount<1000?
                 <ul>
                     <li style={{fontSize:"14px", fontWeight:"bold"}}>$100 - $999</li>
-                  <li className="rx-text"><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> <strong style={{paddingRight:"5px"}}>PLUS</strong>  100 RXHEAL Bonus Tokens</li>
+                  <li className="rx-text"><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> <span style={{paddingRight:"5px"}}>PLUS</span>  100 RXHEAL Bonus Tokens</li>
                   <li className="rx-text"><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> Book HealthiWealthi ($15 value)</li>
                   <li className="rx-text"><img src="/checkPink.svg" style={{paddingRight:"10px"}}/>   Book Lifestyle Medicine Works ($20 value)</li>
                  </ul>

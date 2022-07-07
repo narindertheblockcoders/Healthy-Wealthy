@@ -17,9 +17,9 @@ const Footer = () => {
 </a></li>
       <li className="nav-item"><a href="#" className="nav-link px-2 text-muted">All rights reserved</a></li>
     </ul> */}
-    <p className="text-center text-muted" style={{fontSize:"14px",margin:"0"}}>© 2022 HealthiWealthi™. All rights reserved | <a href="#" className="systeme-show-popup-3443593" style={{textDecoration:"none", color:"grey", fontWeight:"600"}}>Contact us </a>
-    <Script id="form-script-tag-3443593" src="https://www.healthiwealthi.net/public/remote/page/4931931cf737288ba0e8b30a751ad4c276fd7bc.js"></Script>  |
-     Privacy Policy | Terms of Use |  <a href=" https://healthiwealthi.io/rxheal/cookie.php" target="_blank" style={{textDecoration:"none", color:"grey", fontWeight:"600", paddingLeft:"5px"}}>   Cookie Policy  </a>
+    <p className="text-center text-muted" style={{fontSize:"14px",margin:"0"}}>© 2022 HealthiWealthi™. All rights reserved | <a href="https://healthiwealthi.io/contact-us" target="_blank" rel='noreferer' className="systeme-show-popup-3443593" style={{ color:"grey"}}>Contact us </a>
+    {/* <Script id="form-script-tag-3443593" src="https://www.healthiwealthi.net/public/remote/page/4931931cf737288ba0e8b30a751ad4c276fd7bc.js"></Script>  | */} | 
+     Privacy Policy | Terms of Use |  <a href=" https://healthiwealthi.io/terms-of-use/" target="_blank" rel='noreferer'  style={{ color:"grey", paddingLeft:"5px"}}>   Cookie Policy  </a>
     </p>
  
   </footer>

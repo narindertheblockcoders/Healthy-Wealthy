@@ -2057,8 +2057,9 @@ header .top-navbar .navbar-toggler-icon {
 
 
 #item-setting{margin-top: 0px !important;}
-#ref-code {width: 100% !important;}
+#ref-code {width: 100% !important;     }
 #fuds{background-color: black !important; color: white !important;}
+#fifth-item{margin-top: 20px;}
 
 
 @media screen and (max-width: 1200px) {
@@ -2066,6 +2067,7 @@ header .top-navbar .navbar-toggler-icon {
         float: left;
         width: 113%;}    */
         .iframe-setting{height: 224px !important;}
+        #left-rfset {left: -42% !important;}
 }
 
 
@@ -2143,6 +2145,9 @@ header .top-navbar .navbar-toggler-icon {
 
 
 @media screen and (max-width: 768px) {
+    #left-rfset {
+        left: -40% !important;
+    }
     /* .navbar-collapse {
         position: unset !important;important;
         justify-content: center !important
@@ -2297,6 +2302,9 @@ header .top-navbar .navbar-toggler-icon {
 }
 
 @media screen and (max-width: 576px) {
+    #left-rfset {
+        left: -35% !important;
+    }
     .iframe-setting {
         height: 312px !important;
     }
@@ -2343,6 +2351,9 @@ header .top-navbar .navbar-toggler-icon {
 
 
 @media screen and (max-width: 414px) {
+    #ref-code {width: 100% !important;     overflow: scroll;}
+    #left-rfset {left: -30% !important;}
+
     #logo-padd {text-align: left !important;}
     #top-class{height: 587px !important;}
     #span-back {left: -7% !important;}
@@ -2491,10 +2502,11 @@ header .top-navbar .navbar-toggler-icon {
         margin-left: 20px !important;
         margin-top: 0px !important;
     }
-
+    #fifth-item{margin-top: 20px;}
     #second-item {
         margin-left: 20px;
     }
+    #fifth-item{margin-top: 20px;}
 
     .link-item {
         float: left;
@@ -2647,6 +2659,7 @@ header .top-navbar .navbar-toggler-icon {
 
 
 @media screen and (max-width: 375px) {
+    #left-rfset {left: -28% !important;}
     #span-back {left: -14% !important;}
     #ch-line {top: -4% !important;}
     
