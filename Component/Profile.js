@@ -15,10 +15,13 @@ const Profile = () => {
   const lastNameInputRef = useRef();
   const [email, setEmail] = useState(null);
   const passwordInputRef = useRef();
+  const reffralByRef = useRef();
+
   const confirmPasswordInputRef = useRef();
   const [isLoading, setIsLoading] = useState(false);
   const [isLoadingRef, setLoadingRef] = useState(false);
   const [isPasswordValid, setIsPasswordValid ] = useState(false)
+  // const [reffralBy,setReffralBy]= useState(false)
 
   function simulateNetworkRequest() {
     return new Promise((resolve) => setTimeout(resolve, 4000));
@@ -56,7 +59,8 @@ const Profile = () => {
       }
       // localStorage.setItem("token", record.data.data);
       // window.location.reload();
-    } catch (err) {
+    } 
+    catch (err) {
       console.log(err, "hello");
       setLoadingRef(false)
       setIsLoading(false)
@@ -74,14 +78,17 @@ const Profile = () => {
     const firstName = firstNameInputRef.current.value;
     const lastName = lastNameInputRef.current.value;
     const password = passwordInputRef.current.value;
-    const confimPassword = confirmPasswordInputRef.current.value;
+    const confirmPassword = confirmPasswordInputRef.current.value;
+    const referredBy = reffralByRef.current.value;
 
-    if (password !== confimPassword) {
+
+    if (password !== confirmPassword) {
       setIsValid(true);
       notifyError(" Password doesn't match");
       setLoadingRef(false)
       setIsLoading(false)
       setIsPasswordValid(false)
+      // setReffralBy(false)
 
       return;
     }
@@ -103,7 +110,8 @@ const Profile = () => {
       lastName,
       email,
       password,
-      confimPassword,
+      confirmPassword,
+      referredBy
     };
     console.log(local, "sxqwdqwdx");
 
@@ -233,6 +241,17 @@ const Profile = () => {
                 {isValid && (
                   <p style={{ color: "red" }}> Password doesn't match </p>
                 )}
+              </div>
+
+              <div className="input-item item-set">
+                <h6 className="item-text">Referred By</h6>
+                <input
+                  ref={reffralByRef}
+                  className="textinput"
+                  type="text"
+                  name="Refferedby"
+                />
+            
               </div>
               {/* <Link href={"/login"}> */}
               {/* <button

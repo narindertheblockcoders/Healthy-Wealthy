@@ -128,8 +128,8 @@ const Funds = () => {
                       <p className="switch-text">Hide Zero Balances</p>
                     </div>
                   </div>
-                  {/* <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"> */}
-                  <table class="table funds-table" >
+                  {/* <div className="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"> */}
+                  <table className="table funds-table" >
                     <thead>
                       <tr>
                         <th scope="col" style={{textAlign:"left"}}> ASSETS</th>
@@ -148,7 +148,7 @@ const Funds = () => {
                    {token1? token1?.map((item)=>{
                      return (
                       <tr>
-                      <td class="logo-txt">
+                      <td className="logo-txt">
                          RXHEAL
                       </td> 
                       <td >
@@ -166,7 +166,7 @@ const Funds = () => {
                       
                         <button
                           type="button"
-                          class="btn deposit-btn"
+                          className="btn deposit-btn"
                           role="button"
                         
                           onClick={()=>router.push('/pay')}
@@ -184,7 +184,7 @@ const Funds = () => {
                     </tbody>
                   </table>
 
-                  <table class="table funds-table mt-5">
+                  <table className="table funds-table mt-5">
                     
                     <thead>
                       <tr>
@@ -207,7 +207,7 @@ const Funds = () => {
 
                       
                       <tr key={i}>
-                        <td class="logo-txt">
+                        <td className="logo-txt">
                         {new Date(item.createdAt).toLocaleString('en-us', { day:"numeric", year:"numeric", month:"numeric"})}
                         </td>
                         <td>{item.token} </td>
@@ -225,10 +225,10 @@ const Funds = () => {
                     </tbody>
                   </table>
 
-                  {/* <table class="table funds-table mt-2">
+                  {/* <table className="table funds-table mt-2">
                     <tbody>
                       <tr id="btc">
-                        <td class="logo-txt">
+                        <td className="logo-txt">
                           <img src={BTC.src} /> Bitcoin (BTC)
                         </td>
                         <td>0</td>
@@ -241,7 +241,7 @@ const Funds = () => {
                         <td>
                           <button
                             type="button"
-                            class="btn deposit-btn"
+                            className="btn deposit-btn"
                             role="button"
                           >
                             Deposit
@@ -250,7 +250,7 @@ const Funds = () => {
                         {/* <td>
                           <button
                             type="button"
-                            class="btn deposit-btn"
+                            className="btn deposit-btn"
                             role="button"
                           >
                             Withdraw
@@ -259,7 +259,7 @@ const Funds = () => {
                       {/* </tr>
 
                       <tr>
-                        <td class="logo-txt">
+                        <td className="logo-txt">
                           <img src={ETH.src} /> Ethereum
                         </td>
                         <td>0</td>
@@ -272,7 +272,7 @@ const Funds = () => {
                         <td>
                           <button
                             type="button"
-                            class="btn deposit-btn"
+                            className="btn deposit-btn"
                             role="button"
                           >
                             Deposit
@@ -281,7 +281,7 @@ const Funds = () => {
                         {/* <td style={{ width: "5%" }}>
                           <button
                             type="button"
-                            class="btn deposit-btn"
+                            className="btn deposit-btn"
                             role="button"
                           >
                             Withdraw
@@ -290,7 +290,7 @@ const Funds = () => {
                       {/* </tr>
 
                       <tr id="btc">
-                        <td class="logo-txt">
+                        <td className="logo-txt">
                           <img src={Polygon.src}/>  Polygon
                         </td>
                         <td>0</td>
@@ -303,7 +303,7 @@ const Funds = () => {
                         <td>
                           <button
                             type="button"
-                            class="btn deposit-btn"
+                            className="btn deposit-btn"
                             role="button"
                           >
                             Deposit
@@ -312,7 +312,7 @@ const Funds = () => {
                         {/* <td style={{ width: "5%" }}>
                           <button
                             type="button"
-                            class="btn deposit-btn"
+                            className="btn deposit-btn"
                             role="button"
                           >
                             Withdraw
@@ -321,7 +321,7 @@ const Funds = () => {
                       {/* </tr>
 
                       <tr>
-                        <td class="logo-txt">
+                        <td className="logo-txt">
                          <img src={FEI.src} /> USD 
                         </td>
                         <td>0</td>
@@ -334,7 +334,7 @@ const Funds = () => {
                         <td>
                           <button
                             type="button"
-                            class="btn deposit-btn"
+                            className="btn deposit-btn"
                             role="button"
                           >
                             Deposit
@@ -343,7 +343,7 @@ const Funds = () => {
                         {/* <td style={{ width: "5%" }}>
                           <button
                             type="button"
-                            class="btn deposit-btn"
+                            className="btn deposit-btn"
                             role="button"
                           >
                             Withdraw

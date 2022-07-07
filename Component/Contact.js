@@ -87,7 +87,7 @@ const Login = () => {
               <div className="input-line iptset-line"></div>
             
        
-              <h1 class="u-custom-font u-text u-text-default u-text-1 mt-10" style={{color:"#D32286"}}>
+              <h1 className="u-custom-font u-text u-text-default u-text-1 mt-10" style={{color:"#D32286"}}>
               <span className="arrows-icon" onClick={()=>router.back()}  style={{ position: "relative", left: "-15%", cursor: "pointer" }}  >
                     <img style={{width:"1.5%"}} src={Arrow.src} />
                   </span>
@@ -97,7 +97,7 @@ const Login = () => {
               <ul>
                
                 <li  style={{textDecoration:"none", color:"#D32286", fontWeight:"600"}} id="position-set" >You Can Contact us via <img src="/email.png"></img>
-                <a href="#" class="systeme-show-popup-3443593 mail-btn" style={{textDecoration:"none", color:"#D32286", fontWeight:"600"}}>Email</a>
+                <a href="#" className="systeme-show-popup-3443593 mail-btn" style={{textDecoration:"none", color:"#D32286", fontWeight:"600"}}>Email</a>
                 <script id="form-script-tag-3443593" src="https://www.healthiwealthi.net/public/remote/page/4931931cf737288ba0e8b30a751ad4c276fd7bc.js"></script>
                   </li>
               </ul>

@@ -58,16 +58,10 @@ const Login = () => {
         setIsLoading(false)
 
       } 
-      
-    
 
-
-      
-      else {
-        // setError(null);
-      }
    
       if (!res.error) {
+        console.log(res)  
         setLoadingRef(true)
     setIsLoading(true)
     setValid(false);
