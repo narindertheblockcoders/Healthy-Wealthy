@@ -2,10 +2,14 @@ import React from 'react'
 
 import {getSession} from 'next-auth/react'
 import LinkPage from '../Component/LinkPage'
+import Head from 'next/head'
 
 const dashboard = (props) => {
   return (
     <div>
+      <Head>
+      <title>Dashboard</title>
+      </Head>
     <LinkPage props={props} />
     </div>
   )

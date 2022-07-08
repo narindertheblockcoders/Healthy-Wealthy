@@ -5,6 +5,9 @@ import {getSession} from 'next-auth/react'
 const emailChange = () => {
   return (
     <div>
+      <Head>
+      <title>Email Change</title>
+      </Head>
      
 <EmailChange/>
     </div>

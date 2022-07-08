@@ -1,10 +1,14 @@
 import React from 'react'
 import Payment from '../Component/Payment'
 import{getSession} from 'next-auth/react'
+import Head from 'next/head'
 
 const payment = () => {
   return (
     <div>
+      <Head>
+      <title>Payment Method</title>
+      </Head>
       <Payment/>
     </div>
   )

@@ -1,10 +1,15 @@
 import React from 'react'
 import Welcome from '../Component/Welcome'
 import {getSession} from 'next-auth/react'
+import Head from 'next/head'
+
 
 const welcome = () => {
   return (
     <div>
+      <Head>
+      <title>Welcome</title>
+      </Head>
         <Welcome/>
     </div>
   )

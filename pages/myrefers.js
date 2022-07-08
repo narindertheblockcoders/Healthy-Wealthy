@@ -6,7 +6,7 @@ import Head from 'next/head'
 const myrefers = () => {
   return (<div>
      <Head>
-      <title>My Refferal</title>
+      <title>My Refferals</title>
       </Head>
 
       <MyRefferal/>

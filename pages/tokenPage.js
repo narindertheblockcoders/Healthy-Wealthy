@@ -1,10 +1,14 @@
 import React from 'react'
 import TokenPage from '../Component/TokenPage'
 import {getSession} from 'next-auth/react'
+import Head from 'next/head'
 
 const tokenPage = () => {
   return (
     <div>
+      <Head>
+      <title>My Token</title>
+      </Head>
         <TokenPage/>
     </div>
   )

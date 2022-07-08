@@ -1,10 +1,14 @@
 import React from 'react'
 import Funds from '../Component/Funds'
 import {getSession} from 'next-auth/react'
+import Head from 'next/head'
 
 const funds = () => {
   return (
     <div>
+      <Head>
+      <title>Funds</title>
+      </Head>
         <Funds/>
     </div>
   )

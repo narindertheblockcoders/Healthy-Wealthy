@@ -5,6 +5,9 @@ import{getSession} from 'next-auth/react'
 const creditPage = () => {
   return (
     <div>
+      <Head>
+      <title>Payment Type</title>
+      </Head>
         <CreditPage/>
     </div>
   )

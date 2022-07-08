@@ -5,6 +5,9 @@ import{getSession} from 'next-auth/react'
 const paymentForm = () => {
   return (
     <div>
+      <Head>
+      <title>Welcome</title>
+      </Head>
         <PaymentForm/>
     </div>
   )

@@ -5,6 +5,9 @@ import {getSession} from 'next-auth/react'
 const emailVerify = () => {
   return (
     <div>
+      <Head>
+      <title>Email Verify</title>
+      </Head>
         <EmailSubmit/>
     </div>
   )

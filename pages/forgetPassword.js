@@ -1,10 +1,14 @@
 import React from 'react'
 import ForgetPassword from '../Component/ForgetPassword'
 import {getSession} from 'next-auth/react'
+import Head from 'next/head'
 
 const forgetPassword = () => {
   return (
     <div>
+      <Head>
+      <title>Forget Passsword</title>
+      </Head>
         <ForgetPassword/>
     </div>
   )
