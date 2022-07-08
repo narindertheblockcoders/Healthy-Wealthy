@@ -232,12 +232,12 @@ setLoadingRef(false);
               </div>
               <div style={{float:"left", width:"100%", marginTop:"10px"  }}>
 
-<p style={{margin:"0", fontSize:"15px", marginTop:"15px", }}>Click SEND CODE, check your inbox, enter the verification code and click UPDATE.</p>
+<p style={{margin:"0", fontSize:"15px", marginTop:"15px", }}>Click SEND CODE, check your inbox, enter the verification code below and click UPDATE.</p>
   </div>
               <div className="name-sec mb-5 mt-0" style={{marginTop:"0px !important"}}>
               
                 <div className="input-item item-set mt-0" id="item-value" style={{ marginRight: "10px", display: "flex", marginTop:"0px !important" }} >
-                  <input className="textinput w-50" mt-0 type="name" name="username" style={{ borderRadius: " 10px 0 0 10px !important" }} ref={sendCodeRef} />
+                  <input className="textinput w-50" autoComplete="off" type="number" name="otp" style={{ borderRadius: " 10px 0 0 10px !important" }} ref={sendCodeRef} />
                   <button type="button"   disabled={isLoading} onClick={onClickHandler} className="btn btn-roundes  btn- w-50   " style={{  }}>
                     Send Code
                   </button>

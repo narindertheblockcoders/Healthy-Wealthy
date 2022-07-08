@@ -110,14 +110,14 @@ function logoutHandler (){
               pauseOnHover
             />
 
-              <div className="col-head mt-3" id="col-head">
-              <h6 className="mb-0">Share, inspire & earn using your Influencer Referral Link:<strong style={{fontSize:"0.8rem"}}> https://healthy-wealthy.vercel.app?referal={props.session.user.email} </strong><CopyToClipboard
+              <div className="col-head mt-3 " id="col-head">
+              <h6 className="mb-0 mt-0" style={{fontSize:"14px"}}>Share, inspire & earn using your Influencer Referral Link:<strong style={{fontSize:"0.8rem"}}> https://healthy-wealthy.vercel.app?referal={props.session.user.email} </strong><CopyToClipboard
                         text={`https://healthy-wealthy.vercel.app?referal=${props.session.user.email}`}
                         onCopy={() =>{ notify("Copied Successfully"); }}
                       >
                         <img style={{ marginLeft: "0px" }} src={'/mdi.png'} />
                       </CopyToClipboard>   </h6>
-                      <h6 className="mb-3">Questions? <a style={{color:"black", }} href=" https://healthiwealthi.io/contact-us" target="_blank" rel="noreferrer"> Contact us</a> |  <a style={{color:"black",}} href="https://healthiwealthi.io/influencer-program/" target="_blank" rel="noreferrer"> Influencer Details</a> </h6>
+                      <h6 className="mt-3 mb-4" style={{fontSize:"14px"}}>Questions? <a style={{color:"black", }} href=" https://healthiwealthi.io/contact-us" target="_blank" rel="noreferrer"> Contact us</a> |  <a style={{color:"black",}} href="https://healthiwealthi.io/influencer-program/" target="_blank" rel="noreferrer"> Influencer Resources</a> </h6>
 
                 <div className="col-md-7 left-headSec">
 

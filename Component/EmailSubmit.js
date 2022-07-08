@@ -31,6 +31,7 @@ const EmailSubmit = () => {
         console.log(rec);
 
         notify('Verification code Sent' );
+        setError(false)
         setVerify(true)
         setIsLoading(true);
         setLoadingRef(true)

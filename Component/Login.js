@@ -193,7 +193,7 @@ const Login = () => {
               <p className="by-text" style={{cursor:"pointer", marginTop:"5px", fontSize:"13px", color:"#2990DF"}}>
                 
                 {" "}
-             Forget your password?
+             Forgot your password?
               </p>
               </Link>
 
