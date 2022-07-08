@@ -10,8 +10,8 @@ const index = () => {
         
         <title>Signup</title>
 
-        <meta property="og:title" content="
-"/>
+        <meta property="og:title" content="HealthiWealthi™ RXHEAL | Get PAID to live healthi
+Affordable, high-quality Health Coaching for everyone. Own RXHEAL and build wealth."/>
 <meta key="description" property="og:description" content="HealthiWealthi™ RXHEAL | Get PAID to live healthi
 Affordable, high-quality Health Coaching for everyone. Own RXHEAL and build wealth."/>
 <meta property="og:image" key="image" content="/photo.png"/>

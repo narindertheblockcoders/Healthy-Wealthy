@@ -5,7 +5,9 @@ import {getSession} from 'next-auth/react'
 const pay = () => {
   return (
     <div>
-
+     <Head>
+      <title>Withdraw</title>
+      </Head>
         <Pay/>
     </div>
   )
