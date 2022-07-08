@@ -1,6 +1,7 @@
 import React from 'react'
 import PaymentForm from '../Component/PaymentForm'
 import{getSession} from 'next-auth/react'
+import Head from 'next/head'
 
 const paymentForm = () => {
   return (

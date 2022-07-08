@@ -1,6 +1,7 @@
 import React from 'react'
 import Pay from '../Component/Pay'
 import {getSession} from 'next-auth/react'
+import Head from 'next/head'
 
 const pay = () => {
   return (

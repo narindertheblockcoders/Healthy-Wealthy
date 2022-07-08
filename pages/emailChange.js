@@ -1,6 +1,8 @@
 import React from 'react'
 import EmailChange from '../Component/EmailChange'
 import {getSession} from 'next-auth/react'
+import Head from 'next/head'
+
 
 const emailChange = () => {
   return (

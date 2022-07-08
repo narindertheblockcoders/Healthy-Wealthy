@@ -1,6 +1,7 @@
 import React from 'react'
 import EmailSubmit from '../Component/EmailSubmit'
 import {getSession} from 'next-auth/react'
+import Head from 'next/head'
 
 const emailVerify = () => {
   return (

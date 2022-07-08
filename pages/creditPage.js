@@ -1,6 +1,7 @@
 import React from 'react'
 import CreditPage from '../Component/CreditPage'
 import{getSession} from 'next-auth/react'
+import Head from 'next/head'
 
 const creditPage = () => {
   return (
