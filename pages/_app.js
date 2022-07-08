@@ -11,6 +11,15 @@ function MyApp({ Component, pageProps }) {
   return <SessionProvider session={pageProps.session}>
   <SSRProvider>
    <Navbar/>
+   <Head>
+        
+        
+
+        {/* <meta property="og:title" content=""/> */}
+<meta key="description" property="og:description" content="HealthiWealthi™ RXHEAL | Get PAID to live healthi
+Affordable, high-quality Health Coaching for everyone. Own RXHEAL and build wealth."/>
+<meta property="og:image" key="image" content="/photo.png"/>
+       </Head>
   <Component {...pageProps} />
   <Footer/>
   </SSRProvider>

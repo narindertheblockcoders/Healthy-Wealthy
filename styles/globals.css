@@ -2072,7 +2072,7 @@ header .top-navbar .navbar-toggler-icon {
 #ref-code {width: 100% !important;     }
 #fuds{background-color: black !important; color: white !important;}
 #fifth-item{margin-top: 20px;}
-
+#index-line {    top: -3.2%;}
 
 @media screen and (max-width: 1200px) {
     /* .margin-txt {
@@ -2676,8 +2676,10 @@ header .top-navbar .navbar-toggler-icon {
     #ch-line {top: -4% !important;}
     
     #profile-line{top: -4% !important;}
-    #index-line {top: -5% !important;}
-    #login-line {top: -4.2% !important;}
+    #index-line {
+        top: -3.2% !important;
+    }  
+      #login-line {top: -4.2% !important;}
     .profile-line {
         top: -5% !important;
     }
