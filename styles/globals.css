@@ -141,6 +141,7 @@ input[type=number]::-webkit-outer-spin-button {
     /* position: absolute; */
     bottom: 0;
     background-color: #F5F5F5 !important;
+    text-decoration: none;
 }
 .contact-mail {font-size: 14px; margin: 0; font-weight: unset;}
 /* 
@@ -407,7 +408,7 @@ header .navbar-light .navbar-nav .nav-link {
     width: 100%;
     padding: 58px 0;
     text-align: center;
-    min-height: 83vh;
+    min-height: 84vh;
 }
 
 .pay-line {
@@ -1557,7 +1558,7 @@ sup {
 }
 
 .profile-sec .funds-sec .funds-table th {
-    background-color: black;
+    background-color: #7F7F7F;
     color: white;
     font-size: 12px;
     font-weight: 700;
@@ -1942,7 +1943,7 @@ header .top-navbar .navbar-toggler-icon {
     float: left;
 }
 
-.four-sec::before {
+.six-sec::before {
     content: "";
     display: flex;
     justify-content: center;
@@ -1953,6 +1954,20 @@ header .top-navbar .navbar-toggler-icon {
     top: 25%;
     float: left;
 }
+
+.four-sec::before {
+    content: "";
+    display: flex;
+    justify-content: center;
+    height: 31.01px;
+    width: 31.01px;
+    background-image: url(/token-icon.svg);
+    position: absolute;
+    top: 25%;
+    float: left;
+}
+
+
 
 .five-sec::before {
     content: "";
@@ -1966,17 +1981,7 @@ header .top-navbar .navbar-toggler-icon {
     float: left;
 }
 
-.six-sec::before {
-    content: "";
-    display: flex;
-    justify-content: center;
-    height: 31.01px;
-    width: 31.01px;
-    background-image: url(/token-icon.svg);
-    position: absolute;
-    top: 25%;
-    float: left;
-}
+
 
 #first-item {
     margin-left: 20px !important;

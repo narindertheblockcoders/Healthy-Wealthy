@@ -29,7 +29,7 @@ useEffect(()=>{
             <img src={Arrow.src} />
                 </span>
                 </Link>
-                My Referal&apos;s</h3>
+                My Referrals</h3>
                
                 <table className="table funds-table mt-5" id='funds-color'>
                     

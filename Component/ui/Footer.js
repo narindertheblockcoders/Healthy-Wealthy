@@ -17,12 +17,21 @@ const Footer = () => {
 </a></li>
       <li className="nav-item"><a href="#" className="nav-link px-2 text-muted">All rights reserved</a></li>
     </ul> */}
-    <p className="text-center text-muted" style={{fontSize:"14px",margin:"0"}}>© 2022 HealthiWealthi™. All rights reserved | <a href="https://healthiwealthi.io/contact-us" target="_blank" rel='noreferer' className="systeme-show-popup-3443593" style={{ color:"grey"}}>Contact us </a>
-    {/* <Script id="form-script-tag-3443593" src="https://www.healthiwealthi.net/public/remote/page/4931931cf737288ba0e8b30a751ad4c276fd7bc.js"></Script>  | */} | 
+
+
+    {/* <p className="text-center text-muted" style={{fontSize:"14px",margin:"0"}}>© 2022 HealthiWealthi™. All rights reserved | <a href="https://healthiwealthi.io/contact-us" target="_blank" rel='noreferer' className="systeme-show-popup-3443593" style={{ color:"grey"}}>Contact us </a>| 
      Privacy Policy | Terms of Use |  <a href=" https://healthiwealthi.io/terms-of-use/" target="_blank" rel='noreferer'  style={{ color:"grey", paddingLeft:"5px"}}>   Cookie Policy  </a>
     </p>
+  */}
+
+    <p className="text-center text-muted" style={{fontSize:"14px",margin:"0"}}>© 2022 HealthiWealthi™. All rights reserved | 
+   <a href="https://healthiwealthi.io/terms-of-use" target="_blank" rel='noreferer'  style={{ color:"grey", paddingLeft:"0px", textDecoration:"none"}}>      Privacy & Terms   </a>   <span style={{paddingLeft:"0px"}}> |</span>    <a href="https://healthiwealthi.io/contact-us" target="_blank" rel='noreferer' className="systeme-show-popup-3443593" style={{ color:"grey", textDecoration:"none"}}>Contact us </a>
+    </p>
  
-  </footer>
+    {/* © 2022 HealthiWealthi™. All rights reserved | Privacy & Terms | Contact us  */}
+
+
+  </footer>|
     </div>
   )
 }

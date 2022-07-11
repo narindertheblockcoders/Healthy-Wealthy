@@ -129,13 +129,14 @@ console.log(router.query.amount)
                 {/* <img src="/img.png" className=" mukan"  /> */}
                 {/* <img src="/reactangle.png" className="icon-set"  /> */}
                 
-
-                <iframe 
+                <iframe
                    style={{marginTop: "-5px", borderRadius: "10px 10px 0 0"}} 
                    className="iframe-setting"
-                src="https://player.vimeo.com/video/728067878?h=e5e14e76d8&title=0&byline=0&portrait=0"   width="100%" height="270px"  frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                src="https://player.vimeo.com/video/728168698?h=0206ea4572&title=0&byline=0&portrait=0" width="100%" height="270px" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
 
-                {/* <button onClick={()=>setModalShow(true)} type="button" className="wht-btn"><img src="/vicon.svg" style={{paddingRight:"6px"}}/> 5 Min</button> */}
+
+
+
             <VideoModal    show={modalShow}
         onHide={() => setModalShow(false)}/>
 

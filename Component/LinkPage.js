@@ -133,9 +133,10 @@ function logoutHandler (){
                       </div>
                     </Link>
 
-                    <Link href={'/changePassword'}>
+                    <Link href={'https://healthiwealthi.io/healthiwealthi-solutions-1'}>
                       <div className="link-item four-sec" id="sec-item">
-                        CHANGE PASSWORD
+                      WATCH & LEARN
+                      {/* TOKEN */}
                       </div>
                     </Link>
                     <Link href={"/buy"}>
@@ -143,17 +144,18 @@ function logoutHandler (){
                         BUY TOKEN
                       </div>
                     </Link>
-                    <Link href={'https://healthiwealthi.io/blog'}>
+                    <Link href={'/changePassword'}>
 
                     <div className="link-item six-sec" id="third-item">
-                      TOKEN
+                    CHANGE PASSWORD
+                   
                     </div>
                     </Link>
 
                     <Link href={'/myrefers'}>
 
                     <div className="link-item seven-sec" id="four-item">
-                      My Refferal&apos;s
+                    My Referrals
                     </div>
                     </Link>
 

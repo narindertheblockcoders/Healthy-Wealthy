@@ -123,13 +123,10 @@ const FrontPage = () => {
                 {" "}
                 Join the HealthiWealthi <sup className="sup-text">TM</sup><br></br> Global Community
               </h3>
-              <p style={{fontSize:"13px", paddingTop:"7px", margin:"0"}}>HealthiWealthi™ RXHEAL | Get PAID to live healthi
-Affordable, high-quality Health Coaching for everyone. Own RXHEAL and build wealth.</p>
-<img className="mt-3" style={{width:"100%"}} src="/photo.png"/>
-              {/* <p style={{fontSize:"13px", paddingTop:"7px", margin:"0"}}>Own RXHEAL and unleash your
-potential on HealthiWealthi™ living
-healthier, happier, longer, and richer.</p> */}
-
+<img className="mt-2" style={{width:"100%"}} src="/photo1.png"/>
+              <p style={{fontSize:"13px", paddingTop:"7px", margin:"0"}}>Register now and receive 100 RXHEAL reward tokens.
+</p>
+           
 
 
 
