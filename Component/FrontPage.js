@@ -102,7 +102,7 @@ const FrontPage = () => {
 
   return (
     <div>
-      <section className="profile-sec verify-hight" >
+      <section className="profile-sec verify-hight pb-0" >
         <div className="container">
           <div className="row justify-content-center">
             <ToastContainer

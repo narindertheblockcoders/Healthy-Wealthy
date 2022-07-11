@@ -402,13 +402,12 @@ header .navbar-light .navbar-nav .nav-link {
 .navbar-toggler {
     border: 1px solid black;
 }
-
 .profile-sec {
     float: left;
     width: 100%;
     padding: 58px 0;
     text-align: center;
-    min-height: 84vh;
+    min-height: 83vh;
 }
 
 .pay-line {

@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 const Footer = () => {
   return (
-    <div>
+    
         <footer className="footer-head py-3 " id='footer-set' style={{display:"flex", justifyContent:"center"}}>
     {/* <ul className="nav justify-content-center border-bottom pb-3 mb-3">
       <li className="nav-item"><a href="#" className="nav-link px-2 text-muted">© 2022 HealthiWealthi™. </a></li>
@@ -31,8 +31,8 @@ const Footer = () => {
     {/* © 2022 HealthiWealthi™. All rights reserved | Privacy & Terms | Contact us  */}
 
 
-  </footer>|
-    </div>
+  </footer>
+    
   )
 }
 
