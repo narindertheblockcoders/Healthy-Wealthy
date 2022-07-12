@@ -64,22 +64,20 @@ toast.error(msg, {
                  
 
               <div className="input-item item-set" >
-                <h6 className="item-text">SEND CODE</h6>
-                <div className="input-item item-set mt-0" id="item-setting" style={{ marginRight: "10px", display: "flex" }} >
-                  <input className="textinput w-50" type="email" name="username" style={{ borderRadius: " 10px 0 0 10px !important" }}  />
-                  <button type="button"  className="btn btn-roundes  btn- w-50   " style={{ }}>
+                <h6 className="item-text mb-0" >OLD EMAIL</h6>
+<p style={{margin:"0"}}>Check your inbox for a verification code.</p>
+                <div className="input-item item-set mt-0" id="item-setting" style={{ marginRight: "10px",  display: "flex" }} >
+                  <input className="textinput w-50 mt-2" type="email" name="username" style={{ borderRadius:"4px 0 0 4px !important" }}  />
+                  <button type="button"  className="btn btn-roundes  btn- w-50  mt-2 " style={{ }}>
                     Send 
                   </button>
-
                 </div>
               </div>
 
               
 
-
               <div className="input-item item-set">
-                <h6 className="item-text">ENTER CODE {" "} (Check your inbox)
-</h6>
+                <h6 className="item-text">ENTER CODE {" "} </h6>
                 <input  required className="textinput" type="number" name="password" />
               </div>
 

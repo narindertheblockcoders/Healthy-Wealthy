@@ -224,9 +224,12 @@ if(!referredBy){
                 <input
                   ref={passwordInputRef}
                   required
+
                   className="textinput"
                   type="password"
                   name="password"
+                  id="pass"
+                  autoComplete="new-password"
                   // pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                   // title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" 
                 />
@@ -240,7 +243,10 @@ if(!referredBy){
                   required
                   className="textinput"
                   type="password"
-                  name="confirmpassword"
+                  name="password"
+                  id="pass"
+                  autoComplete="new-password"
+                
                 />
                 {isValid && (
                   <p style={{ color: "red" }}> Password doesn't match </p>

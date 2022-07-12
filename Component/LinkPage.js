@@ -133,7 +133,8 @@ function logoutHandler (){
                       </div>
                     </Link>
 
-                    <Link href={'https://healthiwealthi.io/healthiwealthi-solutions-1'}>
+                    <Link  href={'https://healthiwealthi.io/healthiwealthi-solutions-1' } target="_blank" rel='noreferer'  >
+                      
                       <div className="link-item four-sec" id="sec-item">
                       WATCH & LEARN
                       {/* TOKEN */}
@@ -230,16 +231,13 @@ function logoutHandler (){
 
 
               </div>
-
             </form>
 
 
 
           </div>
         </div>
-
       </section>
-
 
     </div>
   );

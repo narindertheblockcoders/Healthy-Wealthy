@@ -1052,12 +1052,13 @@ sup {
 
 .profile-sec .input-sec .para-set {
     float: left;
-    width: 111.5%;
+    width: 100% !important;
     padding-left: 0;
     padding-top: 15px;
+    padding-bottom: 15px;
     border-top: 1px solid #DFDFDF;
     margin: 0;
-    left: -20px;
+    left: 0px !important;
     position: relative;
 }
 

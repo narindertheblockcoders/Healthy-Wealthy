@@ -102,7 +102,7 @@ const FrontPage = () => {
 
   return (
     <div>
-      <section className="profile-sec verify-hight pb-0" >
+      <section className="profile-sec verify-hight" >
         <div className="container">
           <div className="row justify-content-center">
             <ToastContainer
@@ -116,14 +116,17 @@ const FrontPage = () => {
               draggable
               pauseOnHover
             />
-            <form className="input-sec input-top" id="form-setup" onSubmit={onSubmitHandler}>
-              <div className="input-line" id="index-line"></div>
-              <img src={Heart.src} className="mt-2" />
+            <form className="input-sec input-top p-0" id="form-setup" onSubmit={onSubmitHandler}>
+              {/* <div className="input-line" id="index-line"></div> */}
+              {/* <img src={Heart.src} className="mt-2" /> */}
+<img    style={{marginTop: "-5px", borderRadius: "10px 10px 0 0", width:"100%"}} 
+                   className="iframe-setting"  src="/photo2.png"/>
+
+<div class="padding-set">
               <h3 className="heading-text mt-3">
                 {" "}
                 Join the HealthiWealthi <sup className="sup-text">TM</sup><br></br> Global Community
               </h3>
-<img className="mt-2" style={{width:"100%"}} src="/photo1.png"/>
               <p style={{fontSize:"13px", paddingTop:"7px", margin:"0"}}>Register now and receive 100 RXHEAL reward tokens.
 </p>
            
@@ -201,7 +204,7 @@ const FrontPage = () => {
                 {" "}
                 By continuing you agree to our privacy policy.
               </p>
-
+              </div>
               <div className="para-set">
                 <Link href={"/login"}>
                   <p className="iptpara-text">
@@ -220,6 +223,7 @@ const FrontPage = () => {
                   </p>
                 </Link>
               </div>
+            
             </form>
           </div>
         </div>
