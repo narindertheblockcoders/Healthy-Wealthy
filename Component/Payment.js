@@ -44,9 +44,10 @@ const Payment = () => {
     onSettled(data, error) {
       setIsLoading(true);
       console.log("Settled", { data, error });
-      setIsLoading(false);
       setErrorMessage(error?.message);
       if (error) {
+      setIsLoading(false);
+
         console.log(error.data.message, "err");
         if (error.data.message) {
           setErrorMessage(error?.data.message);
