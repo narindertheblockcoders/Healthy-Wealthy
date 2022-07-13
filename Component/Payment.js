@@ -35,7 +35,7 @@ const Payment = () => {
   // console.log(chains);
   const [errorMessage, setErrorMessage] = useState(null);
   const { data, isError, isLoading, write } = useContractWrite({
-    addressOrName: "0xb2e9830ce0f1099f6ac00b0da94e72a87b84bc23",
+    addressOrName: "0x7584f3c77D998378f8853959d478d54CB0c8c728",
     contractInterface: abi,
     functionName: "mint",
 
@@ -44,13 +44,18 @@ const Payment = () => {
     onSettled(data, error) {
       setIsLoading(true);
       console.log("Settled", { data, error });
-
+      setIsLoading(false);
+      setErrorMessage(error?.message);
       if (error) {
-        setErrorMessage(error?.message);
+        console.log(error.data.message, "err");
+        if (error.data.message) {
+          setErrorMessage(error?.data.message);
+        } else {
+          setErrorMessage(error);
+        }
         // setTimeout(function () {
         //   setModalShow(false);
         // }, 2000);
-        setIsLoading(false);
       }
     },
     onSuccess(data) {
@@ -76,7 +81,7 @@ const Payment = () => {
         console.log("api");
       }
       if (data?.status == 0) {
-        setErrorMessage(error?.message);
+        setErrorMessage(error.data?.message);
         setIsLoading(false);
 
         // setErrorMessage("Transaction failed");
@@ -97,7 +102,7 @@ const Payment = () => {
   });
   const token = useContractRead(
     {
-      addressOrName: "0xb2e9830ce0f1099f6ac00b0da94e72a87b84bc23",
+      addressOrName: "0x7584f3c77D998378f8853959d478d54CB0c8c728",
       contractInterface: abi,
     },
 
@@ -154,10 +159,10 @@ const Payment = () => {
       setErrorMessage(null);
       const local = await localStorage.getItem("query");
       const localValue = JSON.parse(local);
-      if (currency == 80001) currency = 3;
+      if (currency == 80001) currency = 4;
 
-      if (currency == 4) currency = 2;
-      if (currency == 97) currency = 4;
+      if (currency == 4) currency = 3;
+      if (currency == 97) currency = 5;
       // const token = localStorage.getItem("token");
       console.log(usd, price, currency);
       let finalAmount = usd.toString() / price[currency - 2];
@@ -180,12 +185,9 @@ const Payment = () => {
       const response = res.data;
       console.log(response, "data");
       setTxId(response.data.id);
+      console.log(quantity);
       write({
-        args: [account.address, quantity],
-        overrides: {
-          // gasLimit: 3302558,
-          value: (quantity * 100000000000000).toString(),
-        },
+        args: [quantity],
       });
       // router.push({
       //   pathname: "/paymentForm",
