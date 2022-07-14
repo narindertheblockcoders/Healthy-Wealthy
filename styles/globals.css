@@ -2075,9 +2075,12 @@ header .top-navbar .navbar-toggler-icon {
 
 #item-setting{margin-top: 0px !important;}
 #ref-code {width: 100% !important;     }
-#fuds{background-color: black !important; color: white !important;}
+#fuds{background-color: #7F7F7F !important; color: white !important; border: none !important; border-color: transparent !important;}
 #fifth-item{margin-top: 20px;}
 #index-line {    top: -3.2%;}
+.table > :not(:first-child) {
+    border-top: none !important;
+}
 
 @media screen and (max-width: 1200px) {
     /* .margin-txt {

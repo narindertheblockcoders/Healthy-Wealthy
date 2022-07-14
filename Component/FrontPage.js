@@ -18,7 +18,7 @@ const FrontPage = () => {
     return new Promise((resolve) => setTimeout(resolve, 4000));
   }
   const router = useRouter();
-  console.log(router.query.referal)
+  console.log(router.query,"router ddi queery")
   async function register(data) {
     try {
       let res = await axios.post("/api/register", data);
@@ -122,7 +122,7 @@ const FrontPage = () => {
 <img    style={{marginTop: "-5px", borderRadius: "10px 10px 0 0", width:"100%"}} 
                    className="iframe-setting"  src="/photo2.png"/>
 
-<div class="padding-set">
+<div className="padding-set">
               <h3 className="heading-text mt-3">
                 {" "}
                 Join the HealthiWealthi <sup className="sup-text">TM</sup><br></br> Global Community

@@ -133,7 +133,7 @@ function logoutHandler (){
                       </div>
                     </Link>
 
-                    <Link  href={'https://healthiwealthi.io/healthiwealthi-solutions-1' } target="_blank" rel='noreferer'  >
+                    <Link  href={'https://healthiwealthi.io/the-healthiwealthi-solutions-free-course/' } target="_blank" rel='noreferer'  >
                       
                       <div className="link-item four-sec" id="sec-item">
                       WATCH & LEARN
