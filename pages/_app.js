@@ -37,7 +37,7 @@ const { chains, provider } = configureChains(
   [alchemyProvider({ alchemyId: process.env.ALCHEMY_ID }), publicProvider()]
 );
 const { connectors } = getDefaultWallets({
-  appName: "Ayewa",
+  appName: "Healthy-Wealthy",
   chains,
 });
 const wagmiClient = createClient({
