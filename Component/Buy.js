@@ -8,6 +8,7 @@ import Heart from "../public/Heart.svg";
 import Arrow from "../public/arrow.svg";
 import VideoModal from "./ui/VideoModal";
 import Button from "react-bootstrap/Button";
+import $ from "jquery"
 
 const Buy = () => {
   const forInputRef = useRef();
@@ -18,6 +19,9 @@ const Buy = () => {
   const [modalShow, setModalShow] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isLoadingRef, setLoadingRef] = useState(false);
+
+
+
 
   function simulateNetworkRequest() {
     return new Promise((resolve) => setTimeout(resolve, 4000));
@@ -93,6 +97,16 @@ const Buy = () => {
   }, [isLoading]);
 
   const handleClick = () => setLoadingRef(false);
+
+  let n = finalValue;
+  // console.log(n," bro n a gya")
+let str = n.toLocaleString("en-US");
+console.log(str,"str here bro"); // "234,234.555"
+
+// let o =forInputRef.current.value;
+// let sta = o.toLocaleString("en-US");
+// console.log(sta,"str here bro"); 
+
 
   return (
     <div>
@@ -189,6 +203,8 @@ const Buy = () => {
                         type="number"
                         required
                         ref={forInputRef}
+                        pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$"
+                        data-type="currency"
                         // style={{ borderRadius: "10px 0 0 10px" }}
                         onChange={onChangeHandler}
                         className="form-control"
@@ -232,7 +248,7 @@ const Buy = () => {
                         disabled
                         // pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$"
                         // data-type="currency"
-                        value={finalValue}
+                        value={str}
                         placeholder="10000"
                         aria-label=" amount"
                       />

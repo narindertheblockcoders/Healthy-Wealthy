@@ -18,7 +18,7 @@ const [error, setError] =useState(false)
 const router = useRouter()
 console.log(router.query)
 const [Usd,setUsd]= useState(router.query.USD)
-const [total,setTotal] = useState(router.query.total)
+const [total, setTotal]= useState((router.query.total))
 const handleClick = async (e) => {
 
   e.preventDefault();
@@ -80,6 +80,18 @@ toast.error(msg, {
   progress: undefined,
 });
 
+
+let n = total;
+let str = n.toLocaleString("en-US",);
+console.log(str,"str here bro"); // "234,234.555"
+
+function numberWithCommas(n) {
+  var parts=n.toString().split(".");
+  return parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",") + (parts[1] ? "." + parts[1] : "");
+}
+// console.log(numberWithCommas)
+
+
   return (
     <div>
       <section className="profile-sec verify-hight " id="id-set  "   >
@@ -119,11 +131,11 @@ toast.error(msg, {
                 {/* <h6 className="item-text" style={{ fontSize: "17px", fontWeight: "600", marginBottom: "5px", color:"#D32286" }}> 
                  Order preview </h6> */}
 
-<p style={{marginBottom:"10px",  fontSize:"14px", }}>  <b>You receive </b>{total} <b>RXHEAL tokens for USD</b> {Usd}</p>
+<p style={{marginBottom:"10px",  fontSize:"14px", }}>  You receive {numberWithCommas(total)} <span style={{fontWeight:"bold"}}> RXHEAL </span> tokens for USD {numberWithCommas(Usd)}</p>
                   {Usd >= 100 && Usd<1000? 
                 <ul>
                     {/* <li style={{fontSize:"14px", fontWeight:"bold"}}>$100 - $999</li> */}
-                  <li className="rx-text"><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> <strong style={{paddingRight:"5px"}}>PLUS</strong>  100 RXHEAL Bonus Tokens</li>
+                  <li className="rx-text"><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> <strong style={{paddingRight:"5px"}}>PLUS</strong>  100 <span style={{fontWeight:"bold", paddingLeft:"5px", paddingRight:"5px"}}>RXHEAL</span> Bonus Tokens</li>
                   <li className="rx-text"><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> Book HealthiWealthi ($15 value)</li>
                   <li className="rx-text"><img src="/checkPink.svg" style={{paddingRight:"10px"}}/>   Book Lifestyle Medicine Works ($20 value)</li>
                  </ul>
@@ -132,7 +144,7 @@ toast.error(msg, {
 {Usd > 999 && Usd< 5000?
 <ul>
                   {/* <li style={{fontSize:"14px", fontWeight:"bold", marginTop:"10px"}}>    $1,000 - $4,999</li> */}
-                  <li className="rx-text"><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> <strong style={{paddingRight:"5px"}}>PLUS</strong>  1,000 RXHEAL Bonus Tokens</li>
+                  <li className="rx-text"><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> <strong style={{paddingRight:"5px"}}>PLUS</strong>  1,000 <span style={{fontWeight:"bold", paddingLeft:"5px", paddingRight:"5px"}}>RXHEAL</span> Bonus Tokens</li>
                   <li className="rx-text"><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> Book HealthiWealthi ($15 value)</li>
                   <li className="rx-text"><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> Lifestyle Medicine Summit Premium Ticket ($197 value)</li>
 
@@ -143,7 +155,7 @@ toast.error(msg, {
 { Usd > 4999 ? 
 <ul>
                   {/* <li style={{fontSize:"14px", fontWeight:"bold", marginTop:"10px"}}>    $5,000 -  $10,000</li> */}
-                  <li className="rx-text"><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> <strong style={{paddingRight:"5px"}}>PLUS</strong> 5,000 RXHEAL Bonus Tokens</li>
+                  <li className="rx-text"><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> <strong style={{paddingRight:"5px"}}>PLUS</strong> 5,000 <span style={{fontWeight:"bold", paddingLeft:"5px", paddingRight:"5px"}}>RXHEAL</span> Bonus Tokens</li>
                   <li className="rx-text"><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> Book HealthiWealthi ($15 value)</li>
                   <li className="rx-text"><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> Lifestyle Medicine Summit Premium Ticket ($197 value)</li>
                   <li className="rx-text"><img src="/checkPink.svg" style={{paddingRight:"10px"}}/> The Art & Science of Self-Healing 101 Course ($297 value)</li>
