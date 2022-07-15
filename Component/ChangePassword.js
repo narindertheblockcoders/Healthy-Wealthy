@@ -206,7 +206,7 @@ setLoadingRef(false);
               <div className="line profile-line" id="ch-line"></div>
               <h3 className="heading-text pink-text mt-2 ">
               <Link href={'/dashboard'}>
-              <span  className="arrows-icon" style={{ position: "relative", left: "-23%", cursor:"pointer" }}  >
+              <span  className="arrows-icon" style={{ position: "relative", left: "-21%", cursor:"pointer" }}  >
                     <img src={Arrow.src} />
                   </span>
                   </Link>

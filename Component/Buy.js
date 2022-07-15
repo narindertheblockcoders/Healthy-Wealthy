@@ -99,7 +99,6 @@ const Buy = () => {
   const handleClick = () => setLoadingRef(false);
 
   let n = finalValue;
-  // console.log(n," bro n a gya")
 let str = n.toLocaleString("en-US");
 console.log(str,"str here bro"); // "234,234.555"
 

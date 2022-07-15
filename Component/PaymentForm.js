@@ -24,9 +24,7 @@ const PaymentForm = () => {
     return new Promise((resolve) => setTimeout(resolve, 4000));
   }
 
-
   const via = router.query;
-
   const { finalAmount } = router.query;
 
   async function payment() {
@@ -42,7 +40,7 @@ const PaymentForm = () => {
         )
       }
 
-      
+
       setIfFinalValue(record.data.data);
     } catch (err) {
       console.log(err, "hello");
@@ -80,7 +78,6 @@ const PaymentForm = () => {
 
     // PaymentForm()
   }
-
 
 
   useEffect(() => {
@@ -147,7 +144,7 @@ const PaymentForm = () => {
                     <div className="flex-ipt">
                       <h4 className="payment-text">
                          RXHEAL OWNED:{" "}
-                        <span> {query && query?.finalValue}</span>{" "}
+                        <span>  {query && query?.finalValue}</span>{" "}
                       </h4>
                       {/* <input type="text" className='ipt-currency' defaultValue={query?.finalValue}></input> */}
                     </div>
