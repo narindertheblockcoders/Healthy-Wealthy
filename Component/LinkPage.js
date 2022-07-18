@@ -75,8 +75,12 @@ function logoutHandler (){
           <div className="row justify-content-center">
             <form className="funds-sec" onSubmit={onSubmitHandler}>
               <h3 className="funds-heading">Your Dashboard</h3>
-              <h4 className="wel-text">  Welcome  <strong> {name?.firstName}{". "}</strong> 
-              You're now part of a passionate community of health lovers & professionals ready to reimagine, democratize and build the new healthcare 3.0.
+              <h4 className="wel-text"> 
+              {/* Welcome NAME ! */}
+              
+              
+               Welcome  <strong> {name?.firstName} ! {" "}</strong> 
+               You're now part of a passionate community of health lovers & professionals ready to build and succeed in the new healthcare 3.0.
               {/* Please find below your RXHEAL details. Watch out for our HealthiWealthi™ email updates. Questions?  */}
              
              
@@ -111,8 +115,11 @@ function logoutHandler (){
             />
 
               <div className="col-head mt-3 " id="col-head">
-              <h6 className="mb-0 mt-0" style={{fontSize:"14px"}}>Share, inspire & earn using your Influencer Referral Link:<strong style={{fontSize:"0.8rem"}}> https://healthy-wealthy.vercel.app?referal={props.session.user.email} </strong><CopyToClipboard
-                        text={`https://healthy-wealthy.vercel.app?referal=${props.session.user.email}`}
+              <h6 className="mb-0 mt-0" style={{fontSize:"14px"}}>
+                
+                {/* Share, inspire & earn using your Influencer Referral Link: https://healthy-wealthy.vercel.app?ref=4694016 */}
+                Share, inspire & earn using your Influencer Referral Link:<strong style={{fontSize:"0.8rem"}}> https://healthy-wealthy.vercel.app?ref={props.session.user.email} </strong><CopyToClipboard
+                        text={`https://healthy-wealthy.vercel.app?ref=${props.session.user.email}`}
                         onCopy={() =>{ notify("Copied Successfully"); }}
                       >
                         <img style={{ marginLeft: "0px" }} src={'/mdi.png'} />
@@ -122,21 +129,21 @@ function logoutHandler (){
                 <div className="col-md-7 left-headSec">
 
                   <div className="link-head  " id="first-sec">
-                    <Link href={"/userProfile"}>
-                      <div className="link-item first-sec">PROFILE</div>
+                    <Link   href={'https://healthiwealthi.io/the-healthiwealthi-solutions-free-course/' } target="_blank" rel='noreferer'>
+                      <div className="link-item four-sec"> WATCH & LEARN</div>
                     </Link>
 
                     
                     <Link href={"/funds"}>
-                      <div className="link-item third-sec first-set" id="first-item ">
-                        FUNDS
+                      <div className="link-item first-sec first-set" id="first-item ">
+                     PROFILE
                       </div>
                     </Link>
 
-                    <Link  href={'https://healthiwealthi.io/the-healthiwealthi-solutions-free-course/' } target="_blank" rel='noreferer'  >
+                    <Link href={"/userProfile"}   >
+                      <div className="link-item third-sec" id="sec-item">
                       
-                      <div className="link-item four-sec" id="sec-item">
-                      WATCH & LEARN
+                      FUNDS
                       {/* TOKEN */}
                       </div>
                     </Link>

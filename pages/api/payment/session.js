@@ -38,11 +38,11 @@ export default async function handler(req, res) {
         currency: 'usd',
         product_data: {
          
-          name: "RxH",
+          name: "HealthiWealthi™ RXHEAL Reward Tokens",
         },
         unit_amount: 100,
       },
-      description: "RxH",
+      description: "HealthiWealthi™ RXHEAL Reward Tokens",
       quantity,
     };
       const session = await stripe.checkout.sessions.create({

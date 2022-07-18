@@ -1887,7 +1887,7 @@ header .top-navbar .navbar-toggler-icon {
     flex-direction: column;
     justify-content: center;
 }
-
+.first-sec{margin-left: 20px !important;}
 
 
 .first-sec::before {

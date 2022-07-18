@@ -84,9 +84,9 @@ const FrontPage = () => {
     });
 
     useEffect(() => {
-      if(router.query.referal){
+      if(router.query.ref){
         console.log("first")
-        localStorage.setItem("rfCode",router.query.referal)
+        localStorage.setItem("rfCode",router.query.ref)
       }
   
       if (isLoading) {

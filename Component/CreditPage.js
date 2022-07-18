@@ -52,7 +52,7 @@ const handleClick = async (e) => {
        const {error}  =await stripe.redirectToCheckout({
        sessionId: response.data.id
     })
-    
+
     if(error){
       setIsLoading(false)
       

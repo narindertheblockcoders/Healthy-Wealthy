@@ -2,8 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/buy": "pages/buy.js",
+  "/api/mytokens": "pages/api/mytokens.js",
   "/api/auth/[...nextauth]": "pages/api/auth/[...nextauth].js",
-  "/api/tokenPrice": "pages/api/tokenPrice.js",
-  "/creditPage": "pages/creditPage.js"
+  "/api/userProfile": "pages/api/userProfile.js"
 }

@@ -333,6 +333,11 @@ const Payment = () => {
             </form>
           </div>
         </div>
+      <div className="text-set mt-4" id="skip-page">
+        <Link href={"/dashboard"}>
+          <p style={{ cursor: "pointer" }}>Skip for Now</p>
+        </Link>
+      </div>
       </section>
     </div>
   );
