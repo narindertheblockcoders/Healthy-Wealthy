@@ -12,7 +12,7 @@ export default async function handler(req, res) {
         data
         );
         const reference = response.data;
-        let re=  await axios.post("https://hooks.zapier.com/hooks/catch/2086978/bww2e69/",{email:data.email, name:data.firstName})
+      
 
       // console.log(reference, "string");
       res.status(200).json({ data: reference });

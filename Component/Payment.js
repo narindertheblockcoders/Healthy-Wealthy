@@ -232,14 +232,15 @@ const Payment = () => {
               <div className="input-line credit-line" id="cred-line"></div>
 
               <h3 className="heading-text mt-0">
-                <Link href={"/creditPage"}>
+                {/* <Link href={"/creditPage"}> */}
                   <span
                     className="arrow-icon"
+                    onClick={() => router.back()}
                     style={{ position: "relative", left: "-10%" }}
                   >
                     <img src={Arrow.src} />
                   </span>
-                </Link>
+                {/* </Link> */}
                 Pay with crypto wallet
               </h3>
 

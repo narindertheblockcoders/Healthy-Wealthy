@@ -16,7 +16,7 @@ import { publicProvider } from "wagmi/providers/public";
 
 const BscChain = {
   id: 97,
-  name: 'BNB Smart Chain Testnet',
+  name: 'BNB Smart Chain Tstripeestnet',
   network: 'BNB',
   nativeCurrency: {
     decimals: 18,

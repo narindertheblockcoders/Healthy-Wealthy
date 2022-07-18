@@ -82,12 +82,13 @@ toast.error(msg, {
 
 
 let n = total;
-let str = n.toLocaleString("en-US",);
+let str = n?.toLocaleString("en-US",);
 console.log(str,"str here bro"); // "234,234.555"
 
 function numberWithCommas(n) {
-  var parts=n.toString().split(".");
-  return parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",") + (parts[1] ? "." + parts[1] : "");
+  if(!n) return;
+  var parts=n?.toString().split(".");
+  return parts[0]?.replace(/\B(?=(\d{3})+(?!\d))/g, ",") + (parts[1] ? "." + parts[1] : "");
 }
 // console.log(numberWithCommas)
 
@@ -121,11 +122,12 @@ function numberWithCommas(n) {
 
 
               <h6 className="item-text" style={{ fontSize: "22px", fontWeight: "600", marginBottom: "0px", color:"#D32286" }}> 
-              <Link href={"/buy"}>
-                  <span  style={{ position: "relative", left: "-24%" }}>
+              {/* <Link href={"/buy"}> */}
+                  <span  onClick={() => router.back()}  style={{ position: "relative", left: "-24%" }}>
                     <img src={Arrow.src} />
                   </span>
-                </Link>  Order preview </h6>
+                {/* </Link>   */}
+                Order preview </h6>
 
               <div className="input-item benefit-type " style={{marginTop:"25px !important"}}>
                 {/* <h6 className="item-text" style={{ fontSize: "17px", fontWeight: "600", marginBottom: "5px", color:"#D32286" }}> 
