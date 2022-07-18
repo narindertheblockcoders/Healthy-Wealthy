@@ -134,15 +134,14 @@ function logoutHandler (){
                     </Link>
 
                     
-                    <Link href={"/funds"}>
+                    <Link href={"/userProfile"}>
                       <div className="link-item first-sec first-set" id="first-item ">
                      PROFILE
                       </div>
                     </Link>
 
-                    <Link href={"/userProfile"}   >
+                    <Link href={"/funds"}   >
                       <div className="link-item third-sec" id="sec-item">
-                      
                       FUNDS
                       {/* TOKEN */}
                       </div>
