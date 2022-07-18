@@ -11,7 +11,6 @@ import { useRouter } from "next/router";
 const stripePromise = loadStripe("pk_test_51I9VYeJmw6LbIkvthtU60uARcY69ymGd7PXiuzXUnUIvp0NsuKCywpsvugi4utnvW6GCA9McIOIeQ4GG4zdvinXv00l55gtZ1n");
 
 const CreditPage = () => {
-  
 
 const [isLoading,setIsLoading]=useState(false)
 const [error, setError] =useState(false)
@@ -19,17 +18,16 @@ const router = useRouter()
 console.log(router.query)
 const [Usd,setUsd]= useState(router.query.USD)
 const [total, setTotal]= useState((router.query.total))
-const handleClick = async (e) => {
 
+const handleClick = async (e) => {
   e.preventDefault();
   setIsLoading (true)
   let total = JSON.parse(localStorage.getItem("query"))
+
   try{
-
     const response = await axios.post("/api/payment/session", {data:total?.enteredFor})
-    console.log(response.data.id)
-
-
+    console.log(response.data.id, "responce data here")
+    console.log(response, "responce data here")
     let query= await JSON.parse(localStorage.getItem('query'))
     if(!query) return;
     // let token =  localStorage.getItem('token')
@@ -48,14 +46,13 @@ const handleClick = async (e) => {
        let dataa = res.data.data
        console.log(dataa)
        let datas = JSON.stringify({transId:response.data.id,id:dataa.id})
-
        localStorage.setItem("tranx",datas)
 
-    const stripe = await stripePromise;
-    const {error}  =await stripe.redirectToCheckout({
-      sessionId: response.data.id
-      
+       const stripe = await stripePromise;
+       const {error}  =await stripe.redirectToCheckout({
+       sessionId: response.data.id
     })
+    
     if(error){
       setIsLoading(false)
       
@@ -179,8 +176,7 @@ function numberWithCommas(n) {
 
                     {error && (<p style={{color:"red", textAlign:"center", fontSize:"15px", margin:"0"}}> Invalid amount</p>)}
                 <button type="submit" disabled={isLoading} className="btn credit-btn mt-0" id="credit-btn">
-                  <img className="icon-space" src={Credit.src} /> Pay with
-                  Credit Card
+                  <img className="icon-space" src={Credit.src} /> Pay with Credit Card
                 </button>
                 
               </form>

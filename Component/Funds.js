@@ -19,6 +19,7 @@ const Funds = () => {
   const [ref, setRef] = useState();
  const [stakes,setStakes] =useState ()
  const [myTokens,setMyTokens] = useState()
+
   async function register() {
     try {
       // let token = localStorage.getItem("token");
@@ -82,6 +83,7 @@ const Funds = () => {
     router.push("/pay");
   }
 
+  
   return (
     <div>
       <section className="profile-sec" >
@@ -163,12 +165,11 @@ const Funds = () => {
                       </td>
                       <td  style={{textAlign:"center"}}>{item?.totalValue}</td>
                       <td   style={{textAlign:"right"}}>{item.totalValue>0?
-                      
                         <button
                           type="button"
                           className="btn deposit-btn"
                           role="button"
-                        
+                        disabled={item.availableToken == 0 ? true :false}
                           onClick={()=>router.push('/pay')}
                         >
                           Withdraw
